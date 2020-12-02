@@ -21,6 +21,7 @@ namespace ComputerWinform
         {
             InitializeComponent();
             random = new Random();
+            btnHome.Visible = false;
         }
 
         private Color SelectThemeColor()
@@ -51,6 +52,7 @@ namespace ComputerWinform
                     panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     ThemeColor.PrimaryColor = color;
                     ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
+                    btnHome.Visible = true;
                 }
             }
         }
@@ -103,7 +105,7 @@ namespace ComputerWinform
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormCategory(), sender);
 
         }
 
@@ -116,6 +118,26 @@ namespace ComputerWinform
         private void btnStaff_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            if(activeForm!=null)
+            {
+                activeForm.Close();
+
+            }
+            Reset();
+        }
+
+        private void Reset()
+        {
+            DisableButton();
+            lblTitle.Text = "HOME";
+            panelTitleBar.BackColor = Color.FromArgb(0, 150, 136);
+            panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            currentButton = null;
+            btnHome.Visible = false;
         }
     }
 }

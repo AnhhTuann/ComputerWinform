@@ -63,6 +63,16 @@ namespace ComputerWinform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_30px {
+            get {
+                object obj = ResourceManager.GetObject("add_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_shopping_cart_30px {
             get {
                 object obj = ResourceManager.GetObject("add_shopping_cart_30px", resourceCulture);
@@ -163,6 +173,56 @@ namespace ComputerWinform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_bin_30px {
+            get {
+                object obj = ResourceManager.GetObject("delete_bin_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_30px {
+            get {
+                object obj = ResourceManager.GetObject("edit_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filter_30px {
+            get {
+                object obj = ResourceManager.GetObject("filter_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap home_address_30px {
+            get {
+                object obj = ResourceManager.GetObject("home_address_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap home_address_60px {
+            get {
+                object obj = ResourceManager.GetObject("home_address_60px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap name_30px {
             get {
                 object obj = ResourceManager.GetObject("name_30px", resourceCulture);
@@ -196,6 +256,16 @@ namespace ComputerWinform.Properties {
         internal static System.Drawing.Bitmap product_30px {
             get {
                 object obj = ResourceManager.GetObject("product_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_30px {
+            get {
+                object obj = ResourceManager.GetObject("search_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

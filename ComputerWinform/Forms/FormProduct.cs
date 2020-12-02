@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ComputerWinform.Forms
 {
     public partial class FormProduct : Form
@@ -17,37 +18,56 @@ namespace ComputerWinform.Forms
         public FormProduct()
         {
             InitializeComponent();
+            
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private async void FormProduct_Load(object sender, EventArgs e)
         {
-            string response = await ApiHandler.client.GetStringAsync("category");
-            List<Category> rows = JsonConvert.DeserializeObject<List<Category>>(response);
-            DataTable categories = new DataTable("categories");
+            string response = await ApiHandler.client.GetStringAsync("product");
+            List<Product> rows = JsonConvert.DeserializeObject<List<Product>>(response);
+            DataTable products = new DataTable("products");
 
-            categories.Columns.Add(new DataColumn("Id"));
-            categories.Columns.Add(new DataColumn("Name"));
+            products.Columns.Add(new DataColumn("Id"));
+            products.Columns.Add(new DataColumn("Name"));
+            products.Columns.Add(new DataColumn("Description"));
+            products.Columns.Add(new DataColumn("Price"));
+            products.Columns.Add(new DataColumn("Amount"));
+            products.Columns.Add(new DataColumn("Category"));
 
-            foreach (Category record in rows)
+            foreach (Product record in rows)
             {
                 DataRow row;
-                row = categories.NewRow();
+                row = products.NewRow();
                 row["Id"] = record.Id;
                 row["Name"] = record.Name;
-                categories.Rows.Add(row);
+                row["Description"] = record.Description;
+                row["Price"] = record.Price;
+                row["Amount"] = record.Amount;
+                row["Category"] = record.Category.Name;
+                products.Rows.Add(row);
             }
 
-            dataGridView1.DataSource = categories;
+            dataGridViewProduct.DataSource = products;
+            LoadTheme();
         }
+
+
+        private void LoadTheme()
+        {
+            foreach (Control btns in panelBtn.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+            labelButton.ForeColor = ThemeColor.PrimaryColor;
+            labelProduct.ForeColor = ThemeColor.SecondaryColor;
+        }
+
     }
 }

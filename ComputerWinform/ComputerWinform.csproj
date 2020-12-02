@@ -59,6 +59,12 @@
     <Compile Include="FormMainMenu.Designer.cs">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCategory.Designer.cs">
+      <DependentUpon>FormCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     <Compile Include="ThemeColor.cs" />
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCategory.resx">
+      <DependentUpon>FormCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormProduct.resx">
       <DependentUpon>FormProduct.cs</DependentUpon>
@@ -148,6 +157,27 @@
       <Project>{1d254ec6-1157-4994-87fb-522203e7cad0}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_bin_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_address_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_address_60px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

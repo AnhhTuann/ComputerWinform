@@ -35,6 +35,7 @@ namespace ComputerWinform
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
+            this.btnHome = new System.Windows.Forms.Button();
             this.btnStaff = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
@@ -59,7 +60,7 @@ namespace ComputerWinform
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(298, 663);
+            this.panelMenu.Size = new System.Drawing.Size(298, 853);
             this.panelMenu.TabIndex = 0;
             // 
             // panelLogo
@@ -87,11 +88,12 @@ namespace ComputerWinform
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panelTitleBar.Controls.Add(this.btnHome);
             this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(298, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1046, 94);
+            this.panelTitleBar.Size = new System.Drawing.Size(1284, 94);
             this.panelTitleBar.TabIndex = 1;
             // 
             // lblTitle
@@ -100,7 +102,7 @@ namespace ComputerWinform
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblTitle.Location = new System.Drawing.Point(493, 28);
+            this.lblTitle.Location = new System.Drawing.Point(612, 28);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(103, 32);
             this.lblTitle.TabIndex = 0;
@@ -111,8 +113,21 @@ namespace ComputerWinform
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPane.Location = new System.Drawing.Point(298, 94);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(1046, 569);
+            this.panelDesktopPane.Size = new System.Drawing.Size(1284, 759);
             this.panelDesktopPane.TabIndex = 2;
+            // 
+            // btnHome
+            // 
+            this.btnHome.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnHome.FlatAppearance.BorderSize = 0;
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Image = global::ComputerWinform.Properties.Resources.home_address_60px;
+            this.btnHome.Location = new System.Drawing.Point(0, 0);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(75, 94);
+            this.btnHome.TabIndex = 1;
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnStaff
             // 
@@ -199,6 +214,7 @@ namespace ComputerWinform
             this.btnProducts.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnProducts.FlatAppearance.BorderSize = 0;
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProducts.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnProducts.Image = global::ComputerWinform.Properties.Resources.product_30px;
             this.btnProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -237,7 +253,7 @@ namespace ComputerWinform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 663);
+            this.ClientSize = new System.Drawing.Size(1582, 853);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -266,6 +282,7 @@ namespace ComputerWinform
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblLogo;
         private System.Windows.Forms.Panel panelDesktopPane;
+        private System.Windows.Forms.Button btnHome;
     }
 }
 
