@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComputerWinform", "ComputerWinform\ComputerWinform.csproj", "{375A9051-D93F-41D1-A9CD-1B89F749BAF8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DTO", "DTO\DTO.csproj", "{1D254EC6-1157-4994-87FB-522203E7CAD0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{375A9051-D93F-41D1-A9CD-1B89F749BAF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375A9051-D93F-41D1-A9CD-1B89F749BAF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375A9051-D93F-41D1-A9CD-1B89F749BAF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375A9051-D93F-41D1-A9CD-1B89F749BAF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D254EC6-1157-4994-87FB-522203E7CAD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D254EC6-1157-4994-87FB-522203E7CAD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D254EC6-1157-4994-87FB-522203E7CAD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D254EC6-1157-4994-87FB-522203E7CAD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E108671F-4D16-4FAF-A9B7-12476ADE1E89}
+	EndGlobalSection
+EndGlobal
