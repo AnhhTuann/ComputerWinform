@@ -31,11 +31,11 @@ namespace ComputerWinform.Forms
         {
             this.panelCategory = new System.Windows.Forms.Panel();
             this.panelFill = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textCategoryName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
             this.labelProduct = new System.Windows.Forms.Label();
             this.panelBtn = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnFilter = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -66,7 +66,7 @@ namespace ComputerWinform.Forms
             this.panelFill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.panelFill.Controls.Add(this.textBox1);
+            this.panelFill.Controls.Add(this.textCategoryName);
             this.panelFill.Controls.Add(this.labelName);
             this.panelFill.Controls.Add(this.labelProduct);
             this.panelFill.Location = new System.Drawing.Point(318, 12);
@@ -74,13 +74,13 @@ namespace ComputerWinform.Forms
             this.panelFill.Size = new System.Drawing.Size(533, 103);
             this.panelFill.TabIndex = 10;
             // 
-            // textBox1
+            // textCategoryName
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(197, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(317, 22);
-            this.textBox1.TabIndex = 5;
+            this.textCategoryName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textCategoryName.Location = new System.Drawing.Point(197, 65);
+            this.textCategoryName.Name = "textCategoryName";
+            this.textCategoryName.Size = new System.Drawing.Size(317, 22);
+            this.textCategoryName.TabIndex = 5;
             // 
             // labelName
             // 
@@ -106,7 +106,7 @@ namespace ComputerWinform.Forms
             // 
             this.panelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.panelBtn.Controls.Add(this.textBox5);
+            this.panelBtn.Controls.Add(this.textSearch);
             this.panelBtn.Controls.Add(this.btnSearch);
             this.panelBtn.Controls.Add(this.btnFilter);
             this.panelBtn.Controls.Add(this.btnAdd);
@@ -118,14 +118,14 @@ namespace ComputerWinform.Forms
             this.panelBtn.Size = new System.Drawing.Size(533, 248);
             this.panelBtn.TabIndex = 3;
             // 
-            // textBox5
+            // textSearch
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(172, 46);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(299, 38);
-            this.textBox5.TabIndex = 9;
+            this.textSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textSearch.Location = new System.Drawing.Point(172, 46);
+            this.textSearch.Name = "textSearch";
+            this.textSearch.Size = new System.Drawing.Size(299, 38);
+            this.textSearch.TabIndex = 9;
             // 
             // btnSearch
             // 
@@ -174,6 +174,7 @@ namespace ComputerWinform.Forms
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -206,6 +207,7 @@ namespace ComputerWinform.Forms
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // labelButton
             // 
@@ -255,7 +257,7 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Panel panelCategory;
         private System.Windows.Forms.DataGridView dataGridViewCatetgory;
         private System.Windows.Forms.Panel panelBtn;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Button btnAdd;
@@ -263,7 +265,7 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Label labelButton;
         private System.Windows.Forms.Panel panelFill;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textCategoryName;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelProduct;
     }

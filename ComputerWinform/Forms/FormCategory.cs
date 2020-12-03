@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,8 +21,9 @@ namespace ComputerWinform.Forms
             InitializeComponent();
         }
 
-        private async void FormCategory_LoadAsync(object sender, EventArgs e)
+        private async void LoadData ()
         {
+            
             string response = await ApiHandler.client.GetStringAsync("category");
             List<Category> rows = JsonConvert.DeserializeObject<List<Category>>(response);
             DataTable categories = new DataTable("categories");
@@ -37,8 +39,13 @@ namespace ComputerWinform.Forms
                 row["Name"] = record.Name;
                 categories.Rows.Add(row);
             }
-
+            AutoSize = true;
             dataGridViewCatetgory.DataSource = categories;
+        }
+
+        private void FormCategory_LoadAsync(object sender, EventArgs e)
+        {
+            LoadData();
             LoadTheme();
         }
         private void LoadTheme()
@@ -55,6 +62,22 @@ namespace ComputerWinform.Forms
             }
             labelButton.ForeColor = ThemeColor.PrimaryColor;
             labelProduct.ForeColor = ThemeColor.SecondaryColor;
+        }
+
+
+        private async void btnAdd_Click(object sender, EventArgs e)
+
+        {
+            Category category = new Category();
+            category.Name = textCategoryName.Text;
+            var response = await ApiHandler.client.PostAsJsonAsync("category",category);
+            LoadData();
+        }
+
+        private async void btnDel_Click(object sender, EventArgs e)
+        {
+            var response = await ApiHandler.client.DeleteAsync("category/id");
+            LoadData();
         }
     }
 }
