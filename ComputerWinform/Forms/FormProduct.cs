@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -16,6 +17,9 @@ namespace ComputerWinform.Forms
 {
     public partial class FormProduct : Form
     {
+        private string imageName;
+        private byte[] selectedImage;
+
         public FormProduct()
         {
             InitializeComponent();
@@ -92,25 +96,40 @@ namespace ComputerWinform.Forms
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
+            MultipartFormDataContent form = new MultipartFormDataContent();
 
             cbCategory.DisplayMember = "Value";
             cbCategory.ValueMember = "Key";
-            int key = ((KeyValuePair<int, string>)cbCategory.SelectedItem).Key;
-            string value = ((KeyValuePair<int, string>)cbCategory.SelectedItem).Value;
-            Category category = new Category();
-            category.Id = key;
-            category.Name = value;
+            int categoryId = ((KeyValuePair<int, string>)cbCategory.SelectedItem).Key;
+            string categoryName = ((KeyValuePair<int, string>)cbCategory.SelectedItem).Value;
 
-            Product product = new Product();
-            product.Name = textProductName.Text;
-            product.Description = textProductName.Text;
-            product.Price = Int32.Parse( textPrice.Text);
-            product.Category = category;
+            form.Add(new StringContent(textProductName.Text), "name");
+            form.Add(new StringContent(textDescription.Text), "description");
+            form.Add(new StringContent(textPrice.Text), "price");
+            form.Add(new StringContent(categoryId.ToString()), "category[id]");
+            form.Add(new StringContent(categoryName), "category[name]");
+            form.Add(new StreamContent(new MemoryStream(selectedImage)), "productImage", imageName);
 
-            var response = await ApiHandler.client.PostAsJsonAsync("product", product);
+            await ApiHandler.client.PostAsync("product", form);
             LoadData();
         }
 
 
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                imageName = openFileDialog1.FileName;
+                Bitmap image = new Bitmap(imageName);
+
+                using (var stream = new MemoryStream())
+                {
+                    image.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
+                    selectedImage = stream.ToArray();
+                    labelImageName.Text = imageName;
+                }
+            }
+        }
     }
 }

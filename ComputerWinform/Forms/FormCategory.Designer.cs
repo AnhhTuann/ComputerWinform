@@ -43,6 +43,7 @@ namespace ComputerWinform.Forms
             this.btnDel = new System.Windows.Forms.Button();
             this.labelButton = new System.Windows.Forms.Label();
             this.dataGridViewCatetgory = new System.Windows.Forms.DataGridView();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panelCategory.SuspendLayout();
             this.panelFill.SuspendLayout();
             this.panelBtn.SuspendLayout();
@@ -58,7 +59,7 @@ namespace ComputerWinform.Forms
             this.panelCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCategory.Location = new System.Drawing.Point(0, 0);
             this.panelCategory.Name = "panelCategory";
-            this.panelCategory.Size = new System.Drawing.Size(858, 381);
+            this.panelCategory.Size = new System.Drawing.Size(826, 381);
             this.panelCategory.TabIndex = 0;
             // 
             // panelFill
@@ -71,15 +72,15 @@ namespace ComputerWinform.Forms
             this.panelFill.Controls.Add(this.labelProduct);
             this.panelFill.Location = new System.Drawing.Point(318, 12);
             this.panelFill.Name = "panelFill";
-            this.panelFill.Size = new System.Drawing.Size(533, 103);
+            this.panelFill.Size = new System.Drawing.Size(496, 115);
             this.panelFill.TabIndex = 10;
             // 
             // textCategoryName
             // 
             this.textCategoryName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textCategoryName.Location = new System.Drawing.Point(197, 65);
+            this.textCategoryName.Location = new System.Drawing.Point(172, 63);
             this.textCategoryName.Name = "textCategoryName";
-            this.textCategoryName.Size = new System.Drawing.Size(317, 22);
+            this.textCategoryName.Size = new System.Drawing.Size(299, 22);
             this.textCategoryName.TabIndex = 5;
             // 
             // labelName
@@ -113,16 +114,16 @@ namespace ComputerWinform.Forms
             this.panelBtn.Controls.Add(this.btnEdit);
             this.panelBtn.Controls.Add(this.btnDel);
             this.panelBtn.Controls.Add(this.labelButton);
-            this.panelBtn.Location = new System.Drawing.Point(318, 121);
+            this.panelBtn.Location = new System.Drawing.Point(318, 137);
             this.panelBtn.Name = "panelBtn";
-            this.panelBtn.Size = new System.Drawing.Size(533, 248);
+            this.panelBtn.Size = new System.Drawing.Size(496, 232);
             this.panelBtn.TabIndex = 3;
             // 
             // textSearch
             // 
             this.textSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSearch.Location = new System.Drawing.Point(172, 46);
+            this.textSearch.Location = new System.Drawing.Point(172, 48);
             this.textSearch.Name = "textSearch";
             this.textSearch.Size = new System.Drawing.Size(299, 38);
             this.textSearch.TabIndex = 9;
@@ -134,7 +135,7 @@ namespace ComputerWinform.Forms
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = global::ComputerWinform.Properties.Resources.search_30px;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(23, 46);
+            this.btnSearch.Location = new System.Drawing.Point(23, 48);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(134, 48);
             this.btnSearch.TabIndex = 6;
@@ -150,7 +151,7 @@ namespace ComputerWinform.Forms
             this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFilter.Image = global::ComputerWinform.Properties.Resources.filter_30px;
             this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFilter.Location = new System.Drawing.Point(22, 110);
+            this.btnFilter.Location = new System.Drawing.Point(22, 112);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(135, 48);
             this.btnFilter.TabIndex = 5;
@@ -166,9 +167,9 @@ namespace ComputerWinform.Forms
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ComputerWinform.Properties.Resources.add_30px;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(22, 174);
+            this.btnAdd.Location = new System.Drawing.Point(23, 176);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(122, 48);
+            this.btnAdd.Size = new System.Drawing.Size(135, 48);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -183,7 +184,7 @@ namespace ComputerWinform.Forms
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Image = global::ComputerWinform.Properties.Resources.edit_30px;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(172, 174);
+            this.btnEdit.Location = new System.Drawing.Point(172, 176);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(122, 48);
             this.btnEdit.TabIndex = 3;
@@ -199,7 +200,7 @@ namespace ComputerWinform.Forms
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.Image = global::ComputerWinform.Properties.Resources.delete_bin_30px;
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(314, 174);
+            this.btnDel.Location = new System.Drawing.Point(314, 176);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(157, 48);
             this.btnDel.TabIndex = 2;
@@ -214,7 +215,7 @@ namespace ComputerWinform.Forms
             this.labelButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelButton.AutoSize = true;
             this.labelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelButton.Location = new System.Drawing.Point(18, 0);
+            this.labelButton.Location = new System.Drawing.Point(18, 6);
             this.labelButton.Name = "labelButton";
             this.labelButton.Size = new System.Drawing.Size(87, 29);
             this.labelButton.TabIndex = 1;
@@ -225,19 +226,24 @@ namespace ComputerWinform.Forms
             this.dataGridViewCatetgory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewCatetgory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCatetgory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCatetgory.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewCatetgory.Name = "dataGridViewCatetgory";
             this.dataGridViewCatetgory.RowHeadersWidth = 51;
             this.dataGridViewCatetgory.RowTemplate.Height = 24;
-            this.dataGridViewCatetgory.Size = new System.Drawing.Size(300, 381);
+            this.dataGridViewCatetgory.Size = new System.Drawing.Size(305, 381);
             this.dataGridViewCatetgory.TabIndex = 0;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // FormCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 381);
+            this.ClientSize = new System.Drawing.Size(826, 381);
             this.Controls.Add(this.panelCategory);
             this.Name = "FormCategory";
             this.Text = "Category";
@@ -268,5 +274,6 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.TextBox textCategoryName;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelProduct;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

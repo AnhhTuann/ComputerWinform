@@ -79,5 +79,10 @@ namespace ComputerWinform.Forms
             var response = await ApiHandler.client.DeleteAsync("category/id");
             LoadData();
         }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
