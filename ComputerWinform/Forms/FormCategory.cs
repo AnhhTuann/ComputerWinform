@@ -66,17 +66,21 @@ namespace ComputerWinform.Forms
 
 
         private async void btnAdd_Click(object sender, EventArgs e)
-
         {
-            Category category = new Category();
-            category.Name = textCategoryName.Text;
-            var response = await ApiHandler.client.PostAsJsonAsync("category",category);
-            LoadData();
+            if (checkValueForm())
+            {
+                Category category = new Category();
+                category.Name = textCategoryName.Text;
+                var response = await ApiHandler.client.PostAsJsonAsync("category", category);
+                LoadData();
+            }
+            
         }
 
         private async void btnDel_Click(object sender, EventArgs e)
         {
-
+            var categoryId = Int32.Parse(textCategoryId.Text);
+            await ApiHandler.client.DeleteAsync("category/" + categoryId);
             LoadData();
         }
 
@@ -92,8 +96,37 @@ namespace ComputerWinform.Forms
             {
                 DataGridViewRow row = this.dataGridViewCatetgory.Rows[e.RowIndex];
 
+                textCategoryId.Text = row.Cells["Id"].Value.ToString();
                 textCategoryName.Text = row.Cells["Name"].Value.ToString();
             }
+        }
+
+        private async void btnEdit_Click(object sender, EventArgs e)
+        {
+            if(checkValueForm())
+            {
+                var category = new Category()
+                {
+                    Id = Int32.Parse(textCategoryId.Text),
+                    Name = textCategoryName.Text,
+                };
+                await ApiHandler.client.PutAsJsonAsync("category", category);
+                LoadData();
+            }
+        }
+        private bool checkValueForm()
+        {
+            string message = "";
+            string title = "Error";
+
+            if (textCategoryName.Text == "")
+            {
+                message = "Please input category name";
+                MessageBox.Show(message, title);
+                textCategoryName.Focus();
+                return false;
+            }
+            return true;
         }
     }
 }

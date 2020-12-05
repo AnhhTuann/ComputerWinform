@@ -99,24 +99,26 @@ namespace ComputerWinform.Forms
 
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-            MultipartFormDataContent form = new MultipartFormDataContent();
+            if(checkValueForm())
+            {
+                MultipartFormDataContent form = new MultipartFormDataContent();
 
-            cbCategory.DisplayMember = "Value";
-            cbCategory.ValueMember = "Key";
-            int categoryId = ((KeyValuePair<int, string>)cbCategory.SelectedItem).Key;
-            string categoryName = ((KeyValuePair<int, string>)cbCategory.SelectedItem).Value;
+                cbCategory.DisplayMember = "Value";
+                cbCategory.ValueMember = "Key";
+                int categoryId = ((KeyValuePair<int, string>)cbCategory.SelectedItem).Key;
+                string categoryName = ((KeyValuePair<int, string>)cbCategory.SelectedItem).Value;
 
-            form.Add(new StringContent(textProductName.Text), "name");
-            form.Add(new StringContent(textDescription.Text), "description");
-            form.Add(new StringContent(textPrice.Text), "price");
-            form.Add(new StringContent(categoryId.ToString()), "category[id]");
-            form.Add(new StringContent(categoryName), "category[name]");
-            form.Add(new StreamContent(new MemoryStream(selectedImage)), "productImage", imageName);
+                form.Add(new StringContent(textProductName.Text), "name");
+                form.Add(new StringContent(textDescription.Text), "description");
+                form.Add(new StringContent(textPrice.Text), "price");
+                form.Add(new StringContent(categoryId.ToString()), "category[id]");
+                form.Add(new StringContent(categoryName), "category[name]");
+                form.Add(new StreamContent(new MemoryStream(selectedImage)), "productImage", imageName);
 
-            await ApiHandler.client.PostAsync("product", form);
-            LoadData();
-
-
+                await ApiHandler.client.PostAsync("product", form);
+                LoadData();
+            }
+            
 
         }
 
@@ -144,6 +146,7 @@ namespace ComputerWinform.Forms
             {
                 DataGridViewRow row = this.dataGridViewProduct.Rows[e.RowIndex];
 
+                textProductId.Text = row.Cells["Id"].Value.ToString();
                 textProductName.Text = row.Cells["Name"].Value.ToString();
                 textDescription.Text = row.Cells["Description"].Value.ToString();
                 textPrice.Text = row.Cells["Price"].Value.ToString();
@@ -154,15 +157,83 @@ namespace ComputerWinform.Forms
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
+            textProductId.Text = "";
             textProductName.Text = "";
             textDescription.Text = "";
             textPrice.Text = "";
             cbCategory.Text = "";
         }
 
-        private void btnDel_Click(object sender, EventArgs e)
+        private async void btnDel_Click(object sender, EventArgs e)
         {
+            var productId = Int32.Parse(textProductId.Text);
             
+            await ApiHandler.client.DeleteAsync("product/"+ productId);
+            LoadData();
+        }
+
+        private async void btnEdit_Click(object sender, EventArgs e)
+        {
+            if(checkValueForm())
+            {
+                int categoryId = ((KeyValuePair<int, string>)cbCategory.SelectedItem).Key;
+                string categoryName = ((KeyValuePair<int, string>)cbCategory.SelectedItem).Value;
+
+
+                var product = new Product()
+                {
+                    Id = Int32.Parse(textProductId.Text),
+                    Name = textProductName.Text,
+                    Description = textDescription.Text,
+                    Price = Int32.Parse(textPrice.Text),
+                    Image = "",
+                    Category = new Category()
+                    {
+                        Id = categoryId,
+                        Name = categoryName
+                    }
+
+                };
+                await ApiHandler.client.PutAsJsonAsync("product", product);
+                LoadData();
+            }
+        }
+
+        private bool checkValueForm()
+        {
+            string message = "";
+            string title = "Error";
+            
+            if (textProductName.Text == "")
+            {
+                message = "Please input product name";
+                MessageBox.Show(message, title);
+                textProductName.Focus();
+                return false;
+            }
+            if(textDescription.Text == "")
+            {
+                message = "Please input product description";
+                MessageBox.Show(message, title);
+                textDescription.Focus();
+                return false;
+            }
+            if (textPrice.Text == "")
+            {
+                message = "Please input product price";
+                MessageBox.Show(message, title);
+                textPrice.Focus();
+                return false;
+            }
+            if (cbCategory.Text == "")
+            {
+                message = "Please select category";
+                MessageBox.Show(message, title);
+                cbCategory.Focus();
+                return false;
+            }
+
+            return true;
         }
     }
 }
