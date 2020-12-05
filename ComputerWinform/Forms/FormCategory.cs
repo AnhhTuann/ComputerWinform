@@ -76,13 +76,24 @@ namespace ComputerWinform.Forms
 
         private async void btnDel_Click(object sender, EventArgs e)
         {
-            var response = await ApiHandler.client.DeleteAsync("category/id");
+
             LoadData();
         }
 
-        private void btnUpload_Click(object sender, EventArgs e)
+        private void buttonRefresh_Click(object sender, EventArgs e)
         {
+            textCategoryName.Text = "";
+            textSearch.Text = "";
+        }
 
+        private void dataGridViewCatetgory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridViewCatetgory.Rows[e.RowIndex];
+
+                textCategoryName.Text = row.Cells["Name"].Value.ToString();
+            }
         }
     }
 }

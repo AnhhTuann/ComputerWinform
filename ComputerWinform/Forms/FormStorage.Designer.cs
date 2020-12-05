@@ -1,7 +1,7 @@
 ﻿
 namespace ComputerWinform.Forms
 {
-    partial class FormProduct
+    partial class FormStorage
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,8 @@ namespace ComputerWinform.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelProduct = new System.Windows.Forms.Panel();
-            this.panelBtn = new System.Windows.Forms.Panel();
-            this.textSearch = new System.Windows.Forms.TextBox();
-            this.labelButton = new System.Windows.Forms.Label();
-            this.panelFill = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.pbImage = new System.Windows.Forms.PictureBox();
             this.labelImageName = new System.Windows.Forms.Label();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.labelCategory = new System.Windows.Forms.Label();
@@ -44,92 +41,43 @@ namespace ComputerWinform.Forms
             this.labelDes = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelProduct = new System.Windows.Forms.Label();
-            this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.panelFill = new System.Windows.Forms.Panel();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.btnUpload = new System.Windows.Forms.Button();
+            this.textSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnFilter = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
-            this.pbImage = new System.Windows.Forms.PictureBox();
-            this.panelProduct.SuspendLayout();
-            this.panelBtn.SuspendLayout();
-            this.panelFill.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
+            this.labelButton = new System.Windows.Forms.Label();
+            this.panelBtn = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
+            this.panelFill.SuspendLayout();
+            this.panelBtn.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelProduct
+            // dataGridView1
             // 
-            this.panelProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelProduct.Controls.Add(this.panelBtn);
-            this.panelProduct.Controls.Add(this.panelFill);
-            this.panelProduct.Controls.Add(this.dataGridViewProduct);
-            this.panelProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelProduct.Location = new System.Drawing.Point(0, 0);
-            this.panelProduct.Name = "panelProduct";
-            this.panelProduct.Size = new System.Drawing.Size(1114, 899);
-            this.panelProduct.TabIndex = 0;
-            // 
-            // panelBtn
-            // 
-            this.panelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.panelBtn.Controls.Add(this.buttonRefresh);
-            this.panelBtn.Controls.Add(this.btnUpload);
-            this.panelBtn.Controls.Add(this.textSearch);
-            this.panelBtn.Controls.Add(this.btnSearch);
-            this.panelBtn.Controls.Add(this.btnFilter);
-            this.panelBtn.Controls.Add(this.btnAdd);
-            this.panelBtn.Controls.Add(this.btnEdit);
-            this.panelBtn.Controls.Add(this.btnDel);
-            this.panelBtn.Controls.Add(this.labelButton);
-            this.panelBtn.Location = new System.Drawing.Point(610, 623);
-            this.panelBtn.Name = "panelBtn";
-            this.panelBtn.Size = new System.Drawing.Size(492, 264);
-            this.panelBtn.TabIndex = 2;
-            // 
-            // textSearch
-            // 
-            this.textSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSearch.Location = new System.Drawing.Point(175, 64);
-            this.textSearch.Name = "textSearch";
-            this.textSearch.Size = new System.Drawing.Size(299, 38);
-            this.textSearch.TabIndex = 9;
-            // 
-            // labelButton
-            // 
-            this.labelButton.AutoSize = true;
-            this.labelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelButton.Location = new System.Drawing.Point(19, 10);
-            this.labelButton.Name = "labelButton";
-            this.labelButton.Size = new System.Drawing.Size(87, 29);
-            this.labelButton.TabIndex = 1;
-            this.labelButton.Text = "Button";
-            // 
-            // panelFill
-            // 
-            this.panelFill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.panelFill.Controls.Add(this.pbImage);
-            this.panelFill.Controls.Add(this.labelImageName);
-            this.panelFill.Controls.Add(this.cbCategory);
-            this.panelFill.Controls.Add(this.labelCategory);
-            this.panelFill.Controls.Add(this.textPrice);
-            this.panelFill.Controls.Add(this.textDescription);
-            this.panelFill.Controls.Add(this.textProductName);
-            this.panelFill.Controls.Add(this.labelPrice);
-            this.panelFill.Controls.Add(this.labelDes);
-            this.panelFill.Controls.Add(this.labelName);
-            this.panelFill.Controls.Add(this.labelProduct);
-            this.panelFill.Location = new System.Drawing.Point(611, 12);
-            this.panelFill.Name = "panelFill";
-            this.panelFill.Size = new System.Drawing.Size(491, 594);
-            this.panelFill.TabIndex = 1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(652, 882);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // pbImage
+            // 
+            this.pbImage.Location = new System.Drawing.Point(23, 299);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(450, 292);
+            this.pbImage.TabIndex = 12;
+            this.pbImage.TabStop = false;
             // 
             // labelImageName
             // 
@@ -223,24 +171,26 @@ namespace ComputerWinform.Forms
             this.labelProduct.TabIndex = 0;
             this.labelProduct.Text = "Product";
             // 
-            // dataGridViewProduct
+            // panelFill
             // 
-            this.dataGridViewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelFill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProduct.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewProduct.Name = "dataGridViewProduct";
-            this.dataGridViewProduct.RowHeadersWidth = 51;
-            this.dataGridViewProduct.RowTemplate.Height = 24;
-            this.dataGridViewProduct.Size = new System.Drawing.Size(595, 916);
-            this.dataGridViewProduct.TabIndex = 0;
-            this.dataGridViewProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProduct_CellContentClick);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.panelFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panelFill.Controls.Add(this.pbImage);
+            this.panelFill.Controls.Add(this.labelImageName);
+            this.panelFill.Controls.Add(this.cbCategory);
+            this.panelFill.Controls.Add(this.labelCategory);
+            this.panelFill.Controls.Add(this.textPrice);
+            this.panelFill.Controls.Add(this.textDescription);
+            this.panelFill.Controls.Add(this.textProductName);
+            this.panelFill.Controls.Add(this.labelPrice);
+            this.panelFill.Controls.Add(this.labelDes);
+            this.panelFill.Controls.Add(this.labelName);
+            this.panelFill.Controls.Add(this.labelProduct);
+            this.panelFill.Location = new System.Drawing.Point(668, 0);
+            this.panelFill.Name = "panelFill";
+            this.panelFill.Size = new System.Drawing.Size(491, 608);
+            this.panelFill.TabIndex = 2;
             // 
             // buttonRefresh
             // 
@@ -251,7 +201,6 @@ namespace ComputerWinform.Forms
             this.buttonRefresh.Size = new System.Drawing.Size(75, 48);
             this.buttonRefresh.TabIndex = 11;
             this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // btnUpload
             // 
@@ -267,7 +216,15 @@ namespace ComputerWinform.Forms
             this.btnUpload.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpload.UseVisualStyleBackColor = true;
-            this.btnUpload.Click += new System.EventHandler(this.btnUpload_Click);
+            // 
+            // textSearch
+            // 
+            this.textSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textSearch.Location = new System.Drawing.Point(175, 64);
+            this.textSearch.Name = "textSearch";
+            this.textSearch.Size = new System.Drawing.Size(299, 38);
+            this.textSearch.TabIndex = 9;
             // 
             // btnSearch
             // 
@@ -316,7 +273,6 @@ namespace ComputerWinform.Forms
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -349,63 +305,79 @@ namespace ComputerWinform.Forms
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
-            // pbImage
+            // labelButton
             // 
-            this.pbImage.Location = new System.Drawing.Point(23, 299);
-            this.pbImage.Name = "pbImage";
-            this.pbImage.Size = new System.Drawing.Size(450, 292);
-            this.pbImage.TabIndex = 12;
-            this.pbImage.TabStop = false;
+            this.labelButton.AutoSize = true;
+            this.labelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelButton.Location = new System.Drawing.Point(19, 10);
+            this.labelButton.Name = "labelButton";
+            this.labelButton.Size = new System.Drawing.Size(87, 29);
+            this.labelButton.TabIndex = 1;
+            this.labelButton.Text = "Button";
             // 
-            // FormProduct
+            // panelBtn
+            // 
+            this.panelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panelBtn.Controls.Add(this.buttonRefresh);
+            this.panelBtn.Controls.Add(this.btnUpload);
+            this.panelBtn.Controls.Add(this.textSearch);
+            this.panelBtn.Controls.Add(this.btnSearch);
+            this.panelBtn.Controls.Add(this.btnFilter);
+            this.panelBtn.Controls.Add(this.btnAdd);
+            this.panelBtn.Controls.Add(this.btnEdit);
+            this.panelBtn.Controls.Add(this.btnDel);
+            this.panelBtn.Controls.Add(this.labelButton);
+            this.panelBtn.Location = new System.Drawing.Point(668, 618);
+            this.panelBtn.Name = "panelBtn";
+            this.panelBtn.Size = new System.Drawing.Size(492, 264);
+            this.panelBtn.TabIndex = 3;
+            // 
+            // FormStorage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1114, 899);
-            this.Controls.Add(this.panelProduct);
-            this.Name = "FormProduct";
-            this.Text = "Products";
-            this.Load += new System.EventHandler(this.FormProduct_Load);
-            this.panelProduct.ResumeLayout(false);
-            this.panelBtn.ResumeLayout(false);
-            this.panelBtn.PerformLayout();
+            this.ClientSize = new System.Drawing.Size(1158, 883);
+            this.Controls.Add(this.panelBtn);
+            this.Controls.Add(this.panelFill);
+            this.Controls.Add(this.dataGridView1);
+            this.Name = "FormStorage";
+            this.Text = "Storage";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.panelFill.ResumeLayout(false);
             this.panelFill.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
+            this.panelBtn.ResumeLayout(false);
+            this.panelBtn.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panelProduct;
-        private System.Windows.Forms.DataGridView dataGridViewProduct;
-        private System.Windows.Forms.Panel panelBtn;
-        private System.Windows.Forms.Panel panelFill;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Label labelButton;
-        private System.Windows.Forms.Label labelProduct;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.TextBox textSearch;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.PictureBox pbImage;
+        private System.Windows.Forms.Label labelImageName;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.Label labelCategory;
         private System.Windows.Forms.TextBox textPrice;
         private System.Windows.Forms.TextBox textDescription;
         private System.Windows.Forms.TextBox textProductName;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Label labelDes;
-        private System.Windows.Forms.Label labelCategory;
-        private System.Windows.Forms.ComboBox cbCategory;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Label labelImageName;
-        private System.Windows.Forms.Button btnUpload;
-        private System.Windows.Forms.PictureBox pbImage;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelProduct;
+        private System.Windows.Forms.Panel panelFill;
         private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.Button btnUpload;
+        private System.Windows.Forms.TextBox textSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Label labelButton;
+        private System.Windows.Forms.Panel panelBtn;
     }
 }

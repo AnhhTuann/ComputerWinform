@@ -283,6 +283,16 @@ namespace ComputerWinform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap refresh_30px {
+            get {
+                object obj = ResourceManager.GetObject("refresh_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search_30px {
             get {
                 object obj = ResourceManager.GetObject("search_30px", resourceCulture);
@@ -296,6 +306,26 @@ namespace ComputerWinform.Properties {
         internal static System.Drawing.Bitmap shipping_product_48px {
             get {
                 object obj = ResourceManager.GetObject("shipping_product_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap storage_tank_30px {
+            get {
+                object obj = ResourceManager.GetObject("storage_tank_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap storage_tank_60px {
+            get {
+                object obj = ResourceManager.GetObject("storage_tank_60px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -35,6 +35,7 @@ namespace ComputerWinform.Forms
             products.Columns.Add(new DataColumn("Name"));
             products.Columns.Add(new DataColumn("Description"));
             products.Columns.Add(new DataColumn("Price"));
+            products.Columns.Add(new DataColumn("Amount"));
             products.Columns.Add(new DataColumn("Category"));
 
             foreach (Product record in rows)
@@ -45,7 +46,9 @@ namespace ComputerWinform.Forms
                 row["Name"] = record.Name;
                 row["Description"] = record.Description;
                 row["Price"] = record.Price;
+                row["Amount"] = record.Amount;
                 row["Category"] = record.Category.Name;
+
                 products.Rows.Add(row);
             }
 
@@ -112,12 +115,14 @@ namespace ComputerWinform.Forms
 
             await ApiHandler.client.PostAsync("product", form);
             LoadData();
-        }
 
+
+
+        }
 
         private void btnUpload_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png";
+            openFileDialog1.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png; *jfif)|*.jpg; *.jpeg; *.gif; *.bmp; *.png; *.jfif";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 imageName = openFileDialog1.FileName;
@@ -127,9 +132,37 @@ namespace ComputerWinform.Forms
                 {
                     image.Save(stream, System.Drawing.Imaging.ImageFormat.Png);
                     selectedImage = stream.ToArray();
+                    pbImage.Image = image;
                     labelImageName.Text = imageName;
                 }
             }
+        }
+
+        private void dataGridViewProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 )
+            {
+                DataGridViewRow row = this.dataGridViewProduct.Rows[e.RowIndex];
+
+                textProductName.Text = row.Cells["Name"].Value.ToString();
+                textDescription.Text = row.Cells["Description"].Value.ToString();
+                textPrice.Text = row.Cells["Price"].Value.ToString();
+                cbCategory.Text = row.Cells["Category"].Value.ToString();
+
+            }
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            textProductName.Text = "";
+            textDescription.Text = "";
+            textPrice.Text = "";
+            cbCategory.Text = "";
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

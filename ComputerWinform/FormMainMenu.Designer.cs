@@ -36,6 +36,7 @@ namespace ComputerWinform
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
+            this.buttonStorage = new System.Windows.Forms.Button();
             this.btnStaff = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
             this.btnCategory = new System.Windows.Forms.Button();
@@ -50,6 +51,7 @@ namespace ComputerWinform
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.buttonStorage);
             this.panelMenu.Controls.Add(this.btnStaff);
             this.panelMenu.Controls.Add(this.btnCustomer);
             this.panelMenu.Controls.Add(this.btnCategory);
@@ -128,6 +130,26 @@ namespace ComputerWinform
             this.btnHome.TabIndex = 1;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // buttonStorage
+            // 
+            this.buttonStorage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonStorage.FlatAppearance.BorderSize = 0;
+            this.buttonStorage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonStorage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStorage.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonStorage.Image = global::ComputerWinform.Properties.Resources.storage_tank_30px;
+            this.buttonStorage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonStorage.Location = new System.Drawing.Point(0, 491);
+            this.buttonStorage.Name = "buttonStorage";
+            this.buttonStorage.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.buttonStorage.Size = new System.Drawing.Size(298, 60);
+            this.buttonStorage.TabIndex = 6;
+            this.buttonStorage.Text = "Storage";
+            this.buttonStorage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonStorage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonStorage.UseVisualStyleBackColor = true;
+            this.buttonStorage.Click += new System.EventHandler(this.buttonStorage_Click);
             // 
             // btnStaff
             // 
@@ -283,6 +305,7 @@ namespace ComputerWinform
         private System.Windows.Forms.Label lblLogo;
         private System.Windows.Forms.Panel panelDesktopPane;
         private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button buttonStorage;
     }
 }
 

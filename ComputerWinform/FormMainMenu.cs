@@ -130,6 +130,12 @@ namespace ComputerWinform
             Reset();
         }
 
+        private void buttonStorage_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormStorage(), sender);
+
+        }
+
         private void Reset()
         {
             DisableButton();
@@ -139,5 +145,7 @@ namespace ComputerWinform
             currentButton = null;
             btnHome.Visible = false;
         }
+
+
     }
 }

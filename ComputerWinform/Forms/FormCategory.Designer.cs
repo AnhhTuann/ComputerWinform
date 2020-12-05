@@ -35,6 +35,7 @@ namespace ComputerWinform.Forms
             this.labelName = new System.Windows.Forms.Label();
             this.labelProduct = new System.Windows.Forms.Label();
             this.panelBtn = new System.Windows.Forms.Panel();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnFilter = new System.Windows.Forms.Button();
@@ -107,6 +108,7 @@ namespace ComputerWinform.Forms
             // 
             this.panelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panelBtn.Controls.Add(this.buttonRefresh);
             this.panelBtn.Controls.Add(this.textSearch);
             this.panelBtn.Controls.Add(this.btnSearch);
             this.panelBtn.Controls.Add(this.btnFilter);
@@ -118,6 +120,21 @@ namespace ComputerWinform.Forms
             this.panelBtn.Name = "panelBtn";
             this.panelBtn.Size = new System.Drawing.Size(496, 232);
             this.panelBtn.TabIndex = 3;
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRefresh.Image = global::ComputerWinform.Properties.Resources.refresh_30px;
+            this.buttonRefresh.Location = new System.Drawing.Point(172, 112);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(56, 48);
+            this.buttonRefresh.TabIndex = 10;
+            this.buttonRefresh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // textSearch
             // 
@@ -234,6 +251,7 @@ namespace ComputerWinform.Forms
             this.dataGridViewCatetgory.RowTemplate.Height = 24;
             this.dataGridViewCatetgory.Size = new System.Drawing.Size(305, 381);
             this.dataGridViewCatetgory.TabIndex = 0;
+            this.dataGridViewCatetgory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCatetgory_CellContentClick);
             // 
             // openFileDialog1
             // 
@@ -275,5 +293,6 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelProduct;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }
