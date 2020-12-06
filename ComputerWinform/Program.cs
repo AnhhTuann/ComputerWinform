@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ComputerWinform.Forms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace ComputerWinform
             ApiHandler.initializeApiHandler();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMainMenu());
+            Application.Run(new LoadingForm());
         }
     }
 }
