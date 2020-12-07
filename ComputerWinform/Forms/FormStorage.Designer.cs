@@ -32,11 +32,13 @@ namespace ComputerWinform.Forms
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.labelCategory = new System.Windows.Forms.Label();
             this.textPrice = new System.Windows.Forms.TextBox();
-            this.textProductName = new System.Windows.Forms.TextBox();
             this.labelPrice = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelStorage = new System.Windows.Forms.Label();
             this.panelFill = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textDescription = new System.Windows.Forms.TextBox();
+            this.labelDes = new System.Windows.Forms.Label();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -46,9 +48,7 @@ namespace ComputerWinform.Forms
             this.btnDel = new System.Windows.Forms.Button();
             this.labelButton = new System.Windows.Forms.Label();
             this.panelBtn = new System.Windows.Forms.Panel();
-            this.textDescription = new System.Windows.Forms.TextBox();
-            this.labelDes = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbProductName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelFill.SuspendLayout();
             this.panelBtn.SuspendLayout();
@@ -85,14 +85,6 @@ namespace ComputerWinform.Forms
             this.textPrice.Size = new System.Drawing.Size(317, 22);
             this.textPrice.TabIndex = 7;
             // 
-            // textProductName
-            // 
-            this.textProductName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textProductName.Location = new System.Drawing.Point(182, 63);
-            this.textProductName.Name = "textProductName";
-            this.textProductName.Size = new System.Drawing.Size(317, 22);
-            this.textProductName.TabIndex = 5;
-            // 
             // labelPrice
             // 
             this.labelPrice.AutoSize = true;
@@ -128,11 +120,11 @@ namespace ComputerWinform.Forms
             this.panelFill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panelFill.Controls.Add(this.cbProductName);
             this.panelFill.Controls.Add(this.dateTimePicker1);
             this.panelFill.Controls.Add(this.labelCategory);
             this.panelFill.Controls.Add(this.textPrice);
             this.panelFill.Controls.Add(this.textDescription);
-            this.panelFill.Controls.Add(this.textProductName);
             this.panelFill.Controls.Add(this.labelPrice);
             this.panelFill.Controls.Add(this.labelDes);
             this.panelFill.Controls.Add(this.labelName);
@@ -141,6 +133,31 @@ namespace ComputerWinform.Forms
             this.panelFill.Name = "panelFill";
             this.panelFill.Size = new System.Drawing.Size(523, 285);
             this.panelFill.TabIndex = 2;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(182, 211);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(317, 22);
+            this.dateTimePicker1.TabIndex = 13;
+            // 
+            // textDescription
+            // 
+            this.textDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textDescription.Location = new System.Drawing.Point(182, 114);
+            this.textDescription.Name = "textDescription";
+            this.textDescription.Size = new System.Drawing.Size(317, 22);
+            this.textDescription.TabIndex = 6;
+            // 
+            // labelDes
+            // 
+            this.labelDes.AutoSize = true;
+            this.labelDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDes.Location = new System.Drawing.Point(15, 116);
+            this.labelDes.Name = "labelDes";
+            this.labelDes.Size = new System.Drawing.Size(62, 20);
+            this.labelDes.TabIndex = 2;
+            this.labelDes.Text = "Import";
             // 
             // buttonRefresh
             // 
@@ -268,30 +285,13 @@ namespace ComputerWinform.Forms
             this.panelBtn.Size = new System.Drawing.Size(523, 264);
             this.panelBtn.TabIndex = 3;
             // 
-            // textDescription
+            // cbProductName
             // 
-            this.textDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textDescription.Location = new System.Drawing.Point(182, 114);
-            this.textDescription.Name = "textDescription";
-            this.textDescription.Size = new System.Drawing.Size(317, 22);
-            this.textDescription.TabIndex = 6;
-            // 
-            // labelDes
-            // 
-            this.labelDes.AutoSize = true;
-            this.labelDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDes.Location = new System.Drawing.Point(15, 116);
-            this.labelDes.Name = "labelDes";
-            this.labelDes.Size = new System.Drawing.Size(62, 20);
-            this.labelDes.TabIndex = 2;
-            this.labelDes.Text = "Import";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(182, 211);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(317, 22);
-            this.dateTimePicker1.TabIndex = 13;
+            this.cbProductName.FormattingEnabled = true;
+            this.cbProductName.Location = new System.Drawing.Point(182, 59);
+            this.cbProductName.Name = "cbProductName";
+            this.cbProductName.Size = new System.Drawing.Size(317, 24);
+            this.cbProductName.TabIndex = 14;
             // 
             // FormStorage
             // 
@@ -319,7 +319,6 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label labelCategory;
         private System.Windows.Forms.TextBox textPrice;
-        private System.Windows.Forms.TextBox textProductName;
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelStorage;
@@ -336,5 +335,6 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textDescription;
         private System.Windows.Forms.Label labelDes;
+        private System.Windows.Forms.ComboBox cbProductName;
     }
 }
