@@ -21,7 +21,7 @@ namespace ComputerWinform.Forms
         private void timer1_Tick(object sender, EventArgs e)
         {
             panel2.Width += 5;
-            if(panel2.Width >= 800)
+            if(panel2.Width >= 700)
             {
                 timer1.Stop();
                 FormMainMenu mainMenu = new FormMainMenu();
