@@ -36,6 +36,7 @@ namespace ComputerWinform
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
+            this.buttonCombo = new System.Windows.Forms.Button();
             this.buttonStorage = new System.Windows.Forms.Button();
             this.btnStaff = new System.Windows.Forms.Button();
             this.btnCustomer = new System.Windows.Forms.Button();
@@ -51,6 +52,7 @@ namespace ComputerWinform
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.buttonCombo);
             this.panelMenu.Controls.Add(this.buttonStorage);
             this.panelMenu.Controls.Add(this.btnStaff);
             this.panelMenu.Controls.Add(this.btnCustomer);
@@ -130,6 +132,26 @@ namespace ComputerWinform
             this.btnHome.TabIndex = 1;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // buttonCombo
+            // 
+            this.buttonCombo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCombo.FlatAppearance.BorderSize = 0;
+            this.buttonCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCombo.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonCombo.Image = global::ComputerWinform.Properties.Resources.group_objects_30px;
+            this.buttonCombo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCombo.Location = new System.Drawing.Point(0, 551);
+            this.buttonCombo.Name = "buttonCombo";
+            this.buttonCombo.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.buttonCombo.Size = new System.Drawing.Size(298, 60);
+            this.buttonCombo.TabIndex = 7;
+            this.buttonCombo.Text = "Combo";
+            this.buttonCombo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCombo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonCombo.UseVisualStyleBackColor = true;
+            this.buttonCombo.Click += new System.EventHandler(this.buttonCombo_Click);
             // 
             // buttonStorage
             // 
@@ -306,6 +328,7 @@ namespace ComputerWinform
         private System.Windows.Forms.Panel panelDesktopPane;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button buttonStorage;
+        private System.Windows.Forms.Button buttonCombo;
     }
 }
 

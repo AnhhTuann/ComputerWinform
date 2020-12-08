@@ -111,7 +111,7 @@ namespace ComputerWinform
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormCustomer(), sender);
 
         }
 
@@ -146,6 +146,9 @@ namespace ComputerWinform
             btnHome.Visible = false;
         }
 
-
+        private void buttonCombo_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+        }
     }
 }

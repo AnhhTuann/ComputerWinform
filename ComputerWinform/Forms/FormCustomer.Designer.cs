@@ -1,7 +1,7 @@
 ﻿
 namespace ComputerWinform.Forms
 {
-    partial class FormStorage
+    partial class FormCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,15 @@ namespace ComputerWinform.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.labelCategory = new System.Windows.Forms.Label();
-            this.textPrice = new System.Windows.Forms.TextBox();
-            this.labelPrice = new System.Windows.Forms.Label();
+            this.dataGridViewCustomer = new System.Windows.Forms.DataGridView();
+            this.textAddress = new System.Windows.Forms.TextBox();
+            this.textEmail = new System.Windows.Forms.TextBox();
+            this.labelAddress = new System.Windows.Forms.Label();
+            this.labelEmail = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
-            this.labelStorage = new System.Windows.Forms.Label();
+            this.labelCustomer = new System.Windows.Forms.Label();
             this.panelFill = new System.Windows.Forms.Panel();
-            this.cbProductName = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textDescription = new System.Windows.Forms.TextBox();
-            this.labelDes = new System.Windows.Forms.Label();
+            this.panelBtn = new System.Windows.Forms.Panel();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -48,52 +46,62 @@ namespace ComputerWinform.Forms
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.labelButton = new System.Windows.Forms.Label();
-            this.panelBtn = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.labelPhone = new System.Windows.Forms.Label();
+            this.textPhone = new System.Windows.Forms.TextBox();
+            this.textName = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
             this.panelFill.SuspendLayout();
             this.panelBtn.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewCustomer
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(561, 882);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCustomer.Location = new System.Drawing.Point(-1, -2);
+            this.dataGridViewCustomer.Name = "dataGridViewCustomer";
+            this.dataGridViewCustomer.RowHeadersWidth = 51;
+            this.dataGridViewCustomer.RowTemplate.Height = 24;
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(533, 555);
+            this.dataGridViewCustomer.TabIndex = 0;
             // 
-            // labelCategory
+            // textAddress
             // 
-            this.labelCategory.AutoSize = true;
-            this.labelCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCategory.Location = new System.Drawing.Point(15, 213);
-            this.labelCategory.Name = "labelCategory";
-            this.labelCategory.Size = new System.Drawing.Size(49, 20);
-            this.labelCategory.TabIndex = 9;
-            this.labelCategory.Text = "Date";
+            this.textAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textAddress.Location = new System.Drawing.Point(182, 157);
+            this.textAddress.Name = "textAddress";
+            this.textAddress.Size = new System.Drawing.Size(317, 22);
+            this.textAddress.TabIndex = 7;
             // 
-            // textPrice
+            // textEmail
             // 
-            this.textPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textPrice.Location = new System.Drawing.Point(182, 157);
-            this.textPrice.Name = "textPrice";
-            this.textPrice.Size = new System.Drawing.Size(317, 22);
-            this.textPrice.TabIndex = 7;
+            this.textEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textEmail.Location = new System.Drawing.Point(182, 114);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(317, 22);
+            this.textEmail.TabIndex = 6;
             // 
-            // labelPrice
+            // labelAddress
             // 
-            this.labelPrice.AutoSize = true;
-            this.labelPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrice.Location = new System.Drawing.Point(15, 159);
-            this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(63, 20);
-            this.labelPrice.TabIndex = 3;
-            this.labelPrice.Text = "Export";
+            this.labelAddress.AutoSize = true;
+            this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAddress.Location = new System.Drawing.Point(15, 159);
+            this.labelAddress.Name = "labelAddress";
+            this.labelAddress.Size = new System.Drawing.Size(78, 20);
+            this.labelAddress.TabIndex = 3;
+            this.labelAddress.Text = "Address";
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.Location = new System.Drawing.Point(15, 116);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(56, 20);
+            this.labelEmail.TabIndex = 2;
+            this.labelEmail.Text = "Email";
             // 
             // labelName
             // 
@@ -101,71 +109,55 @@ namespace ComputerWinform.Forms
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.Location = new System.Drawing.Point(15, 65);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(128, 20);
+            this.labelName.Size = new System.Drawing.Size(57, 20);
             this.labelName.TabIndex = 1;
-            this.labelName.Text = "Product Name";
+            this.labelName.Text = "Name";
             // 
-            // labelStorage
+            // labelCustomer
             // 
-            this.labelStorage.AutoSize = true;
-            this.labelStorage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStorage.Location = new System.Drawing.Point(18, 10);
-            this.labelStorage.Name = "labelStorage";
-            this.labelStorage.Size = new System.Drawing.Size(105, 29);
-            this.labelStorage.TabIndex = 0;
-            this.labelStorage.Text = "Storage";
+            this.labelCustomer.AutoSize = true;
+            this.labelCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCustomer.Location = new System.Drawing.Point(18, 10);
+            this.labelCustomer.Name = "labelCustomer";
+            this.labelCustomer.Size = new System.Drawing.Size(125, 29);
+            this.labelCustomer.TabIndex = 0;
+            this.labelCustomer.Text = "Customer";
             // 
             // panelFill
             // 
             this.panelFill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.panelFill.Controls.Add(this.cbProductName);
-            this.panelFill.Controls.Add(this.dateTimePicker1);
-            this.panelFill.Controls.Add(this.labelCategory);
-            this.panelFill.Controls.Add(this.textPrice);
-            this.panelFill.Controls.Add(this.textDescription);
-            this.panelFill.Controls.Add(this.labelPrice);
-            this.panelFill.Controls.Add(this.labelDes);
+            this.panelFill.Controls.Add(this.textName);
+            this.panelFill.Controls.Add(this.textPhone);
+            this.panelFill.Controls.Add(this.labelPhone);
+            this.panelFill.Controls.Add(this.textAddress);
+            this.panelFill.Controls.Add(this.textEmail);
+            this.panelFill.Controls.Add(this.labelAddress);
+            this.panelFill.Controls.Add(this.labelEmail);
             this.panelFill.Controls.Add(this.labelName);
-            this.panelFill.Controls.Add(this.labelStorage);
-            this.panelFill.Location = new System.Drawing.Point(566, 11);
+            this.panelFill.Controls.Add(this.labelCustomer);
+            this.panelFill.Location = new System.Drawing.Point(538, 12);
             this.panelFill.Name = "panelFill";
-            this.panelFill.Size = new System.Drawing.Size(523, 285);
-            this.panelFill.TabIndex = 2;
+            this.panelFill.Size = new System.Drawing.Size(523, 257);
+            this.panelFill.TabIndex = 3;
             // 
-            // cbProductName
+            // panelBtn
             // 
-            this.cbProductName.FormattingEnabled = true;
-            this.cbProductName.Location = new System.Drawing.Point(182, 59);
-            this.cbProductName.Name = "cbProductName";
-            this.cbProductName.Size = new System.Drawing.Size(317, 24);
-            this.cbProductName.TabIndex = 14;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(182, 211);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(317, 22);
-            this.dateTimePicker1.TabIndex = 13;
-            // 
-            // textDescription
-            // 
-            this.textDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textDescription.Location = new System.Drawing.Point(182, 114);
-            this.textDescription.Name = "textDescription";
-            this.textDescription.Size = new System.Drawing.Size(317, 22);
-            this.textDescription.TabIndex = 6;
-            // 
-            // labelDes
-            // 
-            this.labelDes.AutoSize = true;
-            this.labelDes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDes.Location = new System.Drawing.Point(15, 116);
-            this.labelDes.Name = "labelDes";
-            this.labelDes.Size = new System.Drawing.Size(62, 20);
-            this.labelDes.TabIndex = 2;
-            this.labelDes.Text = "Import";
+            this.panelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panelBtn.Controls.Add(this.buttonRefresh);
+            this.panelBtn.Controls.Add(this.textSearch);
+            this.panelBtn.Controls.Add(this.btnSearch);
+            this.panelBtn.Controls.Add(this.btnFilter);
+            this.panelBtn.Controls.Add(this.btnAdd);
+            this.panelBtn.Controls.Add(this.btnEdit);
+            this.panelBtn.Controls.Add(this.btnDel);
+            this.panelBtn.Controls.Add(this.labelButton);
+            this.panelBtn.Location = new System.Drawing.Point(538, 275);
+            this.panelBtn.Name = "panelBtn";
+            this.panelBtn.Size = new System.Drawing.Size(523, 264);
+            this.panelBtn.TabIndex = 15;
             // 
             // buttonRefresh
             // 
@@ -276,36 +268,45 @@ namespace ComputerWinform.Forms
             this.labelButton.TabIndex = 1;
             this.labelButton.Text = "Button";
             // 
-            // panelBtn
+            // labelPhone
             // 
-            this.panelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.panelBtn.Controls.Add(this.buttonRefresh);
-            this.panelBtn.Controls.Add(this.textSearch);
-            this.panelBtn.Controls.Add(this.btnSearch);
-            this.panelBtn.Controls.Add(this.btnFilter);
-            this.panelBtn.Controls.Add(this.btnAdd);
-            this.panelBtn.Controls.Add(this.btnEdit);
-            this.panelBtn.Controls.Add(this.btnDel);
-            this.panelBtn.Controls.Add(this.labelButton);
-            this.panelBtn.Location = new System.Drawing.Point(566, 302);
-            this.panelBtn.Name = "panelBtn";
-            this.panelBtn.Size = new System.Drawing.Size(523, 264);
-            this.panelBtn.TabIndex = 3;
+            this.labelPhone.AutoSize = true;
+            this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhone.Location = new System.Drawing.Point(15, 213);
+            this.labelPhone.Name = "labelPhone";
+            this.labelPhone.Size = new System.Drawing.Size(61, 20);
+            this.labelPhone.TabIndex = 9;
+            this.labelPhone.Text = "Phone";
             // 
-            // FormStorage
+            // textPhone
+            // 
+            this.textPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textPhone.Location = new System.Drawing.Point(182, 211);
+            this.textPhone.Name = "textPhone";
+            this.textPhone.Size = new System.Drawing.Size(317, 22);
+            this.textPhone.TabIndex = 15;
+            // 
+            // textName
+            // 
+            this.textName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textName.Location = new System.Drawing.Point(182, 65);
+            this.textName.Name = "textName";
+            this.textName.Size = new System.Drawing.Size(317, 22);
+            this.textName.TabIndex = 16;
+            // 
+            // FormCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(1101, 567);
+            this.ClientSize = new System.Drawing.Size(1073, 551);
             this.Controls.Add(this.panelBtn);
             this.Controls.Add(this.panelFill);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "FormStorage";
-            this.Text = "Storage";
-            this.Load += new System.EventHandler(this.FormStorage_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Controls.Add(this.dataGridViewCustomer);
+            this.Name = "FormCustomer";
+            this.Text = "FormCustomer";
+            this.Load += new System.EventHandler(this.FormCustomer_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
             this.panelFill.ResumeLayout(false);
             this.panelFill.PerformLayout();
             this.panelBtn.ResumeLayout(false);
@@ -316,13 +317,15 @@ namespace ComputerWinform.Forms
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label labelCategory;
-        private System.Windows.Forms.TextBox textPrice;
-        private System.Windows.Forms.Label labelPrice;
+        private System.Windows.Forms.DataGridView dataGridViewCustomer;
+        private System.Windows.Forms.TextBox textAddress;
+        private System.Windows.Forms.TextBox textEmail;
+        private System.Windows.Forms.Label labelAddress;
+        private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelName;
-        private System.Windows.Forms.Label labelStorage;
+        private System.Windows.Forms.Label labelCustomer;
         private System.Windows.Forms.Panel panelFill;
+        private System.Windows.Forms.Panel panelBtn;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.TextBox textSearch;
         private System.Windows.Forms.Button btnSearch;
@@ -331,10 +334,8 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Label labelButton;
-        private System.Windows.Forms.Panel panelBtn;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textDescription;
-        private System.Windows.Forms.Label labelDes;
-        private System.Windows.Forms.ComboBox cbProductName;
+        private System.Windows.Forms.Label labelPhone;
+        private System.Windows.Forms.TextBox textPhone;
+        private System.Windows.Forms.TextBox textName;
     }
 }
