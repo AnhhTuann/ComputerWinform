@@ -37,6 +37,9 @@ namespace ComputerWinform.Forms
             this.labelName = new System.Windows.Forms.Label();
             this.labelCustomer = new System.Windows.Forms.Label();
             this.panelFill = new System.Windows.Forms.Panel();
+            this.textName = new System.Windows.Forms.TextBox();
+            this.textPhone = new System.Windows.Forms.TextBox();
+            this.labelPhone = new System.Windows.Forms.Label();
             this.panelBtn = new System.Windows.Forms.Panel();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.textSearch = new System.Windows.Forms.TextBox();
@@ -46,9 +49,6 @@ namespace ComputerWinform.Forms
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.labelButton = new System.Windows.Forms.Label();
-            this.labelPhone = new System.Windows.Forms.Label();
-            this.textPhone = new System.Windows.Forms.TextBox();
-            this.textName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
             this.panelFill.SuspendLayout();
             this.panelBtn.SuspendLayout();
@@ -141,6 +141,32 @@ namespace ComputerWinform.Forms
             this.panelFill.Name = "panelFill";
             this.panelFill.Size = new System.Drawing.Size(523, 257);
             this.panelFill.TabIndex = 3;
+            // 
+            // textName
+            // 
+            this.textName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textName.Location = new System.Drawing.Point(182, 65);
+            this.textName.Name = "textName";
+            this.textName.Size = new System.Drawing.Size(317, 22);
+            this.textName.TabIndex = 16;
+            // 
+            // textPhone
+            // 
+            this.textPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textPhone.Location = new System.Drawing.Point(182, 211);
+            this.textPhone.Name = "textPhone";
+            this.textPhone.Size = new System.Drawing.Size(317, 22);
+            this.textPhone.TabIndex = 15;
+            // 
+            // labelPhone
+            // 
+            this.labelPhone.AutoSize = true;
+            this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhone.Location = new System.Drawing.Point(15, 213);
+            this.labelPhone.Name = "labelPhone";
+            this.labelPhone.Size = new System.Drawing.Size(61, 20);
+            this.labelPhone.TabIndex = 9;
+            this.labelPhone.Text = "Phone";
             // 
             // panelBtn
             // 
@@ -268,32 +294,6 @@ namespace ComputerWinform.Forms
             this.labelButton.TabIndex = 1;
             this.labelButton.Text = "Button";
             // 
-            // labelPhone
-            // 
-            this.labelPhone.AutoSize = true;
-            this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(15, 213);
-            this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(61, 20);
-            this.labelPhone.TabIndex = 9;
-            this.labelPhone.Text = "Phone";
-            // 
-            // textPhone
-            // 
-            this.textPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textPhone.Location = new System.Drawing.Point(182, 211);
-            this.textPhone.Name = "textPhone";
-            this.textPhone.Size = new System.Drawing.Size(317, 22);
-            this.textPhone.TabIndex = 15;
-            // 
-            // textName
-            // 
-            this.textName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textName.Location = new System.Drawing.Point(182, 65);
-            this.textName.Name = "textName";
-            this.textName.Size = new System.Drawing.Size(317, 22);
-            this.textName.TabIndex = 16;
-            // 
             // FormCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -304,7 +304,7 @@ namespace ComputerWinform.Forms
             this.Controls.Add(this.panelFill);
             this.Controls.Add(this.dataGridViewCustomer);
             this.Name = "FormCustomer";
-            this.Text = "FormCustomer";
+            this.Text = "Customer";
             this.Load += new System.EventHandler(this.FormCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
             this.panelFill.ResumeLayout(false);

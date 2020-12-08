@@ -113,6 +113,16 @@ namespace ComputerWinform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_pane_30px {
+            get {
+                object obj = ResourceManager.GetObject("close_pane_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap combo_chart_26px {
             get {
                 object obj = ResourceManager.GetObject("combo_chart_26px", resourceCulture);
@@ -193,6 +203,16 @@ namespace ComputerWinform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap email_30px {
+            get {
+                object obj = ResourceManager.GetObject("email_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap filter_30px {
             get {
                 object obj = ResourceManager.GetObject("filter_30px", resourceCulture);
@@ -243,6 +263,26 @@ namespace ComputerWinform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap maximize_window_30px {
+            get {
+                object obj = ResourceManager.GetObject("maximize_window_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimize_window_30px {
+            get {
+                object obj = ResourceManager.GetObject("minimize_window_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap name_30px {
             get {
                 object obj = ResourceManager.GetObject("name_30px", resourceCulture);
@@ -276,6 +316,16 @@ namespace ComputerWinform.Properties {
         internal static System.Drawing.Bitmap password_50px {
             get {
                 object obj = ResourceManager.GetObject("password_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap password_reset_30px {
+            get {
+                object obj = ResourceManager.GetObject("password_reset_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
