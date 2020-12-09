@@ -44,11 +44,12 @@ namespace ComputerWinform.Forms
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnFilter = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.labelButton = new System.Windows.Forms.Label();
+            this.textId = new System.Windows.Forms.TextBox();
+            this.Id = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
             this.panelFill.SuspendLayout();
             this.panelBtn.SuspendLayout();
@@ -59,18 +60,20 @@ namespace ComputerWinform.Forms
             this.dataGridViewCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCustomer.Location = new System.Drawing.Point(-1, -2);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             this.dataGridViewCustomer.RowHeadersWidth = 51;
             this.dataGridViewCustomer.RowTemplate.Height = 24;
-            this.dataGridViewCustomer.Size = new System.Drawing.Size(533, 555);
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(521, 578);
             this.dataGridViewCustomer.TabIndex = 0;
+            this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
             // 
             // textAddress
             // 
             this.textAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textAddress.Location = new System.Drawing.Point(182, 157);
+            this.textAddress.Location = new System.Drawing.Point(182, 173);
             this.textAddress.Name = "textAddress";
             this.textAddress.Size = new System.Drawing.Size(317, 22);
             this.textAddress.TabIndex = 7;
@@ -78,7 +81,7 @@ namespace ComputerWinform.Forms
             // textEmail
             // 
             this.textEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEmail.Location = new System.Drawing.Point(182, 114);
+            this.textEmail.Location = new System.Drawing.Point(182, 129);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(317, 22);
             this.textEmail.TabIndex = 6;
@@ -87,7 +90,7 @@ namespace ComputerWinform.Forms
             // 
             this.labelAddress.AutoSize = true;
             this.labelAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddress.Location = new System.Drawing.Point(15, 159);
+            this.labelAddress.Location = new System.Drawing.Point(19, 175);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(78, 20);
             this.labelAddress.TabIndex = 3;
@@ -97,7 +100,7 @@ namespace ComputerWinform.Forms
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.Location = new System.Drawing.Point(15, 116);
+            this.labelEmail.Location = new System.Drawing.Point(20, 131);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(56, 20);
             this.labelEmail.TabIndex = 2;
@@ -107,7 +110,7 @@ namespace ComputerWinform.Forms
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(15, 65);
+            this.labelName.Location = new System.Drawing.Point(20, 90);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(57, 20);
             this.labelName.TabIndex = 1;
@@ -128,6 +131,8 @@ namespace ComputerWinform.Forms
             this.panelFill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panelFill.Controls.Add(this.textId);
+            this.panelFill.Controls.Add(this.Id);
             this.panelFill.Controls.Add(this.textName);
             this.panelFill.Controls.Add(this.textPhone);
             this.panelFill.Controls.Add(this.labelPhone);
@@ -139,13 +144,13 @@ namespace ComputerWinform.Forms
             this.panelFill.Controls.Add(this.labelCustomer);
             this.panelFill.Location = new System.Drawing.Point(538, 12);
             this.panelFill.Name = "panelFill";
-            this.panelFill.Size = new System.Drawing.Size(523, 257);
+            this.panelFill.Size = new System.Drawing.Size(523, 268);
             this.panelFill.TabIndex = 3;
             // 
             // textName
             // 
             this.textName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textName.Location = new System.Drawing.Point(182, 65);
+            this.textName.Location = new System.Drawing.Point(182, 88);
             this.textName.Name = "textName";
             this.textName.Size = new System.Drawing.Size(317, 22);
             this.textName.TabIndex = 16;
@@ -162,7 +167,7 @@ namespace ComputerWinform.Forms
             // 
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(15, 213);
+            this.labelPhone.Location = new System.Drawing.Point(19, 213);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(61, 20);
             this.labelPhone.TabIndex = 9;
@@ -175,12 +180,11 @@ namespace ComputerWinform.Forms
             this.panelBtn.Controls.Add(this.buttonRefresh);
             this.panelBtn.Controls.Add(this.textSearch);
             this.panelBtn.Controls.Add(this.btnSearch);
-            this.panelBtn.Controls.Add(this.btnFilter);
             this.panelBtn.Controls.Add(this.btnAdd);
             this.panelBtn.Controls.Add(this.btnEdit);
             this.panelBtn.Controls.Add(this.btnDel);
             this.panelBtn.Controls.Add(this.labelButton);
-            this.panelBtn.Location = new System.Drawing.Point(538, 275);
+            this.panelBtn.Location = new System.Drawing.Point(538, 298);
             this.panelBtn.Name = "panelBtn";
             this.panelBtn.Size = new System.Drawing.Size(523, 264);
             this.panelBtn.TabIndex = 15;
@@ -189,11 +193,12 @@ namespace ComputerWinform.Forms
             // 
             this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefresh.Image = global::ComputerWinform.Properties.Resources.refresh_30px;
-            this.buttonRefresh.Location = new System.Drawing.Point(189, 129);
+            this.buttonRefresh.Location = new System.Drawing.Point(19, 129);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(118, 48);
+            this.buttonRefresh.Size = new System.Drawing.Size(469, 48);
             this.buttonRefresh.TabIndex = 11;
             this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // textSearch
             // 
@@ -219,22 +224,6 @@ namespace ComputerWinform.Forms
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.Image = global::ComputerWinform.Properties.Resources.filter_30px;
-            this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFilter.Location = new System.Drawing.Point(19, 128);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(135, 48);
-            this.btnFilter.TabIndex = 5;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFilter.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
@@ -294,12 +283,32 @@ namespace ComputerWinform.Forms
             this.labelButton.TabIndex = 1;
             this.labelButton.Text = "Button";
             // 
+            // textId
+            // 
+            this.textId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textId.Enabled = false;
+            this.textId.Location = new System.Drawing.Point(182, 47);
+            this.textId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(317, 22);
+            this.textId.TabIndex = 18;
+            // 
+            // Id
+            // 
+            this.Id.AutoSize = true;
+            this.Id.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Id.Location = new System.Drawing.Point(20, 49);
+            this.Id.Name = "Id";
+            this.Id.Size = new System.Drawing.Size(24, 20);
+            this.Id.TabIndex = 17;
+            this.Id.Text = "Id";
+            // 
             // FormCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(1073, 551);
+            this.ClientSize = new System.Drawing.Size(1073, 574);
             this.Controls.Add(this.panelBtn);
             this.Controls.Add(this.panelFill);
             this.Controls.Add(this.dataGridViewCustomer);
@@ -329,7 +338,6 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.TextBox textSearch;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
@@ -337,5 +345,7 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.TextBox textPhone;
         private System.Windows.Forms.TextBox textName;
+        private System.Windows.Forms.TextBox textId;
+        private System.Windows.Forms.Label Id;
     }
 }

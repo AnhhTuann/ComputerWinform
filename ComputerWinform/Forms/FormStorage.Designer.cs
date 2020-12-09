@@ -43,7 +43,6 @@ namespace ComputerWinform.Forms
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.textSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnFilter = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
@@ -64,7 +63,7 @@ namespace ComputerWinform.Forms
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(561, 882);
+            this.dataGridView1.Size = new System.Drawing.Size(549, 900);
             this.dataGridView1.TabIndex = 0;
             // 
             // labelCategory
@@ -131,7 +130,7 @@ namespace ComputerWinform.Forms
             this.panelFill.Controls.Add(this.labelStorage);
             this.panelFill.Location = new System.Drawing.Point(566, 11);
             this.panelFill.Name = "panelFill";
-            this.panelFill.Size = new System.Drawing.Size(523, 285);
+            this.panelFill.Size = new System.Drawing.Size(523, 282);
             this.panelFill.TabIndex = 2;
             // 
             // cbProductName
@@ -171,9 +170,9 @@ namespace ComputerWinform.Forms
             // 
             this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefresh.Image = global::ComputerWinform.Properties.Resources.refresh_30px;
-            this.buttonRefresh.Location = new System.Drawing.Point(189, 129);
+            this.buttonRefresh.Location = new System.Drawing.Point(19, 129);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(118, 48);
+            this.buttonRefresh.Size = new System.Drawing.Size(469, 48);
             this.buttonRefresh.TabIndex = 11;
             this.buttonRefresh.UseVisualStyleBackColor = true;
             // 
@@ -201,22 +200,6 @@ namespace ComputerWinform.Forms
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnFilter
-            // 
-            this.btnFilter.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFilter.Image = global::ComputerWinform.Properties.Resources.filter_30px;
-            this.btnFilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFilter.Location = new System.Drawing.Point(19, 128);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(135, 48);
-            this.btnFilter.TabIndex = 5;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFilter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnFilter.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
@@ -283,12 +266,11 @@ namespace ComputerWinform.Forms
             this.panelBtn.Controls.Add(this.buttonRefresh);
             this.panelBtn.Controls.Add(this.textSearch);
             this.panelBtn.Controls.Add(this.btnSearch);
-            this.panelBtn.Controls.Add(this.btnFilter);
             this.panelBtn.Controls.Add(this.btnAdd);
             this.panelBtn.Controls.Add(this.btnEdit);
             this.panelBtn.Controls.Add(this.btnDel);
             this.panelBtn.Controls.Add(this.labelButton);
-            this.panelBtn.Location = new System.Drawing.Point(566, 302);
+            this.panelBtn.Location = new System.Drawing.Point(566, 309);
             this.panelBtn.Name = "panelBtn";
             this.panelBtn.Size = new System.Drawing.Size(523, 264);
             this.panelBtn.TabIndex = 3;
@@ -298,7 +280,7 @@ namespace ComputerWinform.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(1101, 567);
+            this.ClientSize = new System.Drawing.Size(1101, 585);
             this.Controls.Add(this.panelBtn);
             this.Controls.Add(this.panelFill);
             this.Controls.Add(this.dataGridView1);
@@ -326,7 +308,6 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.TextBox textSearch;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
