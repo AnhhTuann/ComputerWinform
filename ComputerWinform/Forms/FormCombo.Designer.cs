@@ -31,15 +31,20 @@ namespace ComputerWinform.Forms
         {
             this.dataGridViewCombo = new System.Windows.Forms.DataGridView();
             this.panelFill = new System.Windows.Forms.Panel();
-            this.dataGridViewDetails = new System.Windows.Forms.DataGridView();
-            this.labelDetails = new System.Windows.Forms.Label();
+            this.labelAddProduct = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cbProductName = new System.Windows.Forms.ComboBox();
             this.textComboId = new System.Windows.Forms.TextBox();
+            this.labelProductName = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.Label();
+            this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
             this.textDiscount = new System.Windows.Forms.TextBox();
             this.textComboName = new System.Windows.Forms.TextBox();
             this.labelDis = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelCombo = new System.Windows.Forms.Label();
+            this.dataGridViewDetails = new System.Windows.Forms.DataGridView();
+            this.labelDetails = new System.Windows.Forms.Label();
             this.panelBtn = new System.Windows.Forms.Panel();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.textSearch = new System.Windows.Forms.TextBox();
@@ -48,18 +53,13 @@ namespace ComputerWinform.Forms
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.labelButton = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cbProductName = new System.Windows.Forms.ComboBox();
-            this.labelProductName = new System.Windows.Forms.Label();
             this.panelDetail = new System.Windows.Forms.Panel();
-            this.labelAddProduct = new System.Windows.Forms.Label();
-            this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCombo)).BeginInit();
             this.panelFill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetails)).BeginInit();
             this.panelBtn.SuspendLayout();
             this.panelDetail.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewCombo
@@ -100,28 +100,41 @@ namespace ComputerWinform.Forms
             this.panelFill.Size = new System.Drawing.Size(540, 543);
             this.panelFill.TabIndex = 2;
             // 
-            // dataGridViewDetails
+            // labelAddProduct
             // 
-            this.dataGridViewDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDetails.Location = new System.Drawing.Point(18, 40);
-            this.dataGridViewDetails.Name = "dataGridViewDetails";
-            this.dataGridViewDetails.RowHeadersWidth = 51;
-            this.dataGridViewDetails.RowTemplate.Height = 24;
-            this.dataGridViewDetails.Size = new System.Drawing.Size(490, 220);
-            this.dataGridViewDetails.TabIndex = 16;
+            this.labelAddProduct.AutoSize = true;
+            this.labelAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAddProduct.Location = new System.Drawing.Point(19, 178);
+            this.labelAddProduct.Name = "labelAddProduct";
+            this.labelAddProduct.Size = new System.Drawing.Size(282, 29);
+            this.labelAddProduct.TabIndex = 17;
+            this.labelAddProduct.Text = "Add products to combo";
             // 
-            // labelDetails
+            // button1
             // 
-            this.labelDetails.AutoSize = true;
-            this.labelDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetails.Location = new System.Drawing.Point(25, 8);
-            this.labelDetails.Name = "labelDetails";
-            this.labelDetails.Size = new System.Drawing.Size(94, 29);
-            this.labelDetails.TabIndex = 15;
-            this.labelDetails.Text = "Details";
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::ComputerWinform.Properties.Resources.add_30px;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(326, 178);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(196, 51);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Add Product ";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // cbProductName
+            // 
+            this.cbProductName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbProductName.FormattingEnabled = true;
+            this.cbProductName.Location = new System.Drawing.Point(126, 262);
+            this.cbProductName.Name = "cbProductName";
+            this.cbProductName.Size = new System.Drawing.Size(396, 24);
+            this.cbProductName.TabIndex = 17;
             // 
             // textComboId
             // 
@@ -133,6 +146,16 @@ namespace ComputerWinform.Forms
             this.textComboId.Size = new System.Drawing.Size(317, 22);
             this.textComboId.TabIndex = 14;
             // 
+            // labelProductName
+            // 
+            this.labelProductName.AutoSize = true;
+            this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelProductName.Location = new System.Drawing.Point(20, 266);
+            this.labelProductName.Name = "labelProductName";
+            this.labelProductName.Size = new System.Drawing.Size(74, 20);
+            this.labelProductName.TabIndex = 18;
+            this.labelProductName.Text = "Product";
+            // 
             // Id
             // 
             this.Id.AutoSize = true;
@@ -142,6 +165,20 @@ namespace ComputerWinform.Forms
             this.Id.Size = new System.Drawing.Size(24, 20);
             this.Id.TabIndex = 13;
             this.Id.Text = "Id";
+            // 
+            // dataGridViewProduct
+            // 
+            this.dataGridViewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduct.Location = new System.Drawing.Point(17, 296);
+            this.dataGridViewProduct.Name = "dataGridViewProduct";
+            this.dataGridViewProduct.RowHeadersWidth = 51;
+            this.dataGridViewProduct.RowTemplate.Height = 24;
+            this.dataGridViewProduct.Size = new System.Drawing.Size(505, 244);
+            this.dataGridViewProduct.TabIndex = 19;
             // 
             // textDiscount
             // 
@@ -190,6 +227,28 @@ namespace ComputerWinform.Forms
             this.labelCombo.Size = new System.Drawing.Size(97, 29);
             this.labelCombo.TabIndex = 0;
             this.labelCombo.Text = "Combo";
+            // 
+            // dataGridViewDetails
+            // 
+            this.dataGridViewDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDetails.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridViewDetails.Location = new System.Drawing.Point(0, 43);
+            this.dataGridViewDetails.Name = "dataGridViewDetails";
+            this.dataGridViewDetails.RowHeadersWidth = 51;
+            this.dataGridViewDetails.RowTemplate.Height = 24;
+            this.dataGridViewDetails.Size = new System.Drawing.Size(536, 220);
+            this.dataGridViewDetails.TabIndex = 16;
+            // 
+            // labelDetails
+            // 
+            this.labelDetails.AutoSize = true;
+            this.labelDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDetails.Location = new System.Drawing.Point(25, 8);
+            this.labelDetails.Name = "labelDetails";
+            this.labelDetails.Size = new System.Drawing.Size(94, 29);
+            this.labelDetails.TabIndex = 15;
+            this.labelDetails.Text = "Details";
             // 
             // panelBtn
             // 
@@ -308,42 +367,6 @@ namespace ComputerWinform.Forms
             this.labelButton.TabIndex = 1;
             this.labelButton.Text = "Button";
             // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::ComputerWinform.Properties.Resources.add_30px;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(326, 178);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 51);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Add Product ";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // cbProductName
-            // 
-            this.cbProductName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbProductName.FormattingEnabled = true;
-            this.cbProductName.Location = new System.Drawing.Point(126, 253);
-            this.cbProductName.Name = "cbProductName";
-            this.cbProductName.Size = new System.Drawing.Size(396, 24);
-            this.cbProductName.TabIndex = 17;
-            // 
-            // labelProductName
-            // 
-            this.labelProductName.AutoSize = true;
-            this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProductName.Location = new System.Drawing.Point(20, 257);
-            this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(74, 20);
-            this.labelProductName.TabIndex = 18;
-            this.labelProductName.Text = "Product";
-            // 
             // panelDetail
             // 
             this.panelDetail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -351,35 +374,11 @@ namespace ComputerWinform.Forms
             this.panelDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
             this.panelDetail.Controls.Add(this.dataGridViewDetails);
             this.panelDetail.Controls.Add(this.labelDetails);
-            this.panelDetail.Location = new System.Drawing.Point(12, 571);
+            this.panelDetail.Location = new System.Drawing.Point(-1, 571);
             this.panelDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(523, 263);
+            this.panelDetail.Size = new System.Drawing.Size(536, 263);
             this.panelDetail.TabIndex = 12;
-            // 
-            // labelAddProduct
-            // 
-            this.labelAddProduct.AutoSize = true;
-            this.labelAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddProduct.Location = new System.Drawing.Point(19, 178);
-            this.labelAddProduct.Name = "labelAddProduct";
-            this.labelAddProduct.Size = new System.Drawing.Size(282, 29);
-            this.labelAddProduct.TabIndex = 17;
-            this.labelAddProduct.Text = "Add products to combo";
-            // 
-            // dataGridViewProduct
-            // 
-            this.dataGridViewProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProduct.Location = new System.Drawing.Point(3, 296);
-            this.dataGridViewProduct.Name = "dataGridViewProduct";
-            this.dataGridViewProduct.RowHeadersWidth = 51;
-            this.dataGridViewProduct.RowTemplate.Height = 24;
-            this.dataGridViewProduct.Size = new System.Drawing.Size(537, 244);
-            this.dataGridViewProduct.TabIndex = 19;
             // 
             // FormCombo
             // 
@@ -397,12 +396,12 @@ namespace ComputerWinform.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCombo)).EndInit();
             this.panelFill.ResumeLayout(false);
             this.panelFill.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetails)).EndInit();
             this.panelBtn.ResumeLayout(false);
             this.panelBtn.PerformLayout();
             this.panelDetail.ResumeLayout(false);
             this.panelDetail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
             this.ResumeLayout(false);
 
         }

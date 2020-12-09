@@ -30,7 +30,7 @@ namespace ComputerWinform.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation3 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.lblBaner = new System.Windows.Forms.Label();
@@ -48,17 +48,17 @@ namespace ComputerWinform.Forms
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panelLogin = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.panelRes = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.labelLogin = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.textAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.textRepass = new Guna.UI2.WinForms.Guna2TextBox();
             this.textEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.labelLogin = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.TextName = new Guna.UI2.WinForms.Guna2TextBox();
             this.textPassword = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLogin.SuspendLayout();
@@ -272,71 +272,6 @@ namespace ComputerWinform.Forms
             this.panelRes.Size = new System.Drawing.Size(376, 501);
             this.panelRes.TabIndex = 14;
             // 
-            // labelLogin
-            // 
-            this.labelLogin.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.labelLogin, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLogin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelLogin.Location = new System.Drawing.Point(285, 460);
-            this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(49, 18);
-            this.labelLogin.TabIndex = 11;
-            this.labelLogin.Text = "Login";
-            this.labelLogin.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.guna2Transition1.SetDecoration(this.label4, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(47, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(284, 32);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Create new account";
-            // 
-            // guna2GradientButton2
-            // 
-            this.guna2GradientButton2.Animated = true;
-            this.guna2GradientButton2.AutoRoundedCorners = true;
-            this.guna2GradientButton2.BorderRadius = 21;
-            this.guna2GradientButton2.CheckedState.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.CustomImages.Parent = this.guna2GradientButton2;
-            this.guna2Transition1.SetDecoration(this.guna2GradientButton2, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2GradientButton2.FillColor = System.Drawing.Color.DarkSlateBlue;
-            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.DarkMagenta;
-            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton2.HoverState.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.Location = new System.Drawing.Point(48, 400);
-            this.guna2GradientButton2.Name = "guna2GradientButton2";
-            this.guna2GradientButton2.ShadowDecoration.Parent = this.guna2GradientButton2;
-            this.guna2GradientButton2.Size = new System.Drawing.Size(286, 45);
-            this.guna2GradientButton2.TabIndex = 7;
-            this.guna2GradientButton2.Text = "Create Account";
-            // 
-            // guna2Transition1
-            // 
-            this.guna2Transition1.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.guna2Transition1.DefaultAnimation = animation3;
-            // 
             // textAddress
             // 
             this.textAddress.Animated = true;
@@ -430,6 +365,31 @@ namespace ComputerWinform.Forms
             this.textEmail.Size = new System.Drawing.Size(281, 44);
             this.textEmail.TabIndex = 13;
             // 
+            // labelLogin
+            // 
+            this.labelLogin.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.labelLogin, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogin.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelLogin.Location = new System.Drawing.Point(285, 460);
+            this.labelLogin.Name = "labelLogin";
+            this.labelLogin.Size = new System.Drawing.Size(49, 18);
+            this.labelLogin.TabIndex = 11;
+            this.labelLogin.Text = "Login";
+            this.labelLogin.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.guna2Transition1.SetDecoration(this.label4, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(47, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(284, 32);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Create new account";
+            // 
             // TextName
             // 
             this.TextName.Animated = true;
@@ -492,6 +452,26 @@ namespace ComputerWinform.Forms
             this.textPassword.Size = new System.Drawing.Size(281, 43);
             this.textPassword.TabIndex = 4;
             // 
+            // guna2GradientButton2
+            // 
+            this.guna2GradientButton2.Animated = true;
+            this.guna2GradientButton2.AutoRoundedCorners = true;
+            this.guna2GradientButton2.BorderRadius = 21;
+            this.guna2GradientButton2.CheckedState.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.CustomImages.Parent = this.guna2GradientButton2;
+            this.guna2Transition1.SetDecoration(this.guna2GradientButton2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2GradientButton2.FillColor = System.Drawing.Color.DarkSlateBlue;
+            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.DarkMagenta;
+            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.guna2GradientButton2.ForeColor = System.Drawing.Color.White;
+            this.guna2GradientButton2.HoverState.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.Location = new System.Drawing.Point(48, 400);
+            this.guna2GradientButton2.Name = "guna2GradientButton2";
+            this.guna2GradientButton2.ShadowDecoration.Parent = this.guna2GradientButton2;
+            this.guna2GradientButton2.Size = new System.Drawing.Size(286, 45);
+            this.guna2GradientButton2.TabIndex = 7;
+            this.guna2GradientButton2.Text = "Create Account";
+            // 
             // guna2TextBox1
             // 
             this.guna2TextBox1.Animated = true;
@@ -553,6 +533,26 @@ namespace ComputerWinform.Forms
             this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
             this.guna2TextBox2.Size = new System.Drawing.Size(286, 43);
             this.guna2TextBox2.TabIndex = 4;
+            // 
+            // guna2Transition1
+            // 
+            this.guna2Transition1.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation1;
             // 
             // guna2PictureBox1
             // 

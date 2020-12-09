@@ -56,7 +56,6 @@ namespace ComputerWinform.Forms
         {
             Combo combo = rows.Find((c) => c.Id == id);
             DataTable combos = new DataTable("combos");
-
             combos.Columns.Add(new DataColumn("Product Id"));
             combos.Columns.Add(new DataColumn("Product Name"));
             combos.Columns.Add(new DataColumn("Price"));
