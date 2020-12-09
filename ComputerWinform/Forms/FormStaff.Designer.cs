@@ -80,9 +80,9 @@ namespace ComputerWinform.Forms
             // 
             this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefresh.Image = global::ComputerWinform.Properties.Resources.refresh_30px;
-            this.buttonRefresh.Location = new System.Drawing.Point(19, 129);
+            this.buttonRefresh.Location = new System.Drawing.Point(19, 130);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(469, 48);
+            this.buttonRefresh.Size = new System.Drawing.Size(480, 48);
             this.buttonRefresh.TabIndex = 11;
             this.buttonRefresh.UseVisualStyleBackColor = true;
             // 
@@ -90,7 +90,7 @@ namespace ComputerWinform.Forms
             // 
             this.textSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSearch.Location = new System.Drawing.Point(189, 63);
+            this.textSearch.Location = new System.Drawing.Point(200, 73);
             this.textSearch.Name = "textSearch";
             this.textSearch.Size = new System.Drawing.Size(299, 38);
             this.textSearch.TabIndex = 9;
@@ -134,7 +134,7 @@ namespace ComputerWinform.Forms
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Image = global::ComputerWinform.Properties.Resources.edit_30px;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(189, 195);
+            this.btnEdit.Location = new System.Drawing.Point(200, 195);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(118, 48);
             this.btnEdit.TabIndex = 3;
@@ -152,7 +152,7 @@ namespace ComputerWinform.Forms
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDel.Location = new System.Drawing.Point(341, 195);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(147, 48);
+            this.btnDel.Size = new System.Drawing.Size(158, 48);
             this.btnDel.TabIndex = 2;
             this.btnDel.Text = "Delete";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

@@ -172,7 +172,7 @@ namespace ComputerWinform.Forms
             // 
             this.textSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSearch.Location = new System.Drawing.Point(172, 48);
+            this.textSearch.Location = new System.Drawing.Point(172, 58);
             this.textSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textSearch.Name = "textSearch";
             this.textSearch.Size = new System.Drawing.Size(299, 38);
