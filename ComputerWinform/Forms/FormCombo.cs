@@ -93,6 +93,8 @@ namespace ComputerWinform.Forms
             labelCombo.ForeColor = ThemeColor.SecondaryColor;
             labelDetails.ForeColor = ThemeColor.SecondaryColor;
             labelAddProduct.ForeColor = ThemeColor.PrimaryColor;
+            labelList.ForeColor = ThemeColor.PrimaryColor;
+
             foreach (Control btns in panelFill.Controls)
             {
                 if (btns.GetType() == typeof(Button))

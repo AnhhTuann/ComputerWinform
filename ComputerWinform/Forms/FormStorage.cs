@@ -51,6 +51,7 @@ namespace ComputerWinform.Forms
             labelStorage.ForeColor = ThemeColor.SecondaryColor;
             labelAddProduct.ForeColor = ThemeColor.PrimaryColor;
             labelDetail.ForeColor = ThemeColor.SecondaryColor;
+            labelList.ForeColor = ThemeColor.PrimaryColor;
         }
 
         private async void LoadDataTicket()

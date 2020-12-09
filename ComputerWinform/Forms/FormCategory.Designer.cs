@@ -46,18 +46,22 @@ namespace ComputerWinform.Forms
             this.labelButton = new System.Windows.Forms.Label();
             this.dataGridViewCatetgory = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.labelList = new System.Windows.Forms.Label();
             this.panelCategory.SuspendLayout();
             this.panelFill.SuspendLayout();
             this.panelBtn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCatetgory)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCategory
             // 
             this.panelCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelCategory.Controls.Add(this.panel1);
             this.panelCategory.Controls.Add(this.panelFill);
             this.panelCategory.Controls.Add(this.panelBtn);
-            this.panelCategory.Controls.Add(this.dataGridViewCatetgory);
             this.panelCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCategory.Location = new System.Drawing.Point(0, 0);
             this.panelCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -134,6 +138,7 @@ namespace ComputerWinform.Forms
             // 
             this.panelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panelBtn.Controls.Add(this.flowLayoutPanel1);
             this.panelBtn.Controls.Add(this.buttonRefresh);
             this.panelBtn.Controls.Add(this.textSearch);
             this.panelBtn.Controls.Add(this.btnSearch);
@@ -261,19 +266,51 @@ namespace ComputerWinform.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewCatetgory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCatetgory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(89)))));
+            this.dataGridViewCatetgory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewCatetgory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCatetgory.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewCatetgory.Location = new System.Drawing.Point(0, 47);
             this.dataGridViewCatetgory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewCatetgory.Name = "dataGridViewCatetgory";
             this.dataGridViewCatetgory.RowHeadersWidth = 51;
             this.dataGridViewCatetgory.RowTemplate.Height = 24;
-            this.dataGridViewCatetgory.Size = new System.Drawing.Size(296, 382);
+            this.dataGridViewCatetgory.Size = new System.Drawing.Size(287, 309);
             this.dataGridViewCatetgory.TabIndex = 0;
             this.dataGridViewCatetgory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCatetgory_CellContentClick);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panel1.Controls.Add(this.labelList);
+            this.panel1.Controls.Add(this.dataGridViewCatetgory);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(287, 356);
+            this.panel1.TabIndex = 11;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(486, 117);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.TabIndex = 11;
+            // 
+            // labelList
+            // 
+            this.labelList.AutoSize = true;
+            this.labelList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelList.Location = new System.Drawing.Point(13, 10);
+            this.labelList.Name = "labelList";
+            this.labelList.Size = new System.Drawing.Size(166, 29);
+            this.labelList.TabIndex = 8;
+            this.labelList.Text = "Category List";
             // 
             // FormCategory
             // 
@@ -291,6 +328,8 @@ namespace ComputerWinform.Forms
             this.panelBtn.ResumeLayout(false);
             this.panelBtn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCatetgory)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -314,5 +353,8 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textCategoryId;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelList;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

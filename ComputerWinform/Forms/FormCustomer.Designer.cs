@@ -37,6 +37,8 @@ namespace ComputerWinform.Forms
             this.labelName = new System.Windows.Forms.Label();
             this.labelCustomer = new System.Windows.Forms.Label();
             this.panelFill = new System.Windows.Forms.Panel();
+            this.textId = new System.Windows.Forms.TextBox();
+            this.Id = new System.Windows.Forms.Label();
             this.textName = new System.Windows.Forms.TextBox();
             this.textPhone = new System.Windows.Forms.TextBox();
             this.labelPhone = new System.Windows.Forms.Label();
@@ -48,11 +50,12 @@ namespace ComputerWinform.Forms
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.labelButton = new System.Windows.Forms.Label();
-            this.textId = new System.Windows.Forms.TextBox();
-            this.Id = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelList = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
             this.panelFill.SuspendLayout();
             this.panelBtn.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewCustomer
@@ -61,12 +64,14 @@ namespace ComputerWinform.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCustomer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(89)))));
+            this.dataGridViewCustomer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCustomer.Location = new System.Drawing.Point(-1, -2);
+            this.dataGridViewCustomer.Location = new System.Drawing.Point(0, 47);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             this.dataGridViewCustomer.RowHeadersWidth = 51;
             this.dataGridViewCustomer.RowTemplate.Height = 24;
-            this.dataGridViewCustomer.Size = new System.Drawing.Size(521, 578);
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(493, 503);
             this.dataGridViewCustomer.TabIndex = 0;
             this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
             // 
@@ -146,6 +151,26 @@ namespace ComputerWinform.Forms
             this.panelFill.Name = "panelFill";
             this.panelFill.Size = new System.Drawing.Size(523, 268);
             this.panelFill.TabIndex = 3;
+            // 
+            // textId
+            // 
+            this.textId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textId.Enabled = false;
+            this.textId.Location = new System.Drawing.Point(182, 47);
+            this.textId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(317, 22);
+            this.textId.TabIndex = 18;
+            // 
+            // Id
+            // 
+            this.Id.AutoSize = true;
+            this.Id.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Id.Location = new System.Drawing.Point(20, 49);
+            this.Id.Name = "Id";
+            this.Id.Size = new System.Drawing.Size(24, 20);
+            this.Id.TabIndex = 17;
+            this.Id.Text = "Id";
             // 
             // textName
             // 
@@ -283,25 +308,28 @@ namespace ComputerWinform.Forms
             this.labelButton.TabIndex = 1;
             this.labelButton.Text = "Button";
             // 
-            // textId
+            // panel1
             // 
-            this.textId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textId.Enabled = false;
-            this.textId.Location = new System.Drawing.Point(182, 47);
-            this.textId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textId.Name = "textId";
-            this.textId.Size = new System.Drawing.Size(317, 22);
-            this.textId.TabIndex = 18;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panel1.Controls.Add(this.labelList);
+            this.panel1.Controls.Add(this.dataGridViewCustomer);
+            this.panel1.Location = new System.Drawing.Point(23, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(493, 550);
+            this.panel1.TabIndex = 16;
             // 
-            // Id
+            // labelList
             // 
-            this.Id.AutoSize = true;
-            this.Id.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Id.Location = new System.Drawing.Point(20, 49);
-            this.Id.Name = "Id";
-            this.Id.Size = new System.Drawing.Size(24, 20);
-            this.Id.TabIndex = 17;
-            this.Id.Text = "Id";
+            this.labelList.AutoSize = true;
+            this.labelList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelList.Location = new System.Drawing.Point(12, 10);
+            this.labelList.Name = "labelList";
+            this.labelList.Size = new System.Drawing.Size(173, 29);
+            this.labelList.TabIndex = 19;
+            this.labelList.Text = "Customer List";
             // 
             // FormCustomer
             // 
@@ -309,9 +337,9 @@ namespace ComputerWinform.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1073, 574);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelBtn);
             this.Controls.Add(this.panelFill);
-            this.Controls.Add(this.dataGridViewCustomer);
             this.Name = "FormCustomer";
             this.Text = "Customer";
             this.Load += new System.EventHandler(this.FormCustomer_Load);
@@ -320,6 +348,8 @@ namespace ComputerWinform.Forms
             this.panelFill.PerformLayout();
             this.panelBtn.ResumeLayout(false);
             this.panelBtn.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -347,5 +377,7 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.TextBox textName;
         private System.Windows.Forms.TextBox textId;
         private System.Windows.Forms.Label Id;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelList;
     }
 }

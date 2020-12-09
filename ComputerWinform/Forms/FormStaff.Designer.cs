@@ -52,9 +52,12 @@ namespace ComputerWinform.Forms
             this.labelName = new System.Windows.Forms.Label();
             this.labelStaff = new System.Windows.Forms.Label();
             this.dataGridViewStaff = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelList = new System.Windows.Forms.Label();
             this.panelBtn.SuspendLayout();
             this.panelFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBtn
@@ -315,14 +318,39 @@ namespace ComputerWinform.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewStaff.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(89)))));
+            this.dataGridViewStaff.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStaff.Location = new System.Drawing.Point(-1, -2);
+            this.dataGridViewStaff.Location = new System.Drawing.Point(0, 47);
             this.dataGridViewStaff.Name = "dataGridViewStaff";
             this.dataGridViewStaff.RowHeadersWidth = 51;
             this.dataGridViewStaff.RowTemplate.Height = 24;
-            this.dataGridViewStaff.Size = new System.Drawing.Size(530, 593);
+            this.dataGridViewStaff.Size = new System.Drawing.Size(511, 518);
             this.dataGridViewStaff.TabIndex = 16;
             this.dataGridViewStaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStaff_CellContentClick);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panel1.Controls.Add(this.labelList);
+            this.panel1.Controls.Add(this.dataGridViewStaff);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(511, 565);
+            this.panel1.TabIndex = 19;
+            // 
+            // labelList
+            // 
+            this.labelList.AutoSize = true;
+            this.labelList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelList.Location = new System.Drawing.Point(12, 10);
+            this.labelList.Name = "labelList";
+            this.labelList.Size = new System.Drawing.Size(113, 29);
+            this.labelList.TabIndex = 21;
+            this.labelList.Text = "Staff List";
             // 
             // FormStaff
             // 
@@ -330,9 +358,9 @@ namespace ComputerWinform.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1080, 590);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelBtn);
             this.Controls.Add(this.panelFill);
-            this.Controls.Add(this.dataGridViewStaff);
             this.Name = "FormStaff";
             this.Text = "Staff";
             this.Load += new System.EventHandler(this.FormStaff_Load);
@@ -341,6 +369,8 @@ namespace ComputerWinform.Forms
             this.panelFill.ResumeLayout(false);
             this.panelFill.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -370,5 +400,7 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.DataGridView dataGridViewStaff;
         private System.Windows.Forms.ComboBox cbRole;
         private System.Windows.Forms.Label labelRole;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelList;
     }
 }

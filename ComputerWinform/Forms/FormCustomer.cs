@@ -39,6 +39,7 @@ namespace ComputerWinform.Forms
             }
             labelButton.ForeColor = ThemeColor.PrimaryColor;
             labelCustomer.ForeColor = ThemeColor.SecondaryColor;
+            labelList.ForeColor = ThemeColor.PrimaryColor;
         }
 
 
