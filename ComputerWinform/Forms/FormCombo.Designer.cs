@@ -187,7 +187,7 @@ namespace ComputerWinform.Forms
             this.dataGridViewProduct.Name = "dataGridViewProduct";
             this.dataGridViewProduct.RowHeadersWidth = 51;
             this.dataGridViewProduct.RowTemplate.Height = 24;
-            this.dataGridViewProduct.Size = new System.Drawing.Size(540, 244);
+            this.dataGridViewProduct.Size = new System.Drawing.Size(540, 247);
             this.dataGridViewProduct.TabIndex = 19;
             // 
             // textDiscount
