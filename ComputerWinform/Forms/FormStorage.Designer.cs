@@ -58,6 +58,7 @@ namespace ComputerWinform.Forms
             this.labelDetail = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelList = new System.Windows.Forms.Label();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTicket)).BeginInit();
             this.panelFill.SuspendLayout();
@@ -213,6 +214,7 @@ namespace ComputerWinform.Forms
             this.dataGridViewProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Product,
             this.Delete});
             this.dataGridViewProduct.Location = new System.Drawing.Point(0, 302);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
@@ -422,6 +424,12 @@ namespace ComputerWinform.Forms
             this.labelList.TabIndex = 25;
             this.labelList.Text = "Storage List";
             // 
+            // Product
+            // 
+            this.Product.HeaderText = "Product";
+            this.Product.MinimumWidth = 6;
+            this.Product.Name = "Product";
+            // 
             // Delete
             // 
             this.Delete.HeaderText = "Delete Product";
@@ -487,6 +495,7 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Label labelProductName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

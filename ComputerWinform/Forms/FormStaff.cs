@@ -81,7 +81,7 @@ namespace ComputerWinform.Forms
                 row["Email"] = record.Email;
                 row["Address"] = record.Address;
                 row["Phone"] = record.Phone;
-                row["Role"] = record.Role;
+                row["Role"] = record.Role.Name;
 
                 staffs.Rows.Add(row);
             }
