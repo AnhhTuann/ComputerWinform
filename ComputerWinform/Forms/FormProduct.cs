@@ -151,7 +151,6 @@ namespace ComputerWinform.Forms
                 textDescription.Text = row.Cells["Description"].Value.ToString();
                 textPrice.Text = row.Cells["Price"].Value.ToString();
                 cbCategory.Text = row.Cells["Category"].Value.ToString();
-
             }
         }
 

@@ -54,6 +54,8 @@ namespace ComputerWinform.Forms
             this.dataGridViewStaff = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelList = new System.Windows.Forms.Label();
+            this.textPass = new System.Windows.Forms.TextBox();
+            this.labelPass = new System.Windows.Forms.Label();
             this.panelBtn.SuspendLayout();
             this.panelFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).BeginInit();
@@ -71,26 +73,27 @@ namespace ComputerWinform.Forms
             this.panelBtn.Controls.Add(this.btnEdit);
             this.panelBtn.Controls.Add(this.btnDel);
             this.panelBtn.Controls.Add(this.labelButton);
-            this.panelBtn.Location = new System.Drawing.Point(548, 314);
+            this.panelBtn.Location = new System.Drawing.Point(548, 364);
             this.panelBtn.Name = "panelBtn";
-            this.panelBtn.Size = new System.Drawing.Size(523, 264);
+            this.panelBtn.Size = new System.Drawing.Size(523, 214);
             this.panelBtn.TabIndex = 18;
             // 
             // buttonRefresh
             // 
             this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefresh.Image = global::ComputerWinform.Properties.Resources.refresh_30px;
-            this.buttonRefresh.Location = new System.Drawing.Point(19, 130);
+            this.buttonRefresh.Location = new System.Drawing.Point(19, 105);
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(480, 48);
             this.buttonRefresh.TabIndex = 11;
             this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click_1);
             // 
             // textSearch
             // 
             this.textSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSearch.Location = new System.Drawing.Point(200, 73);
+            this.textSearch.Location = new System.Drawing.Point(200, 52);
             this.textSearch.Name = "textSearch";
             this.textSearch.Size = new System.Drawing.Size(299, 38);
             this.textSearch.TabIndex = 9;
@@ -102,7 +105,7 @@ namespace ComputerWinform.Forms
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = global::ComputerWinform.Properties.Resources.search_30px;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(19, 63);
+            this.btnSearch.Location = new System.Drawing.Point(19, 42);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(135, 48);
             this.btnSearch.TabIndex = 6;
@@ -118,7 +121,7 @@ namespace ComputerWinform.Forms
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ComputerWinform.Properties.Resources.add_30px;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(19, 195);
+            this.btnAdd.Location = new System.Drawing.Point(19, 159);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(135, 48);
             this.btnAdd.TabIndex = 4;
@@ -126,6 +129,7 @@ namespace ComputerWinform.Forms
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -134,7 +138,7 @@ namespace ComputerWinform.Forms
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Image = global::ComputerWinform.Properties.Resources.edit_30px;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(200, 195);
+            this.btnEdit.Location = new System.Drawing.Point(200, 159);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(118, 48);
             this.btnEdit.TabIndex = 3;
@@ -150,7 +154,7 @@ namespace ComputerWinform.Forms
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.Image = global::ComputerWinform.Properties.Resources.delete_bin_30px;
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(341, 195);
+            this.btnDel.Location = new System.Drawing.Point(341, 159);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(158, 48);
             this.btnDel.TabIndex = 2;
@@ -163,7 +167,7 @@ namespace ComputerWinform.Forms
             // 
             this.labelButton.AutoSize = true;
             this.labelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelButton.Location = new System.Drawing.Point(30, 11);
+            this.labelButton.Location = new System.Drawing.Point(18, 10);
             this.labelButton.Name = "labelButton";
             this.labelButton.Size = new System.Drawing.Size(87, 29);
             this.labelButton.TabIndex = 1;
@@ -174,6 +178,8 @@ namespace ComputerWinform.Forms
             this.panelFill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panelFill.Controls.Add(this.textPass);
+            this.panelFill.Controls.Add(this.labelPass);
             this.panelFill.Controls.Add(this.cbRole);
             this.panelFill.Controls.Add(this.labelRole);
             this.panelFill.Controls.Add(this.textId);
@@ -189,7 +195,7 @@ namespace ComputerWinform.Forms
             this.panelFill.Controls.Add(this.labelStaff);
             this.panelFill.Location = new System.Drawing.Point(548, 12);
             this.panelFill.Name = "panelFill";
-            this.panelFill.Size = new System.Drawing.Size(523, 285);
+            this.panelFill.Size = new System.Drawing.Size(523, 334);
             this.panelFill.TabIndex = 17;
             // 
             // cbRole
@@ -352,6 +358,24 @@ namespace ComputerWinform.Forms
             this.labelList.TabIndex = 21;
             this.labelList.Text = "Staff List";
             // 
+            // textPass
+            // 
+            this.textPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textPass.Location = new System.Drawing.Point(183, 297);
+            this.textPass.Name = "textPass";
+            this.textPass.Size = new System.Drawing.Size(317, 22);
+            this.textPass.TabIndex = 22;
+            // 
+            // labelPass
+            // 
+            this.labelPass.AutoSize = true;
+            this.labelPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPass.Location = new System.Drawing.Point(20, 299);
+            this.labelPass.Name = "labelPass";
+            this.labelPass.Size = new System.Drawing.Size(91, 20);
+            this.labelPass.TabIndex = 21;
+            this.labelPass.Text = "Password";
+            // 
             // FormStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -402,5 +426,7 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Label labelRole;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelList;
+        private System.Windows.Forms.TextBox textPass;
+        private System.Windows.Forms.Label labelPass;
     }
 }
