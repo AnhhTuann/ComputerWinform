@@ -22,6 +22,7 @@ namespace ComputerWinform
             InitializeComponent();
             random = new Random();
             btnHome.Visible = false;
+            LoadTheme();
         }
 
         private Color SelectThemeColor()
@@ -88,7 +89,7 @@ namespace ComputerWinform
 
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormDashboard(), sender);
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
@@ -99,8 +100,7 @@ namespace ComputerWinform
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
-
+            OpenChildForm(new Forms.FormOrder(), sender);
         }
 
         private void btnCategory_Click(object sender, EventArgs e)
@@ -111,13 +111,13 @@ namespace ComputerWinform
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormCustomer(), sender);
 
         }
 
         private void btnStaff_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormStaff(), sender);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -146,6 +146,44 @@ namespace ComputerWinform
             btnHome.Visible = false;
         }
 
+        private void buttonCombo_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormCombo(), sender);
+        }
 
+        private void LoadTheme()
+        {
+            foreach (Control btns in panelTitleBar.Controls)
+            {
+                if (btns.GetType() == typeof(Button))
+                {
+                    Button btn = (Button)btns;
+                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.ForeColor = Color.White;
+                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                }
+            }
+        }
+
+        private void minimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void maximize_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            } else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
     }
 }

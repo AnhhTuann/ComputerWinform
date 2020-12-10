@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ComputerWinform.Forms
 {
-    public partial class LoginForm : Form
+    public partial class FormOrder : Form
     {
-        public LoginForm()
+        public FormOrder()
         {
             InitializeComponent();
         }

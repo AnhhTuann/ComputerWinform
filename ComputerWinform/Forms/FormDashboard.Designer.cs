@@ -1,7 +1,7 @@
 ﻿
 namespace ComputerWinform.Forms
 {
-    partial class LoginForm
+    partial class FormDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,14 @@ namespace ComputerWinform.Forms
         {
             this.SuspendLayout();
             // 
-            // LoginForm
+            // FormDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1125, 632);
-            this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "FormDashboard";
+            this.Text = "Dashboard";
             this.ResumeLayout(false);
 
         }

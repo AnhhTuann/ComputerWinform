@@ -23,7 +23,6 @@ namespace ComputerWinform.Forms
         public FormProduct()
         {
             InitializeComponent();
-
         }
 
         private async void LoadData () {
@@ -55,7 +54,7 @@ namespace ComputerWinform.Forms
             dataGridViewProduct.DataSource = products;
         }
 
-        private async void FormProduct_Load(object sender, EventArgs e)
+        private void FormProduct_Load(object sender, EventArgs e)
         {
             LoadData();
             LoadCategory();
@@ -78,6 +77,7 @@ namespace ComputerWinform.Forms
             }
             labelButton.ForeColor = ThemeColor.PrimaryColor;
             labelProduct.ForeColor = ThemeColor.SecondaryColor;
+            labelList.ForeColor = ThemeColor.PrimaryColor;
         }
 
         private async void LoadCategory()
@@ -151,7 +151,6 @@ namespace ComputerWinform.Forms
                 textDescription.Text = row.Cells["Description"].Value.ToString();
                 textPrice.Text = row.Cells["Price"].Value.ToString();
                 cbCategory.Text = row.Cells["Category"].Value.ToString();
-
             }
         }
 
@@ -235,5 +234,7 @@ namespace ComputerWinform.Forms
 
             return true;
         }
+
+
     }
 }

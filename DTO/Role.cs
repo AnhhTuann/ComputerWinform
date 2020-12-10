@@ -1,6 +1,6 @@
 namespace DTO
 {
-	public class Category : Entity
+	public class Role : Entity
 	{
 		public string Name { get; set; }
 	}

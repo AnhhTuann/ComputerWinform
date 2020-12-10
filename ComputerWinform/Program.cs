@@ -18,7 +18,8 @@ namespace ComputerWinform
             ApiHandler.initializeApiHandler();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoadingForm());
+            Application.Run(new FormMainMenu());
+
         }
     }
 }
