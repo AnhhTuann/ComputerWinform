@@ -364,6 +364,9 @@ namespace ComputerWinform
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.ImageLocation = "https://www.upsieutoc.com/images/2020/12/04/gamehub.png?fbclid=IwAR0o5BaiEvubXA4w" +
     "eWo6iPpF2iSHMqi_bU7L1IOZUYR-V6Jjy1y_ByZ7OYo";
             this.pictureBox1.Location = new System.Drawing.Point(82, 60);

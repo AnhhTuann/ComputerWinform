@@ -23,7 +23,6 @@ namespace ComputerWinform.Forms
         public FormProduct()
         {
             InitializeComponent();
-
         }
 
         private async void LoadData () {

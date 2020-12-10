@@ -56,6 +56,7 @@ namespace ComputerWinform.Forms
             this.panelDetail = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelList = new System.Windows.Forms.Label();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCombo)).BeginInit();
             this.panelFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
@@ -180,11 +181,13 @@ namespace ComputerWinform.Forms
             this.dataGridViewProduct.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(89)))));
             this.dataGridViewProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Delete});
             this.dataGridViewProduct.Location = new System.Drawing.Point(0, 296);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
             this.dataGridViewProduct.RowHeadersWidth = 51;
             this.dataGridViewProduct.RowTemplate.Height = 24;
-            this.dataGridViewProduct.Size = new System.Drawing.Size(540, 247);
+            this.dataGridViewProduct.Size = new System.Drawing.Size(540, 244);
             this.dataGridViewProduct.TabIndex = 19;
             // 
             // textDiscount
@@ -412,6 +415,12 @@ namespace ComputerWinform.Forms
             this.labelList.TabIndex = 20;
             this.labelList.Text = "Combo List";
             // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete Product";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            // 
             // FormCombo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -469,5 +478,6 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.DataGridView dataGridViewProduct;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelList;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

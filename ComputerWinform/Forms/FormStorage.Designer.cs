@@ -58,6 +58,7 @@ namespace ComputerWinform.Forms
             this.labelDetail = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelList = new System.Windows.Forms.Label();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTicket)).BeginInit();
             this.panelFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
@@ -162,9 +163,9 @@ namespace ComputerWinform.Forms
             this.labelAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAddProduct.Location = new System.Drawing.Point(19, 201);
             this.labelAddProduct.Name = "labelAddProduct";
-            this.labelAddProduct.Size = new System.Drawing.Size(170, 29);
+            this.labelAddProduct.Size = new System.Drawing.Size(87, 29);
             this.labelAddProduct.TabIndex = 22;
-            this.labelAddProduct.Text = "Import/Export";
+            this.labelAddProduct.Text = "Import";
             // 
             // button1
             // 
@@ -211,6 +212,8 @@ namespace ComputerWinform.Forms
             this.dataGridViewProduct.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(89)))));
             this.dataGridViewProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Delete});
             this.dataGridViewProduct.Location = new System.Drawing.Point(0, 302);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
             this.dataGridViewProduct.RowHeadersWidth = 51;
@@ -419,6 +422,12 @@ namespace ComputerWinform.Forms
             this.labelList.TabIndex = 25;
             this.labelList.Text = "Storage List";
             // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete Product";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            // 
             // FormStorage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -478,5 +487,6 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Label labelProductName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelList;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

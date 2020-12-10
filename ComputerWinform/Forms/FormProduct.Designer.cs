@@ -303,8 +303,8 @@ namespace ComputerWinform.Forms
             // 
             // pbImage
             // 
-            this.pbImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(89)))));
-            this.pbImage.Location = new System.Drawing.Point(28, 278);
+            this.pbImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.pbImage.Location = new System.Drawing.Point(28, 291);
             this.pbImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(449, 228);
