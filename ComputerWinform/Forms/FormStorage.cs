@@ -21,7 +21,9 @@ namespace ComputerWinform.Forms
 
         private void FormStorage_Load(object sender, EventArgs e)
         {
+            LoadData();
             LoadTheme();
+            LoadProduct();
         }
         private void LoadTheme()
         {
@@ -37,6 +39,131 @@ namespace ComputerWinform.Forms
             }
             labelButton.ForeColor = ThemeColor.PrimaryColor;
             labelStorage.ForeColor = ThemeColor.SecondaryColor;
+        }
+        private async void LoadData()
+        {
+            string response = await ApiHandler.client.GetStringAsync("storage");
+            List<Storage> rows = JsonConvert.DeserializeObject<List<Storage>>(response);
+            DataTable storages = new DataTable("storage");
+
+            storages.Columns.Add(new DataColumn("Id"));
+            storages.Columns.Add(new DataColumn("ProductId"));
+            storages.Columns.Add(new DataColumn("ProductName"));
+            storages.Columns.Add(new DataColumn("Import"));
+            storages.Columns.Add(new DataColumn("Export"));
+            storages.Columns.Add(new DataColumn("Date"));
+
+            foreach (Storage record in rows)
+            {
+                DataRow row;
+                row = storages.NewRow();
+                row["Id"] = record.Id;
+                row["ProductId"] = record.Product.Id;
+                row["ProductName"] = record.Product.Name;
+                row["Import"] = record.Import;
+                row["Export"] = record.Export;
+                row["Date"] = record.Date;
+
+                storages.Rows.Add(row);
+            }
+
+            dataGridViewStorage.DataSource = storages;
+        }
+        private async void LoadProduct()
+        {
+            Dictionary<int, string> comboSource = new Dictionary<int, string>();
+            string response = await ApiHandler.client.GetStringAsync("product");
+            List<Product> rows = JsonConvert.DeserializeObject<List<Product>>(response);
+
+
+
+            foreach (Product record in rows)
+            {
+                comboSource.Add(record.Id, record.Name);
+            }
+
+            cbProductName.DataSource = new BindingSource(comboSource, null);
+
+        }
+
+        private async void btnAdd_Click(object sender, EventArgs e)
+        {
+            if(checkValueForm())
+            {
+                Storage storage = new Storage();
+                storage.Product = new Product()
+                {
+                    Id = Int32.Parse(cbProductName.Text),
+                };
+                storage.Import = Int32.Parse(textImport.Text);
+                storage.Export = Int32.Parse(textExport.Text);
+                storage.Date = DateTime.Parse(dateTimePicker1.Text);
+                //textImport
+                var response = await ApiHandler.client.PostAsJsonAsync("storage", storage);
+                LoadData();
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (checkValueForm())
+            {
+
+            }
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+
+        }
+        private bool checkValueForm()
+        {
+            string message = "";
+            string title = "Error";
+
+            if (cbProductName.Text == "")
+            {
+                message = "Please input product name";
+                MessageBox.Show(message, title);
+                cbProductName.Focus();
+                return false;
+            }
+            if (textImport.Text == "")
+            {
+                message = "Please input product description";
+                MessageBox.Show(message, title);
+                textImport.Focus();
+                return false;
+            }
+            if (textExport.Text == "")
+            {
+                message = "Please input product price";
+                MessageBox.Show(message, title);
+                textExport.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewStorage_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridViewStorage.Rows[e.RowIndex];
+
+                textStorageId.Text = row.Cells["Id"].Value.ToString();
+                cbProductName.Text = row.Cells["ProductId"].Value.ToString();
+                textImport.Text = row.Cells["Import"].Value.ToString();
+                textExport.Text = row.Cells["Export"].Value.ToString();
+                dateTimePicker1.Text = row.Cells["Date"].Value.ToString();
+
+            }
         }
     }
 
