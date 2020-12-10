@@ -54,7 +54,7 @@ namespace ComputerWinform.Forms
             dataGridViewProduct.DataSource = products;
         }
 
-        private async void FormProduct_Load(object sender, EventArgs e)
+        private void FormProduct_Load(object sender, EventArgs e)
         {
             LoadData();
             LoadCategory();
