@@ -94,5 +94,53 @@ namespace ComputerWinform.Forms
             }
         }
 
+
+        private bool checkValueForm()
+        {
+            string message = "";
+            string title = "Error";
+
+            if (textName.Text == "")
+            {
+                message = "Please input customer name";
+                MessageBox.Show(message, title);
+                textName.Focus();
+                return false;
+            }
+            else if (textEmail.Text == "")
+            {
+                message = "Please input email";
+                MessageBox.Show(message, title);
+                textEmail.Focus();
+                return false;
+            }
+            else if (textAddress.Text == "")
+            {
+                message = "Please input address";
+                MessageBox.Show(message, title);
+                textAddress.Focus();
+                return false;
+            }
+            else if (textPass.Text == "")
+            {
+                message = "Please input password";
+                MessageBox.Show(message, title);
+                textPass.Focus();
+                return false;
+            }
+            else if (textPhone.Text == "")
+            {
+                message = "Please input phone number";
+                MessageBox.Show(message, title);
+                textPhone.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

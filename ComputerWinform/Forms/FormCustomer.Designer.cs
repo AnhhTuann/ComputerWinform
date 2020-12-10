@@ -52,6 +52,8 @@ namespace ComputerWinform.Forms
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.textPass = new System.Windows.Forms.TextBox();
+            this.labelPass = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
             this.panelFill.SuspendLayout();
             this.panelBtn.SuspendLayout();
@@ -71,7 +73,7 @@ namespace ComputerWinform.Forms
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             this.dataGridViewCustomer.RowHeadersWidth = 51;
             this.dataGridViewCustomer.RowTemplate.Height = 24;
-            this.dataGridViewCustomer.Size = new System.Drawing.Size(493, 503);
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(493, 529);
             this.dataGridViewCustomer.TabIndex = 0;
             this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
             // 
@@ -136,6 +138,8 @@ namespace ComputerWinform.Forms
             this.panelFill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panelFill.Controls.Add(this.textPass);
+            this.panelFill.Controls.Add(this.labelPass);
             this.panelFill.Controls.Add(this.textId);
             this.panelFill.Controls.Add(this.Id);
             this.panelFill.Controls.Add(this.textName);
@@ -149,7 +153,7 @@ namespace ComputerWinform.Forms
             this.panelFill.Controls.Add(this.labelCustomer);
             this.panelFill.Location = new System.Drawing.Point(538, 12);
             this.panelFill.Name = "panelFill";
-            this.panelFill.Size = new System.Drawing.Size(523, 268);
+            this.panelFill.Size = new System.Drawing.Size(523, 294);
             this.panelFill.TabIndex = 3;
             // 
             // textId
@@ -209,7 +213,7 @@ namespace ComputerWinform.Forms
             this.panelBtn.Controls.Add(this.btnEdit);
             this.panelBtn.Controls.Add(this.btnDel);
             this.panelBtn.Controls.Add(this.labelButton);
-            this.panelBtn.Location = new System.Drawing.Point(538, 298);
+            this.panelBtn.Location = new System.Drawing.Point(538, 324);
             this.panelBtn.Name = "panelBtn";
             this.panelBtn.Size = new System.Drawing.Size(523, 264);
             this.panelBtn.TabIndex = 15;
@@ -270,7 +274,7 @@ namespace ComputerWinform.Forms
             this.panel1.Controls.Add(this.dataGridViewCustomer);
             this.panel1.Location = new System.Drawing.Point(23, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(493, 550);
+            this.panel1.Size = new System.Drawing.Size(493, 576);
             this.panel1.TabIndex = 16;
             // 
             // labelList
@@ -314,6 +318,7 @@ namespace ComputerWinform.Forms
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -331,12 +336,30 @@ namespace ComputerWinform.Forms
             this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
+            // textPass
+            // 
+            this.textPass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textPass.Location = new System.Drawing.Point(182, 251);
+            this.textPass.Name = "textPass";
+            this.textPass.Size = new System.Drawing.Size(317, 22);
+            this.textPass.TabIndex = 20;
+            // 
+            // labelPass
+            // 
+            this.labelPass.AutoSize = true;
+            this.labelPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPass.Location = new System.Drawing.Point(19, 253);
+            this.labelPass.Name = "labelPass";
+            this.labelPass.Size = new System.Drawing.Size(91, 20);
+            this.labelPass.TabIndex = 19;
+            this.labelPass.Text = "Password";
+            // 
             // FormCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(1073, 574);
+            this.ClientSize = new System.Drawing.Size(1073, 600);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelBtn);
             this.Controls.Add(this.panelFill);
@@ -379,5 +402,7 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.TextBox textPass;
+        private System.Windows.Forms.Label labelPass;
     }
 }

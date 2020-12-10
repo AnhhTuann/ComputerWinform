@@ -38,7 +38,7 @@ namespace ComputerWinform.Forms
         private void FormStaff_Load(object sender, EventArgs e)
         {
             LoadData();
-
+            LoadRole();
             LoadTheme();
         }
 
@@ -118,7 +118,21 @@ namespace ComputerWinform.Forms
             }
         }
 
+        private async void LoadRole ()
+        {
+            Dictionary<int, string> comboSource = new Dictionary<int, string>();
+            string response = await ApiHandler.client.GetStringAsync("staff");
+            List<Staff> rows = JsonConvert.DeserializeObject<List<Staff>>(response);
 
+
+            foreach (Staff record in rows)
+            {
+                comboSource.Add(record.Role.Id, record.Role.Name);
+            }
+
+            cbRole.DataSource = new BindingSource(comboSource, null);
+
+        }
 
         private bool checkValueForm()
         {
