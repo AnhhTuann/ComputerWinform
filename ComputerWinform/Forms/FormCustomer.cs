@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -138,9 +139,43 @@ namespace ComputerWinform.Forms
             return true;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private async void btnAdd_Click(object sender, EventArgs e)
         {
+            Person customer = new Person()
+            {
+                Name = textName.Text,
+                Email = textEmail.Text,
+                Password = textPass.Text,
+                Address = textAddress.Text,
+                Phone = textPhone.Text,
+            };
 
+            await ApiHandler.client.PostAsJsonAsync("customer", customer);
+            LoadData();
+        }
+
+        private async void btnEdit_Click(object sender, EventArgs e)
+        {
+            Person customer = new Person()
+            {
+                Id = Int32.Parse(textId.Text),
+                Name = textName.Text,
+                Email = textEmail.Text,
+                Password = textPass.Text,
+                Address = textAddress.Text,
+                Phone = textPhone.Text,
+            };
+
+            await ApiHandler.client.PutAsJsonAsync("customer", customer);
+            LoadData();
+        }
+
+        private async void btnDel_Click(object sender, EventArgs e)
+        {
+            var customerId = Int32.Parse(textId.Text);
+
+            await ApiHandler.client.DeleteAsync("customer/" + customerId);
+            LoadData();
         }
     }
 }
