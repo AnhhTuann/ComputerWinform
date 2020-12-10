@@ -232,13 +232,16 @@ namespace ComputerWinform.Forms
                 Id = roleId,
                 Name = roleName
             };
-            //var response = await ApiHandler.client.PutAsJsonAsync("staff", staff);
+            var response = await ApiHandler.client.PutAsJsonAsync("staff", staff);
             LoadData();
         }
 
-        private void btnDel_Click(object sender, EventArgs e)
+        private async void btnDel_Click(object sender, EventArgs e)
         {
+            var staffId = Int32.Parse(textId.Text);
 
+            await ApiHandler.client.DeleteAsync("staff/" + staffId);
+            LoadData();
         }
     }
 }
