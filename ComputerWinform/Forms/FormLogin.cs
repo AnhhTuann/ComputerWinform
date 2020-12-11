@@ -1,9 +1,11 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,6 +36,31 @@ namespace ComputerWinform.Forms
             LoadingForm loading = new LoadingForm();
             loading.Show();
             this.Hide();
+        }
+
+        private async void createAccount(object sender, EventArgs e)
+        {
+            
+            Person customer = new Person()
+            {
+                Name = TextName.Text,
+                Email = textEmail.Text,
+                Password = textPassword.Text,
+                Address = textAddress.Text,
+                Phone = "",
+            };
+
+             await ApiHandler.client.PostAsJsonAsync("customer", customer);
+        }
+        private async void login(object sender, EventArgs e)
+        {
+            Person customer = new Person()
+            {
+                Email = textEmail.Text,
+                Password = textPassword.Text,
+            };
+            var response = await ApiHandler.client.PostAsJsonAsync("login", customer);
+            Console.WriteLine(response);
         }
     }
 }

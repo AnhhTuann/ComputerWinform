@@ -15,6 +15,7 @@ namespace ComputerWinform.Forms
     public partial class FormCombo : Form
     {
         private List<Combo> rows = new List<Combo>();
+        private List<Product> rows_product = new List<Product>();
         public FormCombo()
         {
             InitializeComponent();
@@ -137,7 +138,39 @@ namespace ComputerWinform.Forms
 
             cbProductName.DataSource = new BindingSource(comboSource, null);
         }
+        private async void addProductToList(object sender, EventArgs e)
+        {
+            int productId = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Key;
+            string productName = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Value;
+            
+            Product product = new Product()
+            {
+                Id = productId,
+                Name = productName
+            };
+            rows_product.Add(product);
+            LoadListProduct(product);
+        }
+        
+        private void LoadListProduct(Product product)
+        {
+            Delete.Name = "button";
+            Delete.HeaderText = "Button";
+            Delete.Text = "Delete";
+            Delete.UseColumnTextForButtonValue = true; //dont forget this line
+            Product.Name = product.Name;
+            dataGridViewProduct.Rows.Add(Product.Name, Delete);
+        }
 
+        private void dataGridViewProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
 
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                dataGridViewProduct.Rows.RemoveAt(e.RowIndex);
+            }
+        }
     }
 }

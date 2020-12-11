@@ -212,5 +212,36 @@ namespace ComputerWinform.Forms
             cbRole.Text = "";
             textSearch.Text = "";
         }
+
+        private async void btnEdit_Click(object sender, EventArgs e)
+        {
+            cbRole.ValueMember = "Key";
+            int roleId = ((KeyValuePair<int, string>)cbRole.SelectedItem).Key;
+            cbRole.DisplayMember = "Value";
+            string roleName = ((KeyValuePair<int, string>)cbRole.SelectedItem).Value;
+            Staff staff = new Staff();
+            staff.Id = Int32.Parse(textId.Text);
+            staff.Name = textName.Text;
+            staff.Email = textEmail.Text;
+            staff.Password = textPass.Text;
+            staff.Address = textAddress.Text;
+            staff.Phone = textPhone.Text;
+
+            staff.Role = new Role()
+            {
+                Id = roleId,
+                Name = roleName
+            };
+            var response = await ApiHandler.client.PutAsJsonAsync("staff", staff);
+            LoadData();
+        }
+
+        private async void btnDel_Click(object sender, EventArgs e)
+        {
+            var staffId = Int32.Parse(textId.Text);
+
+            await ApiHandler.client.DeleteAsync("staff/" + staffId);
+            LoadData();
+        }
     }
 }
