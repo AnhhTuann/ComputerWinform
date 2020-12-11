@@ -38,8 +38,6 @@ namespace ComputerWinform.Forms
             this.labelProductName = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.Label();
             this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.textDiscount = new System.Windows.Forms.TextBox();
             this.textComboName = new System.Windows.Forms.TextBox();
             this.labelDis = new System.Windows.Forms.Label();
@@ -58,6 +56,9 @@ namespace ComputerWinform.Forms
             this.panelDetail = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelList = new System.Windows.Forms.Label();
+            this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCombo)).BeginInit();
             this.panelFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
@@ -76,12 +77,12 @@ namespace ComputerWinform.Forms
             this.dataGridViewCombo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(89)))));
             this.dataGridViewCombo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewCombo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCombo.Location = new System.Drawing.Point(0, 39);
-            this.dataGridViewCombo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewCombo.Location = new System.Drawing.Point(0, 48);
+            this.dataGridViewCombo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewCombo.Name = "dataGridViewCombo";
             this.dataGridViewCombo.RowHeadersWidth = 51;
             this.dataGridViewCombo.RowTemplate.Height = 24;
-            this.dataGridViewCombo.Size = new System.Drawing.Size(392, 399);
+            this.dataGridViewCombo.Size = new System.Drawing.Size(523, 491);
             this.dataGridViewCombo.TabIndex = 0;
             this.dataGridViewCombo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCombo_CellContentClick);
             // 
@@ -102,20 +103,19 @@ namespace ComputerWinform.Forms
             this.panelFill.Controls.Add(this.labelDis);
             this.panelFill.Controls.Add(this.labelName);
             this.panelFill.Controls.Add(this.labelCombo);
-            this.panelFill.Location = new System.Drawing.Point(415, 9);
-            this.panelFill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelFill.Location = new System.Drawing.Point(553, 11);
+            this.panelFill.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelFill.Name = "panelFill";
-            this.panelFill.Size = new System.Drawing.Size(405, 441);
+            this.panelFill.Size = new System.Drawing.Size(540, 543);
             this.panelFill.TabIndex = 2;
             // 
             // labelAddProduct
             // 
             this.labelAddProduct.AutoSize = true;
             this.labelAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddProduct.Location = new System.Drawing.Point(14, 145);
-            this.labelAddProduct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelAddProduct.Location = new System.Drawing.Point(19, 178);
             this.labelAddProduct.Name = "labelAddProduct";
-            this.labelAddProduct.Size = new System.Drawing.Size(228, 24);
+            this.labelAddProduct.Size = new System.Drawing.Size(282, 29);
             this.labelAddProduct.TabIndex = 17;
             this.labelAddProduct.Text = "Add products to combo";
             // 
@@ -126,10 +126,10 @@ namespace ComputerWinform.Forms
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::ComputerWinform.Properties.Resources.add_30px;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(244, 145);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(325, 178);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 41);
+            this.button1.Size = new System.Drawing.Size(196, 50);
             this.button1.TabIndex = 12;
             this.button1.Text = "Add Product ";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -141,30 +141,29 @@ namespace ComputerWinform.Forms
             // 
             this.cbProductName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbProductName.FormattingEnabled = true;
-            this.cbProductName.Location = new System.Drawing.Point(94, 213);
-            this.cbProductName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbProductName.Location = new System.Drawing.Point(125, 262);
+            this.cbProductName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbProductName.Name = "cbProductName";
-            this.cbProductName.Size = new System.Drawing.Size(298, 21);
+            this.cbProductName.Size = new System.Drawing.Size(396, 24);
             this.cbProductName.TabIndex = 17;
             // 
             // textComboId
             // 
             this.textComboId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textComboId.Enabled = false;
-            this.textComboId.Location = new System.Drawing.Point(154, 40);
-            this.textComboId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textComboId.Location = new System.Drawing.Point(205, 49);
+            this.textComboId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textComboId.Name = "textComboId";
-            this.textComboId.Size = new System.Drawing.Size(239, 20);
+            this.textComboId.Size = new System.Drawing.Size(317, 22);
             this.textComboId.TabIndex = 14;
             // 
             // labelProductName
             // 
             this.labelProductName.AutoSize = true;
             this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProductName.Location = new System.Drawing.Point(15, 216);
-            this.labelProductName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelProductName.Location = new System.Drawing.Point(20, 266);
             this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(64, 17);
+            this.labelProductName.Size = new System.Drawing.Size(74, 20);
             this.labelProductName.TabIndex = 18;
             this.labelProductName.Text = "Product";
             // 
@@ -172,10 +171,9 @@ namespace ComputerWinform.Forms
             // 
             this.Id.AutoSize = true;
             this.Id.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Id.Location = new System.Drawing.Point(15, 41);
-            this.Id.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Id.Location = new System.Drawing.Point(20, 50);
             this.Id.Name = "Id";
-            this.Id.Size = new System.Drawing.Size(21, 17);
+            this.Id.Size = new System.Drawing.Size(24, 20);
             this.Id.TabIndex = 13;
             this.Id.Text = "Id";
             // 
@@ -189,56 +187,43 @@ namespace ComputerWinform.Forms
             this.dataGridViewProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductId,
             this.Product,
             this.Delete});
-            this.dataGridViewProduct.Location = new System.Drawing.Point(0, 240);
-            this.dataGridViewProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewProduct.Location = new System.Drawing.Point(0, 295);
+            this.dataGridViewProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
             this.dataGridViewProduct.RowHeadersWidth = 51;
             this.dataGridViewProduct.RowTemplate.Height = 24;
-            this.dataGridViewProduct.Size = new System.Drawing.Size(405, 201);
+            this.dataGridViewProduct.Size = new System.Drawing.Size(540, 247);
             this.dataGridViewProduct.TabIndex = 19;
             this.dataGridViewProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProduct_CellContentClick);
-            // 
-            // Product
-            // 
-            this.Product.HeaderText = "Product";
-            this.Product.MinimumWidth = 6;
-            this.Product.Name = "Product";
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Delete.HeaderText = "Delete Product";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
             // 
             // textDiscount
             // 
             this.textDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textDiscount.Location = new System.Drawing.Point(154, 101);
-            this.textDiscount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textDiscount.Location = new System.Drawing.Point(205, 124);
+            this.textDiscount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textDiscount.Name = "textDiscount";
-            this.textDiscount.Size = new System.Drawing.Size(239, 20);
+            this.textDiscount.Size = new System.Drawing.Size(317, 22);
             this.textDiscount.TabIndex = 6;
             // 
             // textComboName
             // 
             this.textComboName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textComboName.Location = new System.Drawing.Point(154, 69);
-            this.textComboName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textComboName.Location = new System.Drawing.Point(205, 85);
+            this.textComboName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textComboName.Name = "textComboName";
-            this.textComboName.Size = new System.Drawing.Size(239, 20);
+            this.textComboName.Size = new System.Drawing.Size(317, 22);
             this.textComboName.TabIndex = 5;
             // 
             // labelDis
             // 
             this.labelDis.AutoSize = true;
             this.labelDis.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDis.Location = new System.Drawing.Point(15, 102);
-            this.labelDis.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDis.Location = new System.Drawing.Point(20, 126);
             this.labelDis.Name = "labelDis";
-            this.labelDis.Size = new System.Drawing.Size(71, 17);
+            this.labelDis.Size = new System.Drawing.Size(84, 20);
             this.labelDis.TabIndex = 2;
             this.labelDis.Text = "Discount";
             // 
@@ -246,10 +231,9 @@ namespace ComputerWinform.Forms
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(15, 71);
-            this.labelName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelName.Location = new System.Drawing.Point(20, 87);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(49, 17);
+            this.labelName.Size = new System.Drawing.Size(57, 20);
             this.labelName.TabIndex = 1;
             this.labelName.Text = "Name";
             // 
@@ -257,10 +241,9 @@ namespace ComputerWinform.Forms
             // 
             this.labelCombo.AutoSize = true;
             this.labelCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCombo.Location = new System.Drawing.Point(14, 8);
-            this.labelCombo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCombo.Location = new System.Drawing.Point(19, 10);
             this.labelCombo.Name = "labelCombo";
-            this.labelCombo.Size = new System.Drawing.Size(77, 24);
+            this.labelCombo.Size = new System.Drawing.Size(97, 29);
             this.labelCombo.TabIndex = 0;
             this.labelCombo.Text = "Combo";
             // 
@@ -271,22 +254,21 @@ namespace ComputerWinform.Forms
             this.dataGridViewDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDetails.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewDetails.Location = new System.Drawing.Point(0, 35);
-            this.dataGridViewDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewDetails.Location = new System.Drawing.Point(0, 43);
+            this.dataGridViewDetails.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewDetails.Name = "dataGridViewDetails";
             this.dataGridViewDetails.RowHeadersWidth = 51;
             this.dataGridViewDetails.RowTemplate.Height = 24;
-            this.dataGridViewDetails.Size = new System.Drawing.Size(392, 179);
+            this.dataGridViewDetails.Size = new System.Drawing.Size(523, 220);
             this.dataGridViewDetails.TabIndex = 16;
             // 
             // labelDetails
             // 
             this.labelDetails.AutoSize = true;
             this.labelDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetails.Location = new System.Drawing.Point(9, 8);
-            this.labelDetails.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDetails.Location = new System.Drawing.Point(12, 10);
             this.labelDetails.Name = "labelDetails";
-            this.labelDetails.Size = new System.Drawing.Size(72, 24);
+            this.labelDetails.Size = new System.Drawing.Size(94, 29);
             this.labelDetails.TabIndex = 15;
             this.labelDetails.Text = "Details";
             // 
@@ -301,10 +283,10 @@ namespace ComputerWinform.Forms
             this.panelBtn.Controls.Add(this.btnUpdate);
             this.panelBtn.Controls.Add(this.btnDel);
             this.panelBtn.Controls.Add(this.labelButton);
-            this.panelBtn.Location = new System.Drawing.Point(417, 464);
-            this.panelBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelBtn.Location = new System.Drawing.Point(556, 571);
+            this.panelBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelBtn.Name = "panelBtn";
-            this.panelBtn.Size = new System.Drawing.Size(403, 214);
+            this.panelBtn.Size = new System.Drawing.Size(537, 263);
             this.panelBtn.TabIndex = 3;
             // 
             // buttonRefresh
@@ -312,10 +294,10 @@ namespace ComputerWinform.Forms
             this.buttonRefresh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefresh.Image = global::ComputerWinform.Properties.Resources.refresh_30px;
-            this.buttonRefresh.Location = new System.Drawing.Point(32, 104);
-            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonRefresh.Location = new System.Drawing.Point(43, 128);
+            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(340, 39);
+            this.buttonRefresh.Size = new System.Drawing.Size(453, 48);
             this.buttonRefresh.TabIndex = 11;
             this.buttonRefresh.UseVisualStyleBackColor = true;
             // 
@@ -323,10 +305,10 @@ namespace ComputerWinform.Forms
             // 
             this.textSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSearch.Location = new System.Drawing.Point(148, 59);
-            this.textSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textSearch.Location = new System.Drawing.Point(197, 73);
+            this.textSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textSearch.Name = "textSearch";
-            this.textSearch.Size = new System.Drawing.Size(225, 32);
+            this.textSearch.Size = new System.Drawing.Size(299, 38);
             this.textSearch.TabIndex = 9;
             // 
             // btnSearch
@@ -336,10 +318,10 @@ namespace ComputerWinform.Forms
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = global::ComputerWinform.Properties.Resources.search_30px;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(32, 51);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Location = new System.Drawing.Point(43, 63);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(101, 39);
+            this.btnSearch.Size = new System.Drawing.Size(135, 48);
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Search";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -353,10 +335,10 @@ namespace ComputerWinform.Forms
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ComputerWinform.Properties.Resources.add_30px;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(32, 158);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Location = new System.Drawing.Point(43, 194);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(101, 39);
+            this.btnAdd.Size = new System.Drawing.Size(135, 48);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -370,10 +352,10 @@ namespace ComputerWinform.Forms
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Image = global::ComputerWinform.Properties.Resources.edit_30px;
             this.btnUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdate.Location = new System.Drawing.Point(137, 158);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Location = new System.Drawing.Point(183, 194);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(120, 39);
+            this.btnUpdate.Size = new System.Drawing.Size(160, 48);
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -387,10 +369,10 @@ namespace ComputerWinform.Forms
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.Image = global::ComputerWinform.Properties.Resources.delete_bin_30px;
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(262, 158);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDel.Location = new System.Drawing.Point(349, 194);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(110, 39);
+            this.btnDel.Size = new System.Drawing.Size(147, 48);
             this.btnDel.TabIndex = 2;
             this.btnDel.Text = "Delete";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -401,10 +383,9 @@ namespace ComputerWinform.Forms
             // 
             this.labelButton.AutoSize = true;
             this.labelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelButton.Location = new System.Drawing.Point(14, 8);
-            this.labelButton.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelButton.Location = new System.Drawing.Point(19, 10);
             this.labelButton.Name = "labelButton";
-            this.labelButton.Size = new System.Drawing.Size(69, 24);
+            this.labelButton.Size = new System.Drawing.Size(87, 29);
             this.labelButton.TabIndex = 1;
             this.labelButton.Text = "Button";
             // 
@@ -415,10 +396,10 @@ namespace ComputerWinform.Forms
             this.panelDetail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
             this.panelDetail.Controls.Add(this.dataGridViewDetails);
             this.panelDetail.Controls.Add(this.labelDetails);
-            this.panelDetail.Location = new System.Drawing.Point(9, 464);
-            this.panelDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelDetail.Location = new System.Drawing.Point(12, 571);
+            this.panelDetail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(392, 214);
+            this.panelDetail.Size = new System.Drawing.Size(523, 263);
             this.panelDetail.TabIndex = 12;
             // 
             // panel1
@@ -429,34 +410,52 @@ namespace ComputerWinform.Forms
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
             this.panel1.Controls.Add(this.labelList);
             this.panel1.Controls.Add(this.dataGridViewCombo);
-            this.panel1.Location = new System.Drawing.Point(9, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(392, 438);
+            this.panel1.Size = new System.Drawing.Size(523, 539);
             this.panel1.TabIndex = 13;
             // 
             // labelList
             // 
             this.labelList.AutoSize = true;
             this.labelList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelList.Location = new System.Drawing.Point(9, 7);
-            this.labelList.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelList.Location = new System.Drawing.Point(12, 9);
             this.labelList.Name = "labelList";
-            this.labelList.Size = new System.Drawing.Size(114, 24);
+            this.labelList.Size = new System.Drawing.Size(145, 29);
             this.labelList.TabIndex = 20;
             this.labelList.Text = "Combo List";
             // 
+            // ProductId
+            // 
+            this.ProductId.HeaderText = "Product Id";
+            this.ProductId.MinimumWidth = 6;
+            this.ProductId.Name = "ProductId";
+            // 
+            // Product
+            // 
+            this.Product.HeaderText = "Product Name";
+            this.Product.MinimumWidth = 6;
+            this.Product.Name = "Product";
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Delete.HeaderText = "Delete Product";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            // 
             // FormCombo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(829, 687);
+            this.ClientSize = new System.Drawing.Size(1105, 846);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelDetail);
             this.Controls.Add(this.panelBtn);
             this.Controls.Add(this.panelFill);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormCombo";
             this.Text = "Combo";
             this.Load += new System.EventHandler(this.FormCombo_Load);
@@ -504,6 +503,7 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.DataGridView dataGridViewProduct;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }

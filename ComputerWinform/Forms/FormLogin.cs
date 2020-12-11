@@ -47,7 +47,7 @@ namespace ComputerWinform.Forms
                 Email = textEmail.Text,
                 Password = textPassword.Text,
                 Address = textAddress.Text,
-                Phone = "",
+                Phone = textPhone.Text,
             };
 
              await ApiHandler.client.PostAsJsonAsync("customer", customer);
