@@ -38,6 +38,9 @@ namespace ComputerWinform.Forms
             this.labelProductName = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.Label();
             this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
+            this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.textDiscount = new System.Windows.Forms.TextBox();
             this.textComboName = new System.Windows.Forms.TextBox();
             this.labelDis = new System.Windows.Forms.Label();
@@ -56,9 +59,6 @@ namespace ComputerWinform.Forms
             this.panelDetail = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelList = new System.Windows.Forms.Label();
-            this.ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCombo)).BeginInit();
             this.panelFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
@@ -198,6 +198,25 @@ namespace ComputerWinform.Forms
             this.dataGridViewProduct.Size = new System.Drawing.Size(540, 247);
             this.dataGridViewProduct.TabIndex = 19;
             this.dataGridViewProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProduct_CellContentClick);
+            // 
+            // ProductId
+            // 
+            this.ProductId.HeaderText = "Product Id";
+            this.ProductId.MinimumWidth = 6;
+            this.ProductId.Name = "ProductId";
+            // 
+            // Product
+            // 
+            this.Product.HeaderText = "Product Name";
+            this.Product.MinimumWidth = 6;
+            this.Product.Name = "Product";
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Delete.HeaderText = "Delete Product";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
             // 
             // textDiscount
             // 
@@ -344,6 +363,7 @@ namespace ComputerWinform.Forms
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAdd.UseVisualStyleBackColor = true;
+            //this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -425,25 +445,6 @@ namespace ComputerWinform.Forms
             this.labelList.Size = new System.Drawing.Size(145, 29);
             this.labelList.TabIndex = 20;
             this.labelList.Text = "Combo List";
-            // 
-            // ProductId
-            // 
-            this.ProductId.HeaderText = "Product Id";
-            this.ProductId.MinimumWidth = 6;
-            this.ProductId.Name = "ProductId";
-            // 
-            // Product
-            // 
-            this.Product.HeaderText = "Product Name";
-            this.Product.MinimumWidth = 6;
-            this.Product.Name = "Product";
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Delete.HeaderText = "Delete Product";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
             // 
             // FormCombo
             // 

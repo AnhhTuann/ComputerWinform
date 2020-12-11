@@ -54,12 +54,12 @@ namespace ComputerWinform.Forms
         }
         private async void login(object sender, EventArgs e)
         {
-            Person customer = new Person()
+            Staff staff = new Staff()
             {
                 Email = textEmail.Text,
                 Password = textPassword.Text,
             };
-            var response = await ApiHandler.client.PostAsJsonAsync("login", customer);
+            var response = await ApiHandler.client.PostAsJsonAsync("login", staff);
             Console.WriteLine(response);
         }
     }

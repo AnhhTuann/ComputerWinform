@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -55,6 +56,7 @@ namespace ComputerWinform.Forms
 
         private void LoadDataComboDetail(int id)
         {
+            dataGridViewProduct.Rows.Clear();
             Combo combo = rows.Find((c) => c.Id == id);
             DataTable combos = new DataTable("combos");
             combos.Columns.Add(new DataColumn("Product Id"));
@@ -71,6 +73,15 @@ namespace ComputerWinform.Forms
                     row["Price"] = rec.Product.Price;
 
                     combos.Rows.Add(row);
+
+                    // load data for DataGridViewProduct
+                    Delete.Name = "button";
+                    Delete.HeaderText = "Button";
+                    Delete.Text = "Delete";
+                    Delete.UseColumnTextForButtonValue = true; //dont forget this line
+                    Product.Name = rec.Product.Name;
+                    ProductId.Name = rec.Product.Id.ToString();
+                    dataGridViewProduct.Rows.Add(ProductId.Name, Product.Name, Delete);
                 }
             
 
@@ -138,6 +149,7 @@ namespace ComputerWinform.Forms
 
             cbProductName.DataSource = new BindingSource(comboSource, null);
         }
+
         private async void addProductToList(object sender, EventArgs e)
         {
             int productId = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Key;
@@ -159,7 +171,8 @@ namespace ComputerWinform.Forms
             Delete.Text = "Delete";
             Delete.UseColumnTextForButtonValue = true; //dont forget this line
             Product.Name = product.Name;
-            dataGridViewProduct.Rows.Add(Product.Name, Delete);
+            ProductId.Name = product.Id.ToString();
+            dataGridViewProduct.Rows.Add(ProductId.Name,Product.Name, Delete);
         }
 
         private void dataGridViewProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -169,8 +182,50 @@ namespace ComputerWinform.Forms
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
+                //var row = e.RowIndex;
+                //var column = 1;
+                //var id = dataGridViewProduct.Rows[e.RowIndex].Cells[0].Value.ToString();
+                //var name = dataGridViewProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                //var itemToRemove = rows_product.SingleOrDefault(r => r.Id == Int32.Parse(id));
+                //if (itemToRemove != null)
+                  //  rows_product.Remove(itemToRemove);
+                //var listProduct = rows_product;
                 dataGridViewProduct.Rows.RemoveAt(e.RowIndex);
+                
+                
             }
         }
+        /*
+        private async void btnAdd_Click(object sender, EventArgs e)
+        {
+            for( int row = 0; row < dataGridViewProduct.Rows.Count; row++)
+            for(int col =0; dataGridViewProduct.Rows[row].Cells.Count;col++)
+                {
+
+                }
+            List<ComboDetails> listComboDetails = new List<ComboDetails>();
+            foreach(var item in rows_product)
+            {
+                ComboDetails comboDetails = new ComboDetails()
+                {
+                    Product = new Product()
+                    {
+                        Id = item.Id
+                    }
+                };
+                
+                listComboDetails.Add(comboDetails);
+            }
+            Combo combo = new Combo()
+            {
+                Name = textComboName.Text,
+                Discount = Int32.Parse(textDiscount.Text),
+                Details = listComboDetails
+            };
+            await ApiHandler.client.PostAsJsonAsync("combo", combo);
+            LoadDataCombo();
+        }
+        */
     }
 }
