@@ -1,7 +1,7 @@
 ﻿
 namespace ComputerWinform.Forms
 {
-    partial class FormStorage
+    partial class FormStorageImport
     {
         /// <summary>
         /// Required designer variable.

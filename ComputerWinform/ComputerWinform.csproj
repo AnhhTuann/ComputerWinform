@@ -111,11 +111,11 @@
     <Compile Include="Forms\FormStaff.Designer.cs">
       <DependentUpon>FormStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormStorage.cs">
+    <Compile Include="Forms\FormStorageImport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormStorage.Designer.cs">
-      <DependentUpon>FormStorage.cs</DependentUpon>
+    <Compile Include="Forms\FormStorageImport.Designer.cs">
+      <DependentUpon>FormStorageImport.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoadingForm.cs">
       <SubType>Form</SubType>
@@ -158,8 +158,8 @@
     <EmbeddedResource Include="Forms\FormStaff.resx">
       <DependentUpon>FormStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormStorage.resx">
-      <DependentUpon>FormStorage.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormStorageImport.resx">
+      <DependentUpon>FormStorageImport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>

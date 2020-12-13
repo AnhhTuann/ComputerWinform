@@ -150,7 +150,7 @@ namespace ComputerWinform.Forms
             cbProductName.DataSource = new BindingSource(comboSource, null);
         }
 
-        private async void addProductToList(object sender, EventArgs e)
+        private void addProductToList(object sender, EventArgs e)
         {
             int productId = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Key;
             string productName = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Value;
