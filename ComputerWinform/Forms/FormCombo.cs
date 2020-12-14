@@ -160,8 +160,17 @@ namespace ComputerWinform.Forms
                 Id = productId,
                 Name = productName
             };
-            rows_product.Add(product);
-            LoadListProduct(product);
+            if(checkExistProduct())
+            {
+                var message = "Please choice product other";
+                var title = "Product existed";
+                MessageBox.Show(message, title);
+            }
+            else
+            {
+                LoadListProduct(product);
+            }
+            
         }
         
         private void LoadListProduct(Product product)
@@ -196,14 +205,34 @@ namespace ComputerWinform.Forms
                 
             }
         }
-        /*
+        private bool checkExistProduct()
+        {
+            var flag = false;
+            int productId = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Key;
+            for (int rows = 0; rows < dataGridViewProduct.Rows.Count - 1; rows++)
+            {
+                var Id = Int32.Parse(dataGridViewProduct.Rows[rows].Cells[0].Value.ToString());
+                if (productId == Id)
+                {
+                    flag = true;
+                }
+                
+            }
+            return flag;
+        }
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-            for( int row = 0; row < dataGridViewProduct.Rows.Count; row++)
-            for(int col =0; dataGridViewProduct.Rows[row].Cells.Count;col++)
+            List<Product> rows_product = new List<Product>();
+            var x = dataGridViewProduct.Rows.Count;
+            for (int rows = 0; rows < dataGridViewProduct.Rows.Count - 1; rows++)
+            {
+                Product product = new Product()
                 {
-
-                }
+                    Id = Int32.Parse(dataGridViewProduct.Rows[rows].Cells[0].Value.ToString()),
+                    Name = dataGridViewProduct.Rows[rows].Cells[1].Value.ToString()
+                };
+                rows_product.Add(product); 
+            }
             List<ComboDetails> listComboDetails = new List<ComboDetails>();
             foreach(var item in rows_product)
             {
@@ -226,6 +255,53 @@ namespace ComputerWinform.Forms
             await ApiHandler.client.PostAsJsonAsync("combo", combo);
             LoadDataCombo();
         }
-        */
+
+        private async void btnUpdate_Click(object sender, EventArgs e)
+        {
+            List<Product> rows_product = new List<Product>();
+            var x = dataGridViewProduct.Rows.Count;
+            for (int rows = 0; rows < dataGridViewProduct.Rows.Count - 1; rows++)
+            {
+                Product product = new Product()
+                {
+                    Id = Int32.Parse(dataGridViewProduct.Rows[rows].Cells[0].Value.ToString()),
+                    Name = dataGridViewProduct.Rows[rows].Cells[1].Value.ToString()
+                };
+                rows_product.Add(product);
+            }
+            List<ComboDetails> listComboDetails = new List<ComboDetails>();
+            foreach (var item in rows_product)
+            {
+                ComboDetails comboDetails = new ComboDetails()
+                {
+                    Product = new Product()
+                    {
+                        Id = item.Id
+                    }
+                };
+
+                listComboDetails.Add(comboDetails);
+            }
+            Combo combo = new Combo()
+            {
+                Id = Int32.Parse(textComboId.Text),
+                Name = textComboName.Text,
+                Discount = Int32.Parse(textDiscount.Text),
+                Details = listComboDetails
+            };
+            await ApiHandler.client.PutAsJsonAsync("combo", combo);
+            LoadDataCombo();
+        }
+
+        private async void btnDel_Click(object sender, EventArgs e)
+        {
+            if (textComboId.Text!= "")
+            {
+              var id = Int32.Parse(textComboId.Text);
+              await ApiHandler.client.DeleteAsync("combo/" + id);
+              LoadDataCombo();
+            }
+            
+        }
     }
 }
