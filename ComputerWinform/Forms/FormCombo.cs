@@ -191,18 +191,7 @@ namespace ComputerWinform.Forms
             if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                 e.RowIndex >= 0)
             {
-                //var row = e.RowIndex;
-                //var column = 1;
-                //var id = dataGridViewProduct.Rows[e.RowIndex].Cells[0].Value.ToString();
-                //var name = dataGridViewProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
-
-                //var itemToRemove = rows_product.SingleOrDefault(r => r.Id == Int32.Parse(id));
-                //if (itemToRemove != null)
-                  //  rows_product.Remove(itemToRemove);
-                //var listProduct = rows_product;
-                dataGridViewProduct.Rows.RemoveAt(e.RowIndex);
-                
-                
+                dataGridViewProduct.Rows.RemoveAt(e.RowIndex);            
             }
         }
         private bool checkExistProduct()

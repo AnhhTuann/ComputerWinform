@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -72,6 +73,7 @@ namespace ComputerWinform.Forms
 
         private void LoadDataReceiptDetail(int id)
         {
+            dataGridView1.Rows.Clear();
             DataRow row;
             Receipt receipt = rows.Find((c) => c.Id == id);
             DataTable receipts = new DataTable("receipts");
@@ -88,15 +90,24 @@ namespace ComputerWinform.Forms
 
                 receipts.Rows.Add(row);
 
+                // load data for DataGridViewProduct
+                Delete.Name = "button";
+                Delete.HeaderText = "Button";
+                Delete.Text = "Delete";
+                Delete.UseColumnTextForButtonValue = true; //dont forget this line
+                productname.Name = rec.Product.Name;
+                productid.Name = rec.Product.Id.ToString();
+                dataGridView1.Rows.Add(productid.Name, productname.Name, Delete);
             }
 
-
+            
             dataGridViewProduct.DataSource = receipts;
            
         }
 
         private void LoadDataReceiptCombo(int id)
         {
+            dataGridView2.Rows.Clear();
             DataRow row;
             Receipt receipt = rows.Find((c) => c.Id == id);
             DataTable receipts = new DataTable("receipts");
@@ -113,8 +124,15 @@ namespace ComputerWinform.Forms
 
                 receipts.Rows.Add(row);
 
-            }
+                DeleteCombo.Name = "button";
+                DeleteCombo.HeaderText = "Button";
+                DeleteCombo.Text = "Delete";
+                DeleteCombo.UseColumnTextForButtonValue = true; //dont forget this line
+                comboName.Name = rec.Combo.Name;
+                comboid.Name = rec.Combo.Id.ToString();
+                dataGridView2.Rows.Add(comboid.Name, comboName.Name, DeleteCombo);
 
+            }
 
             dataGridViewCombo.DataSource = receipts;
             
@@ -241,6 +259,265 @@ namespace ComputerWinform.Forms
             LoadCombo();
         }
 
+        private void buttonAddProduct_Click(object sender, EventArgs e)
+        {
+            int productId = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Key;
+            string productName = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Value;
+
+            Product product = new Product()
+            {
+                Id = productId,
+                Name = productName
+            };
+            
+            if (checkExistProduct())
+            {
+                var message = "Please choice product other";
+                var title = "Product existed";
+                MessageBox.Show(message, title);
+            }
+            else
+            {
+                LoadListProduct(product);
+            }
+            
+            
+        }
+        private bool checkExistProduct()
+        {
+            var flag = false;
+            int productId = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Key;
+            for (int rows = 0; rows < dataGridView1.Rows.Count - 1; rows++)
+            {
+                var Id = Int32.Parse(dataGridView1.Rows[rows].Cells[0].Value.ToString());
+                if (productId == Id)
+                {
+                    flag = true;
+                }
+
+            }
+            return flag;
+        }
+        private void LoadListProduct(Product product)
+        {
+            Delete.Name = "button";
+            Delete.HeaderText = "Button";
+            Delete.Text = "Delete";
+            Delete.UseColumnTextForButtonValue = true; //dont forget this line
+            productname.Name = product.Name;
+            productid.Name = product.Id.ToString();
+            dataGridView1.Rows.Add(productid.Name, productname.Name, Delete);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                dataGridView1.Rows.RemoveAt(e.RowIndex);
+            }
+        }
+
+        private void buttonAddCombo_Click(object sender, EventArgs e)
+        {
+            int comboId = ((KeyValuePair<int, string>)cbComboname.SelectedItem).Key;
+            string comboName = ((KeyValuePair<int, string>)cbComboname.SelectedItem).Value;
+
+            Combo combo = new Combo()
+            {
+                Id = comboId,
+                Name = comboName
+            };
+
+            if (checkExistCombo())
+            {
+                var message = "Please choice product other";
+                var title = "Product existed";
+                MessageBox.Show(message, title);
+            }
+            else
+            {
+                LoadListCombo(combo);
+            }
+        }
+        private bool checkExistCombo()
+        {
+            var flag = false;
+            int comboId = ((KeyValuePair<int, string>)cbComboname.SelectedItem).Key;
+            for (int rows = 0; rows < dataGridView2.Rows.Count - 1; rows++)
+            {
+                var Id = Int32.Parse(dataGridView2.Rows[rows].Cells[0].Value.ToString());
+                if (comboId == Id)
+                {
+                    flag = true;
+                }
+
+            }
+            return flag;
+        }
+        private void LoadListCombo(Combo combo)
+        {
+            DeleteCombo.Name = "button";
+            DeleteCombo.HeaderText = "Button";
+            DeleteCombo.Text = "Delete";
+            DeleteCombo.UseColumnTextForButtonValue = true; //dont forget this line
+            comboName.Name = combo.Name;
+            comboid.Name = combo.Id.ToString();
+            dataGridView2.Rows.Add(comboid.Name, comboName.Name, DeleteCombo);
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                dataGridView2.Rows.RemoveAt(e.RowIndex);
+            }
+        }
+
+        private async void btnAdd_Click(object sender, EventArgs e)
+        {
+            List<Product> rows_product = new List<Product>();
+            List<Combo> rows_combo = new List<Combo>();
+            var x = dataGridView1.Rows.Count;
+            for (int rows = 0; rows < dataGridView1.Rows.Count - 1; rows++)
+            {
+                Product product = new Product()
+                {
+                    Id = Int32.Parse(dataGridView1.Rows[rows].Cells[0].Value.ToString()),
+                    Name = dataGridView1.Rows[rows].Cells[1].Value.ToString(),
+                    
+                };
+                rows_product.Add(product);
+            }
+            for (int rows = 0; rows < dataGridView2.Rows.Count - 1; rows++)
+            {
+                Combo combo = new Combo()
+                {
+                    Id = Int32.Parse(dataGridView1.Rows[rows].Cells[0].Value.ToString()),
+                    Name = dataGridView1.Rows[rows].Cells[1].Value.ToString(),
+
+                };
+                rows_combo.Add(combo);
+            }
+            List<ReceiptDetails> listReceiptDetails = new List<ReceiptDetails>();
+            foreach (var item in rows_product)
+            {
+                ReceiptDetails receiptDetails = new ReceiptDetails()
+                {
+                    Product = new Product()
+                    {
+                        Id = item.Id,
+                    },
+                    Amount = 1
+                };
+
+                listReceiptDetails.Add(receiptDetails);
+            }
+            List<ReceiptCombos> listReceiptCombos = new List<ReceiptCombos>();
+            foreach (var item in rows_combo)
+            {
+                ReceiptCombos ReceiptCombos = new ReceiptCombos()
+                {
+                    Combo = new Combo()
+                    {
+                        Id = item.Id
+                    },
+                    Amount = 1
+                };
+                listReceiptCombos.Add(ReceiptCombos);
+            }
+            Receipt receipt = new Receipt()
+            {
+                Recipient = textName.Text,
+                Address = textAddress.Text,
+                Phone = textPhone.Text,
+                Date = dateDate.Text,
+                Status = Int32.Parse(textStatus.Text),
+                Details = listReceiptDetails,
+                Combos = listReceiptCombos
+            };
+            var test = await ApiHandler.client.PostAsJsonAsync("receipt", receipt);
+            LoadDataCustomer();
+        }
+
+        private async void btnEdit_Click(object sender, EventArgs e)
+        {
+            List<Product> rows_product = new List<Product>();
+            List<Combo> rows_combo = new List<Combo>();
+            var x = dataGridView1.Rows.Count;
+            for (int rows = 0; rows < dataGridView1.Rows.Count - 1; rows++)
+            {
+                Product product = new Product()
+                {
+                    Id = Int32.Parse(dataGridView1.Rows[rows].Cells[0].Value.ToString()),
+                    Name = dataGridView1.Rows[rows].Cells[1].Value.ToString(),
+
+                };
+                rows_product.Add(product);
+            }
+            for (int rows = 0; rows < dataGridView2.Rows.Count - 1; rows++)
+            {
+                Combo combo = new Combo()
+                {
+                    Id = Int32.Parse(dataGridView1.Rows[rows].Cells[0].Value.ToString()),
+                    Name = dataGridView1.Rows[rows].Cells[1].Value.ToString(),
+
+                };
+                rows_combo.Add(combo);
+            }
+            List<ReceiptDetails> listReceiptDetails = new List<ReceiptDetails>();
+            foreach (var item in rows_product)
+            {
+                ReceiptDetails receiptDetails = new ReceiptDetails()
+                {
+                    Product = new Product()
+                    {
+                        Id = item.Id,
+                    },
+                    Amount = 1
+                };
+
+                listReceiptDetails.Add(receiptDetails);
+            }
+            List<ReceiptCombos> listReceiptCombos = new List<ReceiptCombos>();
+            foreach (var item in rows_combo)
+            {
+                ReceiptCombos ReceiptCombos = new ReceiptCombos()
+                {
+                    Combo = new Combo()
+                    {
+                        Id = item.Id
+                    },
+                    Amount = 1
+                };
+                listReceiptCombos.Add(ReceiptCombos);
+            }
+            Receipt receipt = new Receipt()
+            {
+                Id = Int32.Parse(textId.Text),
+                Recipient = textName.Text,
+                Address = textAddress.Text,
+                Phone = textPhone.Text,
+                Date = dateDate.Text,
+                Status = Int32.Parse(textStatus.Text),
+                Details = listReceiptDetails,
+                Combos = listReceiptCombos
+            };
+            var test = await ApiHandler.client.PutAsJsonAsync("receipt", receipt);
+            LoadDataCustomer();
+        }
+
+        private async void btnDel_Click(object sender, EventArgs e)
+        {
+            var receiptId = Int32.Parse(textId.Text);
+            await ApiHandler.client.DeleteAsync("receipt/" + receiptId);
+            LoadDataCustomer();
+        }
     }
 
 }
