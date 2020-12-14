@@ -15,6 +15,8 @@ namespace ComputerWinform.Forms
     public partial class FormOrder : Form
     {
         private List<Receipt> rows = new List<Receipt>();
+        private List<Combo> rowCombo = new List<Combo>();
+
         public FormOrder()
         {
             InitializeComponent();
@@ -90,7 +92,7 @@ namespace ComputerWinform.Forms
 
 
             dataGridViewProduct.DataSource = receipts;
-            LoadProduct();
+           
         }
 
         private void LoadDataReceiptCombo(int id)
@@ -115,7 +117,7 @@ namespace ComputerWinform.Forms
 
 
             dataGridViewCombo.DataSource = receipts;
-            LoadCombo();
+            
         }
 
         private void dataGridViewCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -128,8 +130,7 @@ namespace ComputerWinform.Forms
                 textAddress.Text = row.Cells["Address Recipient"].Value.ToString();
                 textPhone.Text = row.Cells["Phone Recipient"].Value.ToString();
                 textStatus.Text = row.Cells["Status"].Value.ToString();
-                //dateDate.Text = row.Cells["Date"].Value.ToString();
-
+                dateDate.Text = row.Cells["Date"].Value.ToString();
                 LoadDataReceiptDetail(Int32.Parse(row.Cells["Id"].Value.ToString()));
                 LoadDataReceiptCombo(Int32.Parse(row.Cells["Id"].Value.ToString()));
             }
@@ -206,9 +207,9 @@ namespace ComputerWinform.Forms
                 if (btns.GetType() == typeof(Button))
                 {
                     Button btn = (Button)btns;
-                    btn.BackColor = ThemeColor.PrimaryColor;
+                    btn.BackColor = ThemeColor.SecondaryColor;
                     btn.ForeColor = Color.White;
-                    btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
+                    btn.FlatAppearance.BorderColor = ThemeColor.PrimaryColor;
                 }
             }
             labelButton.ForeColor = ThemeColor.SecondaryColor;
@@ -229,6 +230,17 @@ namespace ComputerWinform.Forms
             }
 
         }
+
+        private void buttonLoadProduct_Click(object sender, EventArgs e)
+        {
+            LoadProduct();
+        }
+
+        private void buttonLoadCombo_Click(object sender, EventArgs e)
+        {
+            LoadCombo();
+        }
+
     }
 
 }

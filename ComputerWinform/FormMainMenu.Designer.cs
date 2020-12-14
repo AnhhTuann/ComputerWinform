@@ -113,7 +113,7 @@ namespace ComputerWinform
             this.buttonStorage.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.buttonStorage.Size = new System.Drawing.Size(298, 60);
             this.buttonStorage.TabIndex = 6;
-            this.buttonStorage.Text = "Storage Import";
+            this.buttonStorage.Text = "Storage";
             this.buttonStorage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonStorage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonStorage.UseVisualStyleBackColor = true;

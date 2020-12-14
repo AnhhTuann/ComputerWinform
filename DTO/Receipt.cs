@@ -10,7 +10,7 @@ namespace DTO
 		public string Address { get; set; }
 		public string Phone { get; set; }
 		public int Status { get; set; } = 0;
-		public string Date { get; set; } = new DateTime().ToShortDateString();
+		public string Date { get; set; } = DateTime.Now.ToShortDateString();
 		public double TotalCost { get; set; } = 0;
 		public List<ReceiptDetails> Details { get; set; } = new List<ReceiptDetails>();
 		public List<ReceiptCombos> Combos { get; set; } = new List<ReceiptCombos>();

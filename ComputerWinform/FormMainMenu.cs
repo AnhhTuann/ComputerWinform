@@ -132,7 +132,7 @@ namespace ComputerWinform
 
         private void buttonStorage_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormStorageImport(), sender);
+            OpenChildForm(new Forms.FormStorage(), sender);
 
         }
 

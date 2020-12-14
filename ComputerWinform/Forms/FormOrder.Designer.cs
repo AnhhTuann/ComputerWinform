@@ -39,6 +39,8 @@ namespace ComputerWinform.Forms
             this.panelCombo = new System.Windows.Forms.Panel();
             this.labelCombo = new System.Windows.Forms.Label();
             this.panelBtn = new System.Windows.Forms.Panel();
+            this.buttonPay = new System.Windows.Forms.Button();
+            this.textSearch = new System.Windows.Forms.TextBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -46,10 +48,18 @@ namespace ComputerWinform.Forms
             this.btnDel = new System.Windows.Forms.Button();
             this.labelButton = new System.Windows.Forms.Label();
             this.panelFill = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonLoadCombo = new System.Windows.Forms.Button();
+            this.buttonLoadProduct = new System.Windows.Forms.Button();
+            this.buttonAddCombo = new System.Windows.Forms.Button();
             this.cbComboname = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.comboid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeleteCombo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dateDate = new System.Windows.Forms.DateTimePicker();
             this.textStatus = new System.Windows.Forms.TextBox();
             this.textPhone = new System.Windows.Forms.TextBox();
@@ -58,7 +68,7 @@ namespace ComputerWinform.Forms
             this.label5 = new System.Windows.Forms.Label();
             this.cbCustomer = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAddProduct = new System.Windows.Forms.Button();
             this.cbProductName = new System.Windows.Forms.ComboBox();
             this.textId = new System.Windows.Forms.TextBox();
             this.Id = new System.Windows.Forms.Label();
@@ -67,12 +77,6 @@ namespace ComputerWinform.Forms
             this.labelDis = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelOrder = new System.Windows.Forms.Label();
-            this.productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.comboid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeleteCombo = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
@@ -94,26 +98,28 @@ namespace ComputerWinform.Forms
             this.dataGridViewCustomer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(89)))));
             this.dataGridViewCustomer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCustomer.Location = new System.Drawing.Point(0, 54);
+            this.dataGridViewCustomer.Location = new System.Drawing.Point(0, 41);
             this.dataGridViewCustomer.Name = "dataGridViewCustomer";
             this.dataGridViewCustomer.RowHeadersWidth = 51;
             this.dataGridViewCustomer.RowTemplate.Height = 24;
-            this.dataGridViewCustomer.Size = new System.Drawing.Size(555, 220);
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(555, 233);
             this.dataGridViewCustomer.TabIndex = 0;
             this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
             // 
             // dataGridViewCombo
             // 
-            this.dataGridViewCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewCombo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewCombo.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(89)))));
+            this.dataGridViewCombo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewCombo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCombo.Location = new System.Drawing.Point(0, 56);
+            this.dataGridViewCombo.Location = new System.Drawing.Point(0, 44);
             this.dataGridViewCombo.Name = "dataGridViewCombo";
             this.dataGridViewCombo.RowHeadersWidth = 51;
             this.dataGridViewCombo.RowTemplate.Height = 24;
-            this.dataGridViewCombo.Size = new System.Drawing.Size(555, 196);
+            this.dataGridViewCombo.Size = new System.Drawing.Size(555, 208);
             this.dataGridViewCombo.TabIndex = 1;
             // 
             // dataGridViewProduct
@@ -125,11 +131,11 @@ namespace ComputerWinform.Forms
             this.dataGridViewProduct.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(89)))));
             this.dataGridViewProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProduct.Location = new System.Drawing.Point(0, 52);
+            this.dataGridViewProduct.Location = new System.Drawing.Point(-3, 41);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
             this.dataGridViewProduct.RowHeadersWidth = 51;
             this.dataGridViewProduct.RowTemplate.Height = 24;
-            this.dataGridViewProduct.Size = new System.Drawing.Size(558, 182);
+            this.dataGridViewProduct.Size = new System.Drawing.Size(558, 195);
             this.dataGridViewProduct.TabIndex = 3;
             // 
             // panelReceipt
@@ -162,10 +168,10 @@ namespace ComputerWinform.Forms
             this.panelProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
             this.panelProduct.Controls.Add(this.labelProduct);
             this.panelProduct.Controls.Add(this.dataGridViewProduct);
-            this.panelProduct.Location = new System.Drawing.Point(12, 301);
+            this.panelProduct.Location = new System.Drawing.Point(12, 299);
             this.panelProduct.Name = "panelProduct";
             this.panelProduct.ShadowDecoration.Parent = this.panelProduct;
-            this.panelProduct.Size = new System.Drawing.Size(555, 234);
+            this.panelProduct.Size = new System.Drawing.Size(555, 236);
             this.panelProduct.TabIndex = 5;
             // 
             // labelProduct
@@ -194,7 +200,7 @@ namespace ComputerWinform.Forms
             // 
             this.labelCombo.AutoSize = true;
             this.labelCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCombo.Location = new System.Drawing.Point(14, 12);
+            this.labelCombo.Location = new System.Drawing.Point(11, 12);
             this.labelCombo.Name = "labelCombo";
             this.labelCombo.Size = new System.Drawing.Size(145, 29);
             this.labelCombo.TabIndex = 28;
@@ -204,6 +210,8 @@ namespace ComputerWinform.Forms
             // 
             this.panelBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.panelBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panelBtn.Controls.Add(this.buttonPay);
+            this.panelBtn.Controls.Add(this.textSearch);
             this.panelBtn.Controls.Add(this.buttonRefresh);
             this.panelBtn.Controls.Add(this.btnSearch);
             this.panelBtn.Controls.Add(this.btnAdd);
@@ -215,13 +223,39 @@ namespace ComputerWinform.Forms
             this.panelBtn.Size = new System.Drawing.Size(610, 252);
             this.panelBtn.TabIndex = 29;
             // 
+            // buttonPay
+            // 
+            this.buttonPay.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPay.Image = global::ComputerWinform.Properties.Resources.áda;
+            this.buttonPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPay.Location = new System.Drawing.Point(413, 118);
+            this.buttonPay.Name = "buttonPay";
+            this.buttonPay.Size = new System.Drawing.Size(167, 48);
+            this.buttonPay.TabIndex = 35;
+            this.buttonPay.Text = "Pay";
+            this.buttonPay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonPay.UseVisualStyleBackColor = true;
+            // 
+            // textSearch
+            // 
+            this.textSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textSearch.Location = new System.Drawing.Point(207, 66);
+            this.textSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textSearch.Name = "textSearch";
+            this.textSearch.Size = new System.Drawing.Size(373, 38);
+            this.textSearch.TabIndex = 31;
+            // 
             // buttonRefresh
             // 
             this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefresh.Image = global::ComputerWinform.Properties.Resources.refresh_30px;
             this.buttonRefresh.Location = new System.Drawing.Point(24, 119);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(556, 48);
+            this.buttonRefresh.Size = new System.Drawing.Size(338, 48);
             this.buttonRefresh.TabIndex = 34;
             this.buttonRefresh.UseVisualStyleBackColor = true;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
@@ -305,7 +339,9 @@ namespace ComputerWinform.Forms
             this.panelFill.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelFill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
-            this.panelFill.Controls.Add(this.button2);
+            this.panelFill.Controls.Add(this.buttonLoadCombo);
+            this.panelFill.Controls.Add(this.buttonLoadProduct);
+            this.panelFill.Controls.Add(this.buttonAddCombo);
             this.panelFill.Controls.Add(this.cbComboname);
             this.panelFill.Controls.Add(this.dataGridView2);
             this.panelFill.Controls.Add(this.dataGridView1);
@@ -317,7 +353,7 @@ namespace ComputerWinform.Forms
             this.panelFill.Controls.Add(this.label5);
             this.panelFill.Controls.Add(this.cbCustomer);
             this.panelFill.Controls.Add(this.label4);
-            this.panelFill.Controls.Add(this.button1);
+            this.panelFill.Controls.Add(this.buttonAddProduct);
             this.panelFill.Controls.Add(this.cbProductName);
             this.panelFill.Controls.Add(this.textId);
             this.panelFill.Controls.Add(this.Id);
@@ -332,22 +368,52 @@ namespace ComputerWinform.Forms
             this.panelFill.Size = new System.Drawing.Size(610, 523);
             this.panelFill.TabIndex = 30;
             // 
-            // button2
+            // buttonLoadCombo
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::ComputerWinform.Properties.Resources.add_30px;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(321, 326);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(289, 50);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "Add Combo";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonLoadCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLoadCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLoadCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLoadCombo.Image = global::ComputerWinform.Properties.Resources.wait_30px1;
+            this.buttonLoadCombo.Location = new System.Drawing.Point(511, 326);
+            this.buttonLoadCombo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonLoadCombo.Name = "buttonLoadCombo";
+            this.buttonLoadCombo.Size = new System.Drawing.Size(99, 50);
+            this.buttonLoadCombo.TabIndex = 34;
+            this.buttonLoadCombo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLoadCombo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonLoadCombo.UseVisualStyleBackColor = true;
+            this.buttonLoadCombo.Click += new System.EventHandler(this.buttonLoadCombo_Click);
+            // 
+            // buttonLoadProduct
+            // 
+            this.buttonLoadProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonLoadProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLoadProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLoadProduct.Image = global::ComputerWinform.Properties.Resources.wait_30px;
+            this.buttonLoadProduct.Location = new System.Drawing.Point(207, 326);
+            this.buttonLoadProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonLoadProduct.Name = "buttonLoadProduct";
+            this.buttonLoadProduct.Size = new System.Drawing.Size(99, 50);
+            this.buttonLoadProduct.TabIndex = 33;
+            this.buttonLoadProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonLoadProduct.UseVisualStyleBackColor = true;
+            this.buttonLoadProduct.Click += new System.EventHandler(this.buttonLoadProduct_Click);
+            // 
+            // buttonAddCombo
+            // 
+            this.buttonAddCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddCombo.Image = global::ComputerWinform.Properties.Resources.add_30px;
+            this.buttonAddCombo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAddCombo.Location = new System.Drawing.Point(321, 326);
+            this.buttonAddCombo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonAddCombo.Name = "buttonAddCombo";
+            this.buttonAddCombo.Size = new System.Drawing.Size(182, 50);
+            this.buttonAddCombo.TabIndex = 32;
+            this.buttonAddCombo.Text = "Add Combo";
+            this.buttonAddCombo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAddCombo.UseVisualStyleBackColor = true;
             // 
             // cbComboname
             // 
@@ -377,6 +443,24 @@ namespace ComputerWinform.Forms
             this.dataGridView2.Size = new System.Drawing.Size(289, 114);
             this.dataGridView2.TabIndex = 30;
             // 
+            // comboid
+            // 
+            this.comboid.HeaderText = "Combo Id";
+            this.comboid.MinimumWidth = 6;
+            this.comboid.Name = "comboid";
+            // 
+            // comboName
+            // 
+            this.comboName.HeaderText = "Combo Name";
+            this.comboName.MinimumWidth = 6;
+            this.comboName.Name = "comboName";
+            // 
+            // DeleteCombo
+            // 
+            this.DeleteCombo.HeaderText = "Delete";
+            this.DeleteCombo.MinimumWidth = 6;
+            this.DeleteCombo.Name = "DeleteCombo";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -395,6 +479,24 @@ namespace ComputerWinform.Forms
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(304, 114);
             this.dataGridView1.TabIndex = 29;
+            // 
+            // productid
+            // 
+            this.productid.HeaderText = "Product Id";
+            this.productid.MinimumWidth = 6;
+            this.productid.Name = "productid";
+            // 
+            // productname
+            // 
+            this.productname.HeaderText = "Product Name";
+            this.productname.MinimumWidth = 6;
+            this.productname.Name = "productname";
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
             // 
             // dateDate
             // 
@@ -471,22 +573,22 @@ namespace ComputerWinform.Forms
             this.label4.TabIndex = 19;
             this.label4.Text = "Customer";
             // 
-            // button1
+            // buttonAddProduct
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::ComputerWinform.Properties.Resources.add_30px;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 326);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(304, 50);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Add Product ";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAddProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddProduct.Image = global::ComputerWinform.Properties.Resources.add_30px;
+            this.buttonAddProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAddProduct.Location = new System.Drawing.Point(0, 326);
+            this.buttonAddProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonAddProduct.Name = "buttonAddProduct";
+            this.buttonAddProduct.Size = new System.Drawing.Size(194, 50);
+            this.buttonAddProduct.TabIndex = 12;
+            this.buttonAddProduct.Text = "Add Product ";
+            this.buttonAddProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAddProduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonAddProduct.UseVisualStyleBackColor = true;
             // 
             // cbProductName
             // 
@@ -566,42 +668,6 @@ namespace ComputerWinform.Forms
             this.labelOrder.TabIndex = 0;
             this.labelOrder.Text = "Order";
             // 
-            // productid
-            // 
-            this.productid.HeaderText = "Product Id";
-            this.productid.MinimumWidth = 6;
-            this.productid.Name = "productid";
-            // 
-            // productname
-            // 
-            this.productname.HeaderText = "Product Name";
-            this.productname.MinimumWidth = 6;
-            this.productname.Name = "productname";
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            // 
-            // comboid
-            // 
-            this.comboid.HeaderText = "Combo Id";
-            this.comboid.MinimumWidth = 6;
-            this.comboid.Name = "comboid";
-            // 
-            // comboName
-            // 
-            this.comboName.HeaderText = "Combo Name";
-            this.comboName.MinimumWidth = 6;
-            this.comboName.Name = "comboName";
-            // 
-            // DeleteCombo
-            // 
-            this.DeleteCombo.HeaderText = "Delete";
-            this.DeleteCombo.MinimumWidth = 6;
-            this.DeleteCombo.Name = "DeleteCombo";
-            // 
             // FormOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -654,7 +720,7 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Panel panelFill;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAddProduct;
         private System.Windows.Forms.ComboBox cbProductName;
         private System.Windows.Forms.TextBox textId;
         private System.Windows.Forms.Label Id;
@@ -674,12 +740,16 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.ComboBox cbComboname;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonAddCombo;
         private System.Windows.Forms.DataGridViewTextBoxColumn comboid;
         private System.Windows.Forms.DataGridViewTextBoxColumn comboName;
         private System.Windows.Forms.DataGridViewButtonColumn DeleteCombo;
         private System.Windows.Forms.DataGridViewTextBoxColumn productid;
         private System.Windows.Forms.DataGridViewTextBoxColumn productname;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.TextBox textSearch;
+        private System.Windows.Forms.Button buttonPay;
+        private System.Windows.Forms.Button buttonLoadCombo;
+        private System.Windows.Forms.Button buttonLoadProduct;
     }
 }

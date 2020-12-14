@@ -111,11 +111,11 @@
     <Compile Include="Forms\FormStaff.Designer.cs">
       <DependentUpon>FormStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormStorageImport.cs">
+    <Compile Include="Forms\FormStorage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormStorageImport.Designer.cs">
-      <DependentUpon>FormStorageImport.cs</DependentUpon>
+    <Compile Include="Forms\FormStorage.Designer.cs">
+      <DependentUpon>FormStorage.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\LoadingForm.cs">
       <SubType>Form</SubType>
@@ -158,8 +158,8 @@
     <EmbeddedResource Include="Forms\FormStaff.resx">
       <DependentUpon>FormStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormStorageImport.resx">
-      <DependentUpon>FormStorageImport.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormStorage.resx">
+      <DependentUpon>FormStorage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
@@ -311,6 +311,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\phone_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pay_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\áda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wait_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wait_30px1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

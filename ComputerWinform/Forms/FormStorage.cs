@@ -12,10 +12,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace ComputerWinform.Forms
 {
-    public partial class FormStorageImport : Form
+    public partial class FormStorage : Form
     {
         private List<Ticket> rows = new List<Ticket>();
-        public FormStorageImport()
+        public FormStorage()
         {
             InitializeComponent();
         }
@@ -66,7 +66,6 @@ namespace ComputerWinform.Forms
             tickets.Columns.Add(new DataColumn("Role"));
             tickets.Columns.Add(new DataColumn("Total Amount"));
             tickets.Columns.Add(new DataColumn("Total Cost"));
-            tickets.Columns.Add(new DataColumn("Import"));  
             tickets.Columns.Add(new DataColumn("Date"));
 
 
@@ -123,7 +122,6 @@ namespace ComputerWinform.Forms
 
                 textTotalAmount.Text = row.Cells["Total Amount"].Value.ToString();
                 textTotalCost.Text = row.Cells["Total Cost"].Value.ToString();
-                textIsImport.Text = row.Cells["Import"].Value.ToString();
                 dateDate.Text = row.Cells["Date"].Value.ToString();
                 LoadDataDetail (Int32.Parse(row.Cells["Staff Id"].Value.ToString()));
             }
@@ -143,6 +141,7 @@ namespace ComputerWinform.Forms
 
             cbProductName.DataSource = new BindingSource(comboSource, null);
         }
+
     }
 
 

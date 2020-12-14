@@ -29,7 +29,6 @@ namespace ComputerWinform.Forms
             string response = await ApiHandler.client.GetStringAsync("product");
             List<Product> rows = JsonConvert.DeserializeObject<List<Product>>(response);
             DataTable products = new DataTable("products");
-
             products.Columns.Add(new DataColumn("Id"));
             products.Columns.Add(new DataColumn("Name"));
             products.Columns.Add(new DataColumn("Description"));

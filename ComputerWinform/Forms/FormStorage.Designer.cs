@@ -1,7 +1,7 @@
 ﻿
 namespace ComputerWinform.Forms
 {
-    partial class FormStorageImport
+    partial class FormStorage
     {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,6 @@ namespace ComputerWinform.Forms
         {
             this.dataGridViewTicket = new System.Windows.Forms.DataGridView();
             this.labelDate = new System.Windows.Forms.Label();
-            this.textIsImport = new System.Windows.Forms.TextBox();
-            this.labelPrice = new System.Windows.Forms.Label();
             this.labelTotalAmount = new System.Windows.Forms.Label();
             this.labelStorage = new System.Windows.Forms.Label();
             this.panelFill = new System.Windows.Forms.Panel();
@@ -41,6 +39,8 @@ namespace ComputerWinform.Forms
             this.cbProductName = new System.Windows.Forms.ComboBox();
             this.labelProductName = new System.Windows.Forms.Label();
             this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.textTotalAmount = new System.Windows.Forms.TextBox();
             this.dateDate = new System.Windows.Forms.DateTimePicker();
             this.textTotalCost = new System.Windows.Forms.TextBox();
@@ -58,8 +58,6 @@ namespace ComputerWinform.Forms
             this.labelDetail = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelList = new System.Windows.Forms.Label();
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTicket)).BeginInit();
             this.panelFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
@@ -90,29 +88,11 @@ namespace ComputerWinform.Forms
             // 
             this.labelDate.AutoSize = true;
             this.labelDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDate.Location = new System.Drawing.Point(21, 164);
+            this.labelDate.Location = new System.Drawing.Point(21, 128);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(49, 20);
             this.labelDate.TabIndex = 9;
             this.labelDate.Text = "Date";
-            // 
-            // textIsImport
-            // 
-            this.textIsImport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textIsImport.Location = new System.Drawing.Point(202, 125);
-            this.textIsImport.Name = "textIsImport";
-            this.textIsImport.Size = new System.Drawing.Size(317, 22);
-            this.textIsImport.TabIndex = 7;
-            // 
-            // labelPrice
-            // 
-            this.labelPrice.AutoSize = true;
-            this.labelPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrice.Location = new System.Drawing.Point(21, 125);
-            this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(122, 20);
-            this.labelPrice.TabIndex = 3;
-            this.labelPrice.Text = "Import/Export";
             // 
             // labelTotalAmount
             // 
@@ -147,9 +127,7 @@ namespace ComputerWinform.Forms
             this.panelFill.Controls.Add(this.textTotalAmount);
             this.panelFill.Controls.Add(this.dateDate);
             this.panelFill.Controls.Add(this.labelDate);
-            this.panelFill.Controls.Add(this.textIsImport);
             this.panelFill.Controls.Add(this.textTotalCost);
-            this.panelFill.Controls.Add(this.labelPrice);
             this.panelFill.Controls.Add(this.labelTotalcost);
             this.panelFill.Controls.Add(this.labelTotalAmount);
             this.panelFill.Controls.Add(this.labelStorage);
@@ -161,12 +139,12 @@ namespace ComputerWinform.Forms
             // labelAddProduct
             // 
             this.labelAddProduct.AutoSize = true;
-            this.labelAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddProduct.Location = new System.Drawing.Point(19, 201);
+            this.labelAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAddProduct.Location = new System.Drawing.Point(19, 193);
             this.labelAddProduct.Name = "labelAddProduct";
-            this.labelAddProduct.Size = new System.Drawing.Size(87, 29);
-            this.labelAddProduct.TabIndex = 22;
-            this.labelAddProduct.Text = "Import";
+            this.labelAddProduct.Size = new System.Drawing.Size(252, 25);
+            this.labelAddProduct.TabIndex = 25;
+            this.labelAddProduct.Text = "Import product to storage";
             // 
             // button1
             // 
@@ -175,7 +153,7 @@ namespace ComputerWinform.Forms
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::ComputerWinform.Properties.Resources.add_30px;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(323, 201);
+            this.button1.Location = new System.Drawing.Point(323, 193);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(196, 51);
@@ -223,6 +201,18 @@ namespace ComputerWinform.Forms
             this.dataGridViewProduct.Size = new System.Drawing.Size(552, 221);
             this.dataGridViewProduct.TabIndex = 20;
             // 
+            // Product
+            // 
+            this.Product.HeaderText = "Product";
+            this.Product.MinimumWidth = 6;
+            this.Product.Name = "Product";
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete Product";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            // 
             // textTotalAmount
             // 
             this.textTotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -233,7 +223,7 @@ namespace ComputerWinform.Forms
             // 
             // dateDate
             // 
-            this.dateDate.Location = new System.Drawing.Point(202, 162);
+            this.dateDate.Location = new System.Drawing.Point(202, 128);
             this.dateDate.Name = "dateDate";
             this.dateDate.Size = new System.Drawing.Size(317, 22);
             this.dateDate.TabIndex = 13;
@@ -424,19 +414,7 @@ namespace ComputerWinform.Forms
             this.labelList.TabIndex = 25;
             this.labelList.Text = "Storage List";
             // 
-            // Product
-            // 
-            this.Product.HeaderText = "Product";
-            this.Product.MinimumWidth = 6;
-            this.Product.Name = "Product";
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete Product";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            // 
-            // FormStorage
+            // FormStorageImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -446,7 +424,7 @@ namespace ComputerWinform.Forms
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelBtn);
             this.Controls.Add(this.panelFill);
-            this.Name = "FormStorage";
+            this.Name = "FormStorageImport";
             this.Text = "Storage";
             this.Load += new System.EventHandler(this.FormStorage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTicket)).EndInit();
@@ -468,8 +446,6 @@ namespace ComputerWinform.Forms
 
         private System.Windows.Forms.DataGridView dataGridViewTicket;
         private System.Windows.Forms.Label labelDate;
-        private System.Windows.Forms.TextBox textIsImport;
-        private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Label labelTotalAmount;
         private System.Windows.Forms.Label labelStorage;
         private System.Windows.Forms.Panel panelFill;
@@ -489,7 +465,6 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Label labelDetail;
         private System.Windows.Forms.TextBox textTotalAmount;
         private System.Windows.Forms.DataGridView dataGridViewProduct;
-        private System.Windows.Forms.Label labelAddProduct;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cbProductName;
         private System.Windows.Forms.Label labelProductName;
@@ -497,5 +472,6 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.Label labelList;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.Label labelAddProduct;
     }
 }

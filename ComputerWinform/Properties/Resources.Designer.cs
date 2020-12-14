@@ -63,6 +63,16 @@ namespace ComputerWinform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap áda {
+            get {
+                object obj = ResourceManager.GetObject("áda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_30px {
             get {
                 object obj = ResourceManager.GetObject("add_30px", resourceCulture);
@@ -343,6 +353,16 @@ namespace ComputerWinform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pay_30px {
+            get {
+                object obj = ResourceManager.GetObject("pay_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap phone_30px {
             get {
                 object obj = ResourceManager.GetObject("phone_30px", resourceCulture);
@@ -466,6 +486,26 @@ namespace ComputerWinform.Properties {
         internal static System.Drawing.Bitmap user_30px {
             get {
                 object obj = ResourceManager.GetObject("user_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wait_30px {
+            get {
+                object obj = ResourceManager.GetObject("wait_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wait_30px1 {
+            get {
+                object obj = ResourceManager.GetObject("wait_30px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
