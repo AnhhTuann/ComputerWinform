@@ -76,11 +76,12 @@ namespace ComputerWinform.Forms
             this.dataGridViewTicket.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(89)))));
             this.dataGridViewTicket.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewTicket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTicket.Location = new System.Drawing.Point(0, 48);
+            this.dataGridViewTicket.Location = new System.Drawing.Point(0, 39);
+            this.dataGridViewTicket.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewTicket.Name = "dataGridViewTicket";
             this.dataGridViewTicket.RowHeadersWidth = 51;
             this.dataGridViewTicket.RowTemplate.Height = 24;
-            this.dataGridViewTicket.Size = new System.Drawing.Size(585, 475);
+            this.dataGridViewTicket.Size = new System.Drawing.Size(439, 386);
             this.dataGridViewTicket.TabIndex = 0;
             this.dataGridViewTicket.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTicket_CellContentClick);
             // 
@@ -88,9 +89,10 @@ namespace ComputerWinform.Forms
             // 
             this.labelDate.AutoSize = true;
             this.labelDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDate.Location = new System.Drawing.Point(21, 128);
+            this.labelDate.Location = new System.Drawing.Point(16, 104);
+            this.labelDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(49, 20);
+            this.labelDate.Size = new System.Drawing.Size(42, 17);
             this.labelDate.TabIndex = 9;
             this.labelDate.Text = "Date";
             // 
@@ -98,9 +100,10 @@ namespace ComputerWinform.Forms
             // 
             this.labelTotalAmount.AutoSize = true;
             this.labelTotalAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalAmount.Location = new System.Drawing.Point(21, 50);
+            this.labelTotalAmount.Location = new System.Drawing.Point(16, 41);
+            this.labelTotalAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTotalAmount.Name = "labelTotalAmount";
-            this.labelTotalAmount.Size = new System.Drawing.Size(120, 20);
+            this.labelTotalAmount.Size = new System.Drawing.Size(104, 17);
             this.labelTotalAmount.TabIndex = 1;
             this.labelTotalAmount.Text = "Total Amount";
             // 
@@ -108,9 +111,10 @@ namespace ComputerWinform.Forms
             // 
             this.labelStorage.AutoSize = true;
             this.labelStorage.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStorage.Location = new System.Drawing.Point(19, 10);
+            this.labelStorage.Location = new System.Drawing.Point(14, 8);
+            this.labelStorage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelStorage.Name = "labelStorage";
-            this.labelStorage.Size = new System.Drawing.Size(105, 29);
+            this.labelStorage.Size = new System.Drawing.Size(82, 24);
             this.labelStorage.TabIndex = 0;
             this.labelStorage.Text = "Storage";
             // 
@@ -131,18 +135,20 @@ namespace ComputerWinform.Forms
             this.panelFill.Controls.Add(this.labelTotalcost);
             this.panelFill.Controls.Add(this.labelTotalAmount);
             this.panelFill.Controls.Add(this.labelStorage);
-            this.panelFill.Location = new System.Drawing.Point(618, 11);
+            this.panelFill.Location = new System.Drawing.Point(464, 9);
+            this.panelFill.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelFill.Name = "panelFill";
-            this.panelFill.Size = new System.Drawing.Size(552, 523);
+            this.panelFill.Size = new System.Drawing.Size(414, 425);
             this.panelFill.TabIndex = 2;
             // 
             // labelAddProduct
             // 
             this.labelAddProduct.AutoSize = true;
             this.labelAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAddProduct.Location = new System.Drawing.Point(19, 193);
+            this.labelAddProduct.Location = new System.Drawing.Point(14, 157);
+            this.labelAddProduct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAddProduct.Name = "labelAddProduct";
-            this.labelAddProduct.Size = new System.Drawing.Size(252, 25);
+            this.labelAddProduct.Size = new System.Drawing.Size(214, 20);
             this.labelAddProduct.TabIndex = 25;
             this.labelAddProduct.Text = "Import product to storage";
             // 
@@ -153,10 +159,10 @@ namespace ComputerWinform.Forms
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::ComputerWinform.Properties.Resources.add_30px;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(323, 193);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(242, 157);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(196, 51);
+            this.button1.Size = new System.Drawing.Size(147, 41);
             this.button1.TabIndex = 21;
             this.button1.Text = "Add Product ";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -167,18 +173,20 @@ namespace ComputerWinform.Forms
             // 
             this.cbProductName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbProductName.FormattingEnabled = true;
-            this.cbProductName.Location = new System.Drawing.Point(160, 272);
+            this.cbProductName.Location = new System.Drawing.Point(120, 221);
+            this.cbProductName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbProductName.Name = "cbProductName";
-            this.cbProductName.Size = new System.Drawing.Size(359, 24);
+            this.cbProductName.Size = new System.Drawing.Size(270, 21);
             this.cbProductName.TabIndex = 23;
             // 
             // labelProductName
             // 
             this.labelProductName.AutoSize = true;
             this.labelProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProductName.Location = new System.Drawing.Point(21, 276);
+            this.labelProductName.Location = new System.Drawing.Point(16, 224);
+            this.labelProductName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(74, 20);
+            this.labelProductName.Size = new System.Drawing.Size(64, 17);
             this.labelProductName.TabIndex = 24;
             this.labelProductName.Text = "Product";
             // 
@@ -194,12 +202,14 @@ namespace ComputerWinform.Forms
             this.dataGridViewProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Product,
             this.Delete});
-            this.dataGridViewProduct.Location = new System.Drawing.Point(0, 302);
+            this.dataGridViewProduct.Location = new System.Drawing.Point(0, 245);
+            this.dataGridViewProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewProduct.Name = "dataGridViewProduct";
             this.dataGridViewProduct.RowHeadersWidth = 51;
             this.dataGridViewProduct.RowTemplate.Height = 24;
-            this.dataGridViewProduct.Size = new System.Drawing.Size(552, 221);
+            this.dataGridViewProduct.Size = new System.Drawing.Size(414, 180);
             this.dataGridViewProduct.TabIndex = 20;
+            this.dataGridViewProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProduct_CellContentClick);
             // 
             // Product
             // 
@@ -216,33 +226,37 @@ namespace ComputerWinform.Forms
             // textTotalAmount
             // 
             this.textTotalAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTotalAmount.Location = new System.Drawing.Point(202, 48);
+            this.textTotalAmount.Location = new System.Drawing.Point(152, 39);
+            this.textTotalAmount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textTotalAmount.Name = "textTotalAmount";
-            this.textTotalAmount.Size = new System.Drawing.Size(317, 22);
+            this.textTotalAmount.Size = new System.Drawing.Size(239, 20);
             this.textTotalAmount.TabIndex = 14;
             // 
             // dateDate
             // 
-            this.dateDate.Location = new System.Drawing.Point(202, 128);
+            this.dateDate.Location = new System.Drawing.Point(152, 104);
+            this.dateDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateDate.Name = "dateDate";
-            this.dateDate.Size = new System.Drawing.Size(317, 22);
+            this.dateDate.Size = new System.Drawing.Size(239, 20);
             this.dateDate.TabIndex = 13;
             // 
             // textTotalCost
             // 
             this.textTotalCost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textTotalCost.Location = new System.Drawing.Point(202, 91);
+            this.textTotalCost.Location = new System.Drawing.Point(152, 74);
+            this.textTotalCost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textTotalCost.Name = "textTotalCost";
-            this.textTotalCost.Size = new System.Drawing.Size(317, 22);
+            this.textTotalCost.Size = new System.Drawing.Size(239, 20);
             this.textTotalCost.TabIndex = 6;
             // 
             // labelTotalcost
             // 
             this.labelTotalcost.AutoSize = true;
             this.labelTotalcost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalcost.Location = new System.Drawing.Point(20, 91);
+            this.labelTotalcost.Location = new System.Drawing.Point(15, 74);
+            this.labelTotalcost.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTotalcost.Name = "labelTotalcost";
-            this.labelTotalcost.Size = new System.Drawing.Size(96, 20);
+            this.labelTotalcost.Size = new System.Drawing.Size(82, 17);
             this.labelTotalcost.TabIndex = 2;
             this.labelTotalcost.Text = "Total Cost";
             // 
@@ -250,9 +264,10 @@ namespace ComputerWinform.Forms
             // 
             this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefresh.Image = global::ComputerWinform.Properties.Resources.refresh_30px;
-            this.buttonRefresh.Location = new System.Drawing.Point(35, 120);
+            this.buttonRefresh.Location = new System.Drawing.Point(26, 98);
+            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(484, 48);
+            this.buttonRefresh.Size = new System.Drawing.Size(363, 39);
             this.buttonRefresh.TabIndex = 11;
             this.buttonRefresh.UseVisualStyleBackColor = true;
             // 
@@ -260,9 +275,10 @@ namespace ComputerWinform.Forms
             // 
             this.textSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSearch.Location = new System.Drawing.Point(202, 66);
+            this.textSearch.Location = new System.Drawing.Point(152, 54);
+            this.textSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textSearch.Name = "textSearch";
-            this.textSearch.Size = new System.Drawing.Size(317, 38);
+            this.textSearch.Size = new System.Drawing.Size(239, 32);
             this.textSearch.TabIndex = 9;
             // 
             // btnSearch
@@ -272,9 +288,10 @@ namespace ComputerWinform.Forms
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Image = global::ComputerWinform.Properties.Resources.search_30px;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(35, 56);
+            this.btnSearch.Location = new System.Drawing.Point(26, 46);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(135, 48);
+            this.btnSearch.Size = new System.Drawing.Size(101, 39);
             this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "Search";
             this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -288,9 +305,10 @@ namespace ComputerWinform.Forms
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::ComputerWinform.Properties.Resources.add_30px;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(35, 189);
+            this.btnAdd.Location = new System.Drawing.Point(26, 154);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(135, 48);
+            this.btnAdd.Size = new System.Drawing.Size(101, 39);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Add";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -304,9 +322,10 @@ namespace ComputerWinform.Forms
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.Image = global::ComputerWinform.Properties.Resources.edit_30px;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(202, 189);
+            this.btnEdit.Location = new System.Drawing.Point(152, 154);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(155, 48);
+            this.btnEdit.Size = new System.Drawing.Size(116, 39);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -320,9 +339,10 @@ namespace ComputerWinform.Forms
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDel.Image = global::ComputerWinform.Properties.Resources.delete_bin_30px;
             this.btnDel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDel.Location = new System.Drawing.Point(384, 189);
+            this.btnDel.Location = new System.Drawing.Point(288, 154);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(135, 48);
+            this.btnDel.Size = new System.Drawing.Size(101, 39);
             this.btnDel.TabIndex = 2;
             this.btnDel.Text = "Delete";
             this.btnDel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -333,9 +353,10 @@ namespace ComputerWinform.Forms
             // 
             this.labelButton.AutoSize = true;
             this.labelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelButton.Location = new System.Drawing.Point(19, 11);
+            this.labelButton.Location = new System.Drawing.Point(14, 9);
+            this.labelButton.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelButton.Name = "labelButton";
-            this.labelButton.Size = new System.Drawing.Size(87, 29);
+            this.labelButton.Size = new System.Drawing.Size(69, 24);
             this.labelButton.TabIndex = 1;
             this.labelButton.Text = "Button";
             // 
@@ -350,9 +371,10 @@ namespace ComputerWinform.Forms
             this.panelBtn.Controls.Add(this.btnEdit);
             this.panelBtn.Controls.Add(this.btnDel);
             this.panelBtn.Controls.Add(this.labelButton);
-            this.panelBtn.Location = new System.Drawing.Point(618, 557);
+            this.panelBtn.Location = new System.Drawing.Point(464, 453);
+            this.panelBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelBtn.Name = "panelBtn";
-            this.panelBtn.Size = new System.Drawing.Size(552, 253);
+            this.panelBtn.Size = new System.Drawing.Size(414, 206);
             this.panelBtn.TabIndex = 3;
             // 
             // panel2
@@ -362,9 +384,10 @@ namespace ComputerWinform.Forms
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
             this.panel2.Controls.Add(this.dataGridViewDetail);
             this.panel2.Controls.Add(this.labelDetail);
-            this.panel2.Location = new System.Drawing.Point(12, 557);
+            this.panel2.Location = new System.Drawing.Point(9, 453);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(585, 253);
+            this.panel2.Size = new System.Drawing.Size(439, 206);
             this.panel2.TabIndex = 13;
             // 
             // dataGridViewDetail
@@ -374,20 +397,22 @@ namespace ComputerWinform.Forms
             this.dataGridViewDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDetail.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewDetail.Location = new System.Drawing.Point(0, 43);
+            this.dataGridViewDetail.Location = new System.Drawing.Point(0, 35);
+            this.dataGridViewDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewDetail.Name = "dataGridViewDetail";
             this.dataGridViewDetail.RowHeadersWidth = 51;
             this.dataGridViewDetail.RowTemplate.Height = 24;
-            this.dataGridViewDetail.Size = new System.Drawing.Size(585, 210);
+            this.dataGridViewDetail.Size = new System.Drawing.Size(439, 171);
             this.dataGridViewDetail.TabIndex = 2;
             // 
             // labelDetail
             // 
             this.labelDetail.AutoSize = true;
             this.labelDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetail.Location = new System.Drawing.Point(30, 11);
+            this.labelDetail.Location = new System.Drawing.Point(22, 9);
+            this.labelDetail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDetail.Name = "labelDetail";
-            this.labelDetail.Size = new System.Drawing.Size(94, 29);
+            this.labelDetail.Size = new System.Drawing.Size(72, 24);
             this.labelDetail.TabIndex = 1;
             this.labelDetail.Text = "Details";
             // 
@@ -399,32 +424,35 @@ namespace ComputerWinform.Forms
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
             this.panel1.Controls.Add(this.labelList);
             this.panel1.Controls.Add(this.dataGridViewTicket);
-            this.panel1.Location = new System.Drawing.Point(12, 11);
+            this.panel1.Location = new System.Drawing.Point(9, 9);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(585, 523);
+            this.panel1.Size = new System.Drawing.Size(439, 425);
             this.panel1.TabIndex = 14;
             // 
             // labelList
             // 
             this.labelList.AutoSize = true;
             this.labelList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelList.Location = new System.Drawing.Point(19, 10);
+            this.labelList.Location = new System.Drawing.Point(14, 8);
+            this.labelList.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelList.Name = "labelList";
-            this.labelList.Size = new System.Drawing.Size(153, 29);
+            this.labelList.Size = new System.Drawing.Size(119, 24);
             this.labelList.TabIndex = 25;
             this.labelList.Text = "Storage List";
             // 
-            // FormStorageImport
+            // FormStorage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.ClientSize = new System.Drawing.Size(1182, 822);
+            this.ClientSize = new System.Drawing.Size(886, 668);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelBtn);
             this.Controls.Add(this.panelFill);
-            this.Name = "FormStorageImport";
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "FormStorage";
             this.Text = "Storage";
             this.Load += new System.EventHandler(this.FormStorage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTicket)).EndInit();
