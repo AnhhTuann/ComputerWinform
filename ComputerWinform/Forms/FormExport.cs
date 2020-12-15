@@ -32,7 +32,7 @@ namespace ComputerWinform.Forms
             rows = JsonConvert.DeserializeObject<List<Export>>(response);
 
             DataTable tickets = new DataTable("exports");
-
+            tickets.Columns.Add(new DataColumn("Id"));
             tickets.Columns.Add(new DataColumn("Staff Id"));
             tickets.Columns.Add(new DataColumn("Staff Name"));
             tickets.Columns.Add(new DataColumn("Role"));
@@ -44,6 +44,7 @@ namespace ComputerWinform.Forms
             {
                 DataRow row;
                 row = tickets.NewRow();
+                row["Id"] = record.Id;
                 row["Staff Id"] = record.Staff.Id;
                 row["Staff Name"] = record.Staff.Name;
                 row["Role"] = record.Staff.Role.Name;
@@ -159,7 +160,7 @@ namespace ComputerWinform.Forms
                 DataRow row;
                 row = tickets.NewRow();
                 row["Id"] = record.Id;
-                row["Customer Name"] = record.Receipt.Customer;
+                row["Customer Name"] = record.Receipt.Customer.Name;
                 row["Recipient"] = record.Receipt.Recipient;
                 row["Address"] = record.Receipt.Address;
                 row["Phone"] = record.Receipt.Phone;
