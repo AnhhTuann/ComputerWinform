@@ -141,6 +141,115 @@ namespace ComputerWinform.Forms
 
             cbProductName.DataSource = new BindingSource(comboSource, null);
         }
+        private void addProductToList(object sender, EventArgs e)
+        {
+            int productId = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Key;
+            string productName = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Value;
+
+            Product product = new Product()
+            {
+                Id = productId,
+                Name = productName
+            };
+            if (checkExistProduct())
+            {
+                var message = "Please choice product other";
+                var title = "Product existed";
+                MessageBox.Show(message, title);
+            }
+            else
+            {
+                LoadListProduct(product);
+            }
+
+        }
+
+        private void LoadListProduct(Product product)
+        {
+            Delete.Name = "button";
+            Delete.HeaderText = "Button";
+            Delete.Text = "Delete";
+            Delete.UseColumnTextForButtonValue = true; //dont forget this line
+            Product.Name = product.Name;
+            //ProductId.Name = product.Id.ToString();
+            //ProductId.Name, 
+            dataGridViewProduct.Rows.Add(Product.Name, Delete);
+        }
+
+        private void dataGridViewProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                //var row = e.RowIndex;
+                //var column = 1;
+                //var id = dataGridViewProduct.Rows[e.RowIndex].Cells[0].Value.ToString();
+                //var name = dataGridViewProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                //var itemToRemove = rows_product.SingleOrDefault(r => r.Id == Int32.Parse(id));
+                //if (itemToRemove != null)
+                //  rows_product.Remove(itemToRemove);
+                //var listProduct = rows_product;
+                dataGridViewProduct.Rows.RemoveAt(e.RowIndex);
+
+
+            }
+        }
+        private bool checkExistProduct()
+        {
+            var flag = false;
+            int productId = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Key;
+            for (int rows = 0; rows < dataGridViewProduct.Rows.Count - 1; rows++)
+            {
+                var Id = Int32.Parse(dataGridViewProduct.Rows[rows].Cells[0].Value.ToString());
+                if (productId == Id)
+                {
+                    flag = true;
+                }
+
+            }
+            return flag;
+        }
+        private async void btnAdd_Click(object sender, EventArgs e)
+        {
+            List<Product> rows_product = new List<Product>();
+            var x = dataGridViewProduct.Rows.Count;
+            for (int rows = 0; rows < dataGridViewProduct.Rows.Count - 1; rows++)
+            {
+                Product product = new Product()
+                {
+                    Id = Int32.Parse(dataGridViewProduct.Rows[rows].Cells[0].Value.ToString()),
+                    Name = dataGridViewProduct.Rows[rows].Cells[1].Value.ToString(),
+                    Amount = Int32.Parse(dataGridViewProduct.Rows[rows].Cells[2].Value.ToString())
+                };
+                rows_product.Add(product);
+            }
+            List<TicketDetails> listTicketDetails = new List<TicketDetails>();
+            foreach (var item in rows_product)
+            {
+                TicketDetails ticketDetails = new TicketDetails()
+                {
+                    Product = new Product()
+                    {
+                        Id = item.Id
+                    },
+                    Amount = 10
+                };
+
+                listTicketDetails.Add(ticketDetails);
+            }
+            Ticket ticket = new Ticket()
+            {
+                Date = dateDate.Text,
+                TotalAmount = Int32.Parse(textTotalAmount.Text),
+                TotalCost = Double.Parse(textTotalCost.Text),
+                Details = listTicketDetails
+            };
+            await ApiHandler.client.PostAsJsonAsync("Import", ticket);
+            LoadDataTicket();
+        }
 
     }
 

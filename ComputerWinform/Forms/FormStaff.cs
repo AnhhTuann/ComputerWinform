@@ -38,7 +38,6 @@ namespace ComputerWinform.Forms
         private void FormStaff_Load(object sender, EventArgs e)
         {
             LoadData();
-            LoadRole();
             LoadTheme();
         }
 
@@ -65,6 +64,7 @@ namespace ComputerWinform.Forms
         {
             string response = await ApiHandler.client.GetStringAsync("staff");
             List<Staff> rows = JsonConvert.DeserializeObject<List<Staff>>(response);
+            LoadRole(rows);
             DataTable staffs = new DataTable("staffs");
 
             staffs.Columns.Add(new DataColumn("Id"));
@@ -118,20 +118,20 @@ namespace ComputerWinform.Forms
             }
         }
 
-        private async void LoadRole ()
+        private async void LoadRole (List<Staff> rows)
         {
             Dictionary<int, string> comboSource = new Dictionary<int, string>();
-            string response = await ApiHandler.client.GetStringAsync("staff");
-            List<Staff> rows = JsonConvert.DeserializeObject<List<Staff>>(response);
-
-
             foreach (Staff record in rows)
             {
-                comboSource.Add(record.Role.Id, record.Role.Name);
+                if (!comboSource.ContainsKey(record.Role.Id))
+                {
+                    comboSource.Add(record.Role.Id, record.Role.Name);
+                }
             }
 
             cbRole.DataSource = new BindingSource(comboSource, null);
-
+           
+           
         }
 
         private bool checkValueForm()
