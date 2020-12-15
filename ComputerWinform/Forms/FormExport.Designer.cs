@@ -30,9 +30,9 @@ namespace ComputerWinform.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelList = new System.Windows.Forms.Label();
             this.dataGridViewTicket = new System.Windows.Forms.DataGridView();
             this.panelFill = new System.Windows.Forms.Panel();
+            this.dataGridViewReceipt = new System.Windows.Forms.DataGridView();
             this.labelExport = new System.Windows.Forms.Label();
             this.panelBtn = new System.Windows.Forms.Panel();
             this.buttonRefresh = new System.Windows.Forms.Button();
@@ -43,14 +43,19 @@ namespace ComputerWinform.Forms
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridViewDetail = new System.Windows.Forms.DataGridView();
             this.labelDetail = new System.Windows.Forms.Label();
-            this.dataGridViewReceipt = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.labelComboList = new System.Windows.Forms.Label();
+            this.labelList = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTicket)).BeginInit();
             this.panelFill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceipt)).BeginInit();
             this.panelBtn.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceipt)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,16 +71,6 @@ namespace ComputerWinform.Forms
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(603, 462);
             this.panel1.TabIndex = 15;
-            // 
-            // labelList
-            // 
-            this.labelList.AutoSize = true;
-            this.labelList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelList.Location = new System.Drawing.Point(19, 10);
-            this.labelList.Name = "labelList";
-            this.labelList.Size = new System.Drawing.Size(136, 29);
-            this.labelList.TabIndex = 25;
-            this.labelList.Text = "Export List";
             // 
             // dataGridViewTicket
             // 
@@ -93,7 +88,6 @@ namespace ComputerWinform.Forms
             this.dataGridViewTicket.RowTemplate.Height = 24;
             this.dataGridViewTicket.Size = new System.Drawing.Size(603, 414);
             this.dataGridViewTicket.TabIndex = 0;
-            this.dataGridViewTicket.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTicket_CellContentClick);
             // 
             // panelFill
             // 
@@ -107,6 +101,24 @@ namespace ComputerWinform.Forms
             this.panelFill.Name = "panelFill";
             this.panelFill.Size = new System.Drawing.Size(603, 341);
             this.panelFill.TabIndex = 26;
+            // 
+            // dataGridViewReceipt
+            // 
+            this.dataGridViewReceipt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewReceipt.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewReceipt.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(89)))));
+            this.dataGridViewReceipt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewReceipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReceipt.Location = new System.Drawing.Point(0, 48);
+            this.dataGridViewReceipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewReceipt.Name = "dataGridViewReceipt";
+            this.dataGridViewReceipt.RowHeadersWidth = 51;
+            this.dataGridViewReceipt.RowTemplate.Height = 24;
+            this.dataGridViewReceipt.Size = new System.Drawing.Size(603, 293);
+            this.dataGridViewReceipt.TabIndex = 26;
+            this.dataGridViewReceipt.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewReceipt_CellContentClick);
             // 
             // labelExport
             // 
@@ -208,7 +220,7 @@ namespace ComputerWinform.Forms
             this.panel2.Location = new System.Drawing.Point(634, 11);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(520, 558);
+            this.panel2.Size = new System.Drawing.Size(552, 301);
             this.panel2.TabIndex = 28;
             // 
             // dataGridViewDetail
@@ -225,7 +237,7 @@ namespace ComputerWinform.Forms
             this.dataGridViewDetail.Name = "dataGridViewDetail";
             this.dataGridViewDetail.RowHeadersWidth = 51;
             this.dataGridViewDetail.RowTemplate.Height = 24;
-            this.dataGridViewDetail.Size = new System.Drawing.Size(603, 510);
+            this.dataGridViewDetail.Size = new System.Drawing.Size(552, 253);
             this.dataGridViewDetail.TabIndex = 2;
             // 
             // labelDetail
@@ -234,26 +246,58 @@ namespace ComputerWinform.Forms
             this.labelDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDetail.Location = new System.Drawing.Point(29, 11);
             this.labelDetail.Name = "labelDetail";
-            this.labelDetail.Size = new System.Drawing.Size(94, 29);
+            this.labelDetail.Size = new System.Drawing.Size(191, 29);
             this.labelDetail.TabIndex = 1;
-            this.labelDetail.Text = "Details";
+            this.labelDetail.Text = "Details Product";
             // 
-            // dataGridViewReceipt
+            // panel3
             // 
-            this.dataGridViewReceipt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(255)))), ((int)(((byte)(252)))));
+            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.labelComboList);
+            this.panel3.Location = new System.Drawing.Point(634, 332);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(552, 237);
+            this.panel3.TabIndex = 29;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewReceipt.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewReceipt.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(89)))));
-            this.dataGridViewReceipt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewReceipt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewReceipt.Location = new System.Drawing.Point(0, 48);
-            this.dataGridViewReceipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridViewReceipt.Name = "dataGridViewReceipt";
-            this.dataGridViewReceipt.RowHeadersWidth = 51;
-            this.dataGridViewReceipt.RowTemplate.Height = 24;
-            this.dataGridViewReceipt.Size = new System.Drawing.Size(603, 293);
-            this.dataGridViewReceipt.TabIndex = 26;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(89)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 46);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(552, 191);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // labelComboList
+            // 
+            this.labelComboList.AutoSize = true;
+            this.labelComboList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelComboList.Location = new System.Drawing.Point(21, 9);
+            this.labelComboList.Name = "labelComboList";
+            this.labelComboList.Size = new System.Drawing.Size(185, 29);
+            this.labelComboList.TabIndex = 1;
+            this.labelComboList.Text = "Details Combo";
+            // 
+            // labelList
+            // 
+            this.labelList.AutoSize = true;
+            this.labelList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelList.Location = new System.Drawing.Point(19, 10);
+            this.labelList.Name = "labelList";
+            this.labelList.Size = new System.Drawing.Size(136, 29);
+            this.labelList.TabIndex = 25;
+            this.labelList.Text = "Export List";
             // 
             // FormExport
             // 
@@ -261,6 +305,7 @@ namespace ComputerWinform.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.ClientSize = new System.Drawing.Size(1198, 852);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelBtn);
             this.Controls.Add(this.panelFill);
@@ -273,12 +318,15 @@ namespace ComputerWinform.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTicket)).EndInit();
             this.panelFill.ResumeLayout(false);
             this.panelFill.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceipt)).EndInit();
             this.panelBtn.ResumeLayout(false);
             this.panelBtn.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReceipt)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,7 +334,6 @@ namespace ComputerWinform.Forms
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelList;
         private System.Windows.Forms.DataGridView dataGridViewTicket;
         private System.Windows.Forms.Panel panelFill;
         private System.Windows.Forms.Label labelExport;
@@ -300,5 +347,9 @@ namespace ComputerWinform.Forms
         private System.Windows.Forms.DataGridView dataGridViewDetail;
         private System.Windows.Forms.Label labelDetail;
         private System.Windows.Forms.DataGridView dataGridViewReceipt;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label labelComboList;
+        private System.Windows.Forms.Label labelList;
     }
 }

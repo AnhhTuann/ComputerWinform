@@ -594,6 +594,78 @@ namespace ComputerWinform.Forms
             await ApiHandler.client.DeleteAsync("receipt/" + receiptId);
             LoadDataCustomer();
         }
+
+        private async void buttonPay_Click(object sender, EventArgs e)
+        {
+            List<Product> rows_product = new List<Product>();
+            List<Combo> rows_combo = new List<Combo>();
+            var x = dataGridView1.Rows.Count;
+            for (int rows = 0; rows < dataGridView1.Rows.Count - 1; rows++)
+            {
+                Product product = new Product()
+                {
+                    Id = Int32.Parse(dataGridView1.Rows[rows].Cells[0].Value.ToString()),
+                    Name = dataGridView1.Rows[rows].Cells[1].Value.ToString(),
+                    Amount = Int32.Parse(dataGridView1.Rows[rows].Cells[2].Value.ToString())
+                };
+                rows_product.Add(product);
+            }
+            for (int rows = 0; rows < dataGridView2.Rows.Count - 1; rows++)
+            {
+                Combo combo = new Combo()
+                {
+                    Id = Int32.Parse(dataGridView2.Rows[rows].Cells[0].Value.ToString()),
+                    Name = dataGridView2.Rows[rows].Cells[1].Value.ToString(),
+                    Amount = Int32.Parse(dataGridView2.Rows[rows].Cells[2].Value.ToString())
+                };
+                rows_combo.Add(combo);
+            }
+            List<ReceiptDetails> listReceiptDetails = new List<ReceiptDetails>();
+            foreach (var item in rows_product)
+            {
+                ReceiptDetails receiptDetails = new ReceiptDetails()
+                {
+                    Product = new Product()
+                    {
+                        Id = item.Id,
+                    },
+                    Amount = item.Amount
+                };
+
+                listReceiptDetails.Add(receiptDetails);
+            }
+            List<ReceiptCombos> listReceiptCombos = new List<ReceiptCombos>();
+            foreach (var item in rows_combo)
+            {
+                ReceiptCombos ReceiptCombos = new ReceiptCombos()
+                {
+                    Combo = new Combo()
+                    {
+                        Id = item.Id
+                    },
+                    Amount = item.Amount
+                };
+                listReceiptCombos.Add(ReceiptCombos);
+            }
+            int customerId = ((KeyValuePair<int, string>)cbCustomer.SelectedItem).Key;
+            Receipt receipt = new Receipt()
+            {
+                Id = Int32.Parse(textId.Text),
+                Recipient = textName.Text,
+                Address = textAddress.Text,
+                Phone = textPhone.Text,
+                Date = dateDate.Text,
+                Status = 1,
+                Details = listReceiptDetails,
+                Combos = listReceiptCombos,
+                Customer = new Person()
+                {
+                    Id = customerId,
+                }
+            };
+            var test = await ApiHandler.client.PutAsJsonAsync("receipt", receipt);
+            LoadDataCustomer();
+        }
     }
 
 }

@@ -15,6 +15,7 @@ namespace ComputerWinform.Forms
     public partial class FormExport : Form
     {
         private List<Export> rows = new List<Export>();
+        private Export export = new Export();
         public FormExport()
         {
             InitializeComponent();
@@ -54,36 +55,97 @@ namespace ComputerWinform.Forms
             dataGridViewTicket.DataSource = tickets;
             LoadDataReceipt();
         }
-        private void LoadDataDetail(int id)
+        private async void LoadListProductAndCombo(int id)
         {
-            Export tiket = rows.Find((c) => c.Id == id);
-            DataTable tickets = new DataTable("exports");
-            tickets.Columns.Add(new DataColumn("Product Id"));
-            tickets.Columns.Add(new DataColumn("Product Name"));
-            tickets.Columns.Add(new DataColumn("Price"));
+            string response = await ApiHandler.client.GetStringAsync("export/" + id);
+            export = JsonConvert.DeserializeObject<Export>(response);
+
+            DataTable products = new DataTable("products");
+
+            products.Columns.Add(new DataColumn("Product Id"));
+            products.Columns.Add(new DataColumn("Product Name"));
+            products.Columns.Add(new DataColumn("Price"));
+            products.Columns.Add(new DataColumn("Amount"));
 
 
-            foreach (TicketDetails rec in tiket.Details)
+
+            foreach (ReceiptDetails record in export.Receipt.Details)
             {
                 DataRow row;
-                row = tickets.NewRow();
-                row["Product Id"] = rec.Product.Id;
-                row["Product Name"] = rec.Product.Name;
-                row["Price"] = rec.Product.Price;
+                row = products.NewRow();
+                row["Product Id"] = record.Product.Id;
+                row["Product Name"] = record.Product.Name;
+                row["Price"] = record.Product.Price;
+                row["Amount"] = record.Amount;
 
-                tickets.Rows.Add(row);
+                products.Rows.Add(row);
+            }
+            DataTable combos = new DataTable("combos");
+
+            combos.Columns.Add(new DataColumn("Combo Id"));
+            combos.Columns.Add(new DataColumn("Combo Name"));
+            combos.Columns.Add(new DataColumn("Price"));
+            combos.Columns.Add(new DataColumn("Amount"));
+
+
+
+            foreach (ReceiptCombos record in export.Receipt.Combos)
+            {
+                DataRow row;
+                row = combos.NewRow();
+                row["Combo Id"] = record.Combo.Id;
+                row["Combo Name"] = record.Combo.Name;
+                row["Price"] = record.Combo.Price;
+                row["Amount"] = record.Amount;
+
+                combos.Rows.Add(row);
             }
 
 
-            dataGridViewDetail.DataSource = tickets;
+            dataGridView1.DataSource = combos;
+
+            dataGridViewDetail.DataSource = products;
+
+
         }
+        private async void LoadListCombo(int id)
+        {
+            string response = await ApiHandler.client.GetStringAsync("export/" + id);
+            export = JsonConvert.DeserializeObject<Export>(response);
+
+            DataTable combos = new DataTable("combos");
+
+            combos.Columns.Add(new DataColumn("Combo Id"));
+            combos.Columns.Add(new DataColumn("Combo Name"));
+            combos.Columns.Add(new DataColumn("Price"));
+            combos.Columns.Add(new DataColumn("Amount"));
+
+
+
+            foreach (ReceiptCombos record in export.Receipt.Combos)
+            {
+                DataRow row;
+                row = combos.NewRow();
+                row["Combo Id"] = record.Combo.Id;
+                row["Combo Name"] = record.Combo.Name;
+                row["Price"] = record.Combo.Price;
+                row["Amount"] = record.Amount;
+
+                combos.Rows.Add(row);
+            }
+
+
+            dataGridView1.DataSource = combos;
+        }
+
+
         private async void LoadDataReceipt()
         {
             string response = await ApiHandler.client.GetStringAsync("export");
             rows = JsonConvert.DeserializeObject<List<Export>>(response);
 
             DataTable tickets = new DataTable("exports");
-
+            tickets.Columns.Add(new DataColumn("Id"));
             tickets.Columns.Add(new DataColumn("Customer Name"));
             tickets.Columns.Add(new DataColumn("Recipient"));
             tickets.Columns.Add(new DataColumn("Address"));
@@ -92,11 +154,11 @@ namespace ComputerWinform.Forms
             tickets.Columns.Add(new DataColumn("Total Cost"));
 
 
-
             foreach (Export record in rows)
             {
                 DataRow row;
                 row = tickets.NewRow();
+                row["Id"] = record.Id;
                 row["Customer Name"] = record.Receipt.Customer;
                 row["Recipient"] = record.Receipt.Recipient;
                 row["Address"] = record.Receipt.Address;
@@ -107,17 +169,16 @@ namespace ComputerWinform.Forms
                 tickets.Rows.Add(row);
             }
 
+
             dataGridViewReceipt.DataSource = tickets;
         }
 
-
-
-        private void dataGridViewTicket_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewReceipt_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dataGridViewTicket.Rows[e.RowIndex];
-                LoadDataDetail(Int32.Parse(row.Cells["Staff Id"].Value.ToString()));
+                DataGridViewRow row = this.dataGridViewReceipt.Rows[e.RowIndex];
+                LoadListProductAndCombo(Int32.Parse(row.Cells["Id"].Value.ToString()));
             }
         }
     }

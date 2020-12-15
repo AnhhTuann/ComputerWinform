@@ -46,12 +46,22 @@ namespace ComputerWinform.Forms
             this.btnDel = new System.Windows.Forms.Button();
             this.labelButton = new System.Windows.Forms.Label();
             this.panelFill = new System.Windows.Forms.Panel();
+            this.textAmountCombo = new System.Windows.Forms.TextBox();
+            this.textAmountProduct = new System.Windows.Forms.TextBox();
             this.buttonLoadCombo = new System.Windows.Forms.Button();
             this.buttonLoadProduct = new System.Windows.Forms.Button();
             this.buttonAddCombo = new System.Windows.Forms.Button();
             this.cbComboname = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.comboid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountcombo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeleteCombo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dateDate = new System.Windows.Forms.DateTimePicker();
             this.textStatus = new System.Windows.Forms.TextBox();
             this.textPhone = new System.Windows.Forms.TextBox();
@@ -69,16 +79,6 @@ namespace ComputerWinform.Forms
             this.labelDis = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
             this.labelOrder = new System.Windows.Forms.Label();
-            this.productid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.comboid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountcombo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeleteCombo = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.textAmountProduct = new System.Windows.Forms.TextBox();
-            this.textAmountCombo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCombo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
@@ -246,6 +246,7 @@ namespace ComputerWinform.Forms
             this.buttonPay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPay.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonPay.UseVisualStyleBackColor = true;
+            this.buttonPay.Click += new System.EventHandler(this.buttonPay_Click);
             // 
             // buttonRefresh
             // 
@@ -359,6 +360,24 @@ namespace ComputerWinform.Forms
             this.panelFill.Size = new System.Drawing.Size(611, 599);
             this.panelFill.TabIndex = 30;
             // 
+            // textAmountCombo
+            // 
+            this.textAmountCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textAmountCombo.Location = new System.Drawing.Point(321, 420);
+            this.textAmountCombo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textAmountCombo.Name = "textAmountCombo";
+            this.textAmountCombo.Size = new System.Drawing.Size(289, 22);
+            this.textAmountCombo.TabIndex = 36;
+            // 
+            // textAmountProduct
+            // 
+            this.textAmountProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textAmountProduct.Location = new System.Drawing.Point(0, 420);
+            this.textAmountProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textAmountProduct.Name = "textAmountProduct";
+            this.textAmountProduct.Size = new System.Drawing.Size(304, 22);
+            this.textAmountProduct.TabIndex = 35;
+            // 
             // buttonLoadCombo
             // 
             this.buttonLoadCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -438,6 +457,30 @@ namespace ComputerWinform.Forms
             this.dataGridView2.TabIndex = 30;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // comboid
+            // 
+            this.comboid.HeaderText = "Combo Id";
+            this.comboid.MinimumWidth = 6;
+            this.comboid.Name = "comboid";
+            // 
+            // comboName
+            // 
+            this.comboName.HeaderText = "Combo Name";
+            this.comboName.MinimumWidth = 6;
+            this.comboName.Name = "comboName";
+            // 
+            // amountcombo
+            // 
+            this.amountcombo.HeaderText = "Amount";
+            this.amountcombo.MinimumWidth = 6;
+            this.amountcombo.Name = "amountcombo";
+            // 
+            // DeleteCombo
+            // 
+            this.DeleteCombo.HeaderText = "Delete";
+            this.DeleteCombo.MinimumWidth = 6;
+            this.DeleteCombo.Name = "DeleteCombo";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -459,6 +502,30 @@ namespace ComputerWinform.Forms
             this.dataGridView1.Size = new System.Drawing.Size(304, 153);
             this.dataGridView1.TabIndex = 29;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // productid
+            // 
+            this.productid.HeaderText = "Product Id";
+            this.productid.MinimumWidth = 6;
+            this.productid.Name = "productid";
+            // 
+            // productname
+            // 
+            this.productname.HeaderText = "Product Name";
+            this.productname.MinimumWidth = 6;
+            this.productname.Name = "productname";
+            // 
+            // amount
+            // 
+            this.amount.HeaderText = "Amount";
+            this.amount.MinimumWidth = 6;
+            this.amount.Name = "amount";
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
             // 
             // dateDate
             // 
@@ -631,72 +698,6 @@ namespace ComputerWinform.Forms
             this.labelOrder.Size = new System.Drawing.Size(81, 29);
             this.labelOrder.TabIndex = 0;
             this.labelOrder.Text = "Order";
-            // 
-            // productid
-            // 
-            this.productid.HeaderText = "Product Id";
-            this.productid.MinimumWidth = 6;
-            this.productid.Name = "productid";
-            // 
-            // productname
-            // 
-            this.productname.HeaderText = "Product Name";
-            this.productname.MinimumWidth = 6;
-            this.productname.Name = "productname";
-            // 
-            // amount
-            // 
-            this.amount.HeaderText = "Amount";
-            this.amount.MinimumWidth = 6;
-            this.amount.Name = "amount";
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            // 
-            // comboid
-            // 
-            this.comboid.HeaderText = "Combo Id";
-            this.comboid.MinimumWidth = 6;
-            this.comboid.Name = "comboid";
-            // 
-            // comboName
-            // 
-            this.comboName.HeaderText = "Combo Name";
-            this.comboName.MinimumWidth = 6;
-            this.comboName.Name = "comboName";
-            // 
-            // amountcombo
-            // 
-            this.amountcombo.HeaderText = "Amount";
-            this.amountcombo.MinimumWidth = 6;
-            this.amountcombo.Name = "amountcombo";
-            // 
-            // DeleteCombo
-            // 
-            this.DeleteCombo.HeaderText = "Delete";
-            this.DeleteCombo.MinimumWidth = 6;
-            this.DeleteCombo.Name = "DeleteCombo";
-            // 
-            // textAmountProduct
-            // 
-            this.textAmountProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textAmountProduct.Location = new System.Drawing.Point(0, 420);
-            this.textAmountProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textAmountProduct.Name = "textAmountProduct";
-            this.textAmountProduct.Size = new System.Drawing.Size(304, 22);
-            this.textAmountProduct.TabIndex = 35;
-            // 
-            // textAmountCombo
-            // 
-            this.textAmountCombo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textAmountCombo.Location = new System.Drawing.Point(321, 420);
-            this.textAmountCombo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textAmountCombo.Name = "textAmountCombo";
-            this.textAmountCombo.Size = new System.Drawing.Size(289, 22);
-            this.textAmountCombo.TabIndex = 36;
             // 
             // FormOrder
             // 
