@@ -573,7 +573,7 @@ namespace ComputerWinform.Forms
             {
                 Id = Int32.Parse(textId.Text),
                 Recipient = textName.Text,
-                Address = textAddress.Text,2
+                Address = textAddress.Text,
                 Phone = textPhone.Text,
                 Date = dateDate.Text,
                 Status = Int32.Parse(textStatus.Text),

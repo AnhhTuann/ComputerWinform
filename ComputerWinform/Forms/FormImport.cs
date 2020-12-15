@@ -59,7 +59,7 @@ namespace ComputerWinform.Forms
             string response = await ApiHandler.client.GetStringAsync("import");
             rows = JsonConvert.DeserializeObject<List<Import>>(response);
 
-            DataTable tickets = new DataTable("tickets");
+            DataTable tickets = new DataTable("imports");
 
             tickets.Columns.Add(new DataColumn("Staff Id"));
             tickets.Columns.Add(new DataColumn("Staff Name"));
@@ -91,7 +91,7 @@ namespace ComputerWinform.Forms
         private void LoadDataDetail(int id)
         {
             Ticket tiket = rows.Find((c) => c.Id == id);
-            DataTable tickets = new DataTable("tickets");
+            DataTable tickets = new DataTable("imports");
             tickets.Columns.Add(new DataColumn("Product Id"));
             tickets.Columns.Add(new DataColumn("Product Name"));
             tickets.Columns.Add(new DataColumn("Price"));
