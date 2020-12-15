@@ -31,6 +31,7 @@ namespace ComputerWinform
         {
             this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonCombo = new System.Windows.Forms.Button();
             this.buttonStorage = new System.Windows.Forms.Button();
             this.btnStaff = new System.Windows.Forms.Button();
@@ -64,6 +65,7 @@ namespace ComputerWinform
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.buttonCombo);
             this.panelMenu.Controls.Add(this.buttonStorage);
             this.panelMenu.Controls.Add(this.btnStaff);
@@ -78,6 +80,26 @@ namespace ComputerWinform
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(298, 853);
             this.panelMenu.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.Image = global::ComputerWinform.Properties.Resources.export_30px;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 611);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(298, 60);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Export";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonCombo
             // 
@@ -106,14 +128,14 @@ namespace ComputerWinform
             this.buttonStorage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStorage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStorage.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonStorage.Image = global::ComputerWinform.Properties.Resources.storage_tank_30px;
+            this.buttonStorage.Image = global::ComputerWinform.Properties.Resources.download_30px;
             this.buttonStorage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonStorage.Location = new System.Drawing.Point(0, 491);
             this.buttonStorage.Name = "buttonStorage";
             this.buttonStorage.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.buttonStorage.Size = new System.Drawing.Size(298, 60);
             this.buttonStorage.TabIndex = 6;
-            this.buttonStorage.Text = "Storage";
+            this.buttonStorage.Text = "Import";
             this.buttonStorage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonStorage.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonStorage.UseVisualStyleBackColor = true;
@@ -440,6 +462,7 @@ namespace ComputerWinform
         private System.Windows.Forms.Button minimize;
         private System.Windows.Forms.Button exit;
         private System.Windows.Forms.Button maximize;
+        private System.Windows.Forms.Button button1;
     }
 }
 

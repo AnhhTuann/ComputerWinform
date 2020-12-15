@@ -213,6 +213,16 @@ namespace ComputerWinform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download_30px {
+            get {
+                object obj = ResourceManager.GetObject("download_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_30px {
             get {
                 object obj = ResourceManager.GetObject("edit_30px", resourceCulture);
@@ -226,6 +236,16 @@ namespace ComputerWinform.Properties {
         internal static System.Drawing.Bitmap email_30px {
             get {
                 object obj = ResourceManager.GetObject("email_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap export_30px {
+            get {
+                object obj = ResourceManager.GetObject("export_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

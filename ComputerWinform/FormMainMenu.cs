@@ -132,7 +132,7 @@ namespace ComputerWinform
 
         private void buttonStorage_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormStorage(), sender);
+            OpenChildForm(new Forms.FormImport(), sender);
 
         }
 
@@ -184,6 +184,11 @@ namespace ComputerWinform
             {
                 WindowState = FormWindowState.Normal;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Forms.FormExport(), sender);
         }
     }
 }

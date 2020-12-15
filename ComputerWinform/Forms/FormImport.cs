@@ -12,17 +12,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace ComputerWinform.Forms
 {
-    public partial class FormStorage : Form
+    public partial class FormImport : Form
     {
-        private List<Ticket> rows = new List<Ticket>();
-        public FormStorage()
+        private List<Import> rows = new List<Import>();
+        public FormImport()
         {
             InitializeComponent();
         }
 
         private void FormStorage_Load(object sender, EventArgs e)
         {
-            LoadDataTicket();
+            LoadDataImport();
             LoadTheme();
         }
         private void LoadTheme()
@@ -54,10 +54,10 @@ namespace ComputerWinform.Forms
             labelList.ForeColor = ThemeColor.PrimaryColor;
         }
 
-        private async void LoadDataTicket()
+        private async void LoadDataImport()
         {
             string response = await ApiHandler.client.GetStringAsync("import");
-            rows = JsonConvert.DeserializeObject<List<Ticket>>(response);
+            rows = JsonConvert.DeserializeObject<List<Import>>(response);
 
             DataTable tickets = new DataTable("tickets");
 
@@ -171,9 +171,9 @@ namespace ComputerWinform.Forms
             Delete.Text = "Delete";
             Delete.UseColumnTextForButtonValue = true; //dont forget this line
             Product.Name = product.Name;
-            //ProductId.Name = product.Id.ToString();
-            //ProductId.Name, 
-            dataGridViewProduct.Rows.Add(Product.Name, Delete);
+            productid.Name = product.Id.ToString();
+            amount.Name = textAmount.Text;
+            dataGridViewProduct.Rows.Add(productid.Name,Product.Name, amount.Name, Delete);
         }
 
         private void dataGridViewProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -235,20 +235,24 @@ namespace ComputerWinform.Forms
                     {
                         Id = item.Id
                     },
-                    Amount = 10
+                    Amount = item.Amount
                 };
 
                 listTicketDetails.Add(ticketDetails);
             }
-            Ticket ticket = new Ticket()
+            Import import = new Import()
             {
                 Date = dateDate.Text,
-                TotalAmount = Int32.Parse(textTotalAmount.Text),
-                TotalCost = Double.Parse(textTotalCost.Text),
+                //TotalAmount = Int32.Parse(textTotalAmount.Text),
+                //TotalCost = Double.Parse(textTotalCost.Text),
+                Staff = new Staff()
+                {
+                    Id = 1
+                },
                 Details = listTicketDetails
             };
-            await ApiHandler.client.PostAsJsonAsync("Import", ticket);
-            LoadDataTicket();
+            await ApiHandler.client.PostAsJsonAsync("Import", import);
+            LoadDataImport();
         }
 
     }

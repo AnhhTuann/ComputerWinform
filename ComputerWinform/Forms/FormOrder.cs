@@ -80,13 +80,17 @@ namespace ComputerWinform.Forms
             receipts.Columns.Add(new DataColumn("Product Id"));
             receipts.Columns.Add(new DataColumn("Product Name"));
             receipts.Columns.Add(new DataColumn("Price"));
-            
+            receipts.Columns.Add(new DataColumn("Amount"));
+
+
             foreach (ReceiptDetails rec in receipt.Details)
             {
                 row = receipts.NewRow();
                 row["Product Id"] = rec.Product.Id;
                 row["Product Name"] = rec.Product.Name;
                 row["Price"] = rec.Product.Price;
+                row["Amount"] = rec.Amount;
+
 
                 receipts.Rows.Add(row);
 
@@ -97,7 +101,8 @@ namespace ComputerWinform.Forms
                 Delete.UseColumnTextForButtonValue = true; //dont forget this line
                 productname.Name = rec.Product.Name;
                 productid.Name = rec.Product.Id.ToString();
-                dataGridView1.Rows.Add(productid.Name, productname.Name, Delete);
+                amount.Name = rec.Amount.ToString();
+                dataGridView1.Rows.Add(productid.Name, productname.Name, amount.Name, Delete);
             }
 
             
@@ -114,6 +119,8 @@ namespace ComputerWinform.Forms
             receipts.Columns.Add(new DataColumn("Combo Name"));
             receipts.Columns.Add(new DataColumn("Discount"));
             receipts.Columns.Add(new DataColumn("Price"));
+            receipts.Columns.Add(new DataColumn("Amount"));
+
 
             foreach (ReceiptCombos rec in receipt.Combos)
             {
@@ -121,6 +128,7 @@ namespace ComputerWinform.Forms
                 row["Combo Name"] = rec.Combo.Id;
                 row["Discount"] = rec.Combo.Name;
                 row["Price"] = rec.Combo.Price;
+                row["Amount"] = rec.Amount;
 
                 receipts.Rows.Add(row);
 
@@ -130,7 +138,8 @@ namespace ComputerWinform.Forms
                 DeleteCombo.UseColumnTextForButtonValue = true; //dont forget this line
                 comboName.Name = rec.Combo.Name;
                 comboid.Name = rec.Combo.Id.ToString();
-                dataGridView2.Rows.Add(comboid.Name, comboName.Name, DeleteCombo);
+                amountcombo.Name = rec.Amount.ToString();
+                dataGridView2.Rows.Add(comboid.Name, comboName.Name, amountcombo.Name, DeleteCombo);
 
             }
 
@@ -261,25 +270,51 @@ namespace ComputerWinform.Forms
 
         private void buttonAddProduct_Click(object sender, EventArgs e)
         {
-            int productId = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Key;
-            string productName = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Value;
-
-            Product product = new Product()
+            int productId;
+            string productName;
+            if (cbProductName.Text == "")
             {
-                Id = productId,
-                Name = productName
-            };
-            
-            if (checkExistProduct())
-            {
-                var message = "Please choice product other";
-                var title = "Product existed";
+                var message = "Please input product name";
+                var title = "Error";
                 MessageBox.Show(message, title);
+                cbProductName.Focus();
+                return;
             }
             else
             {
-                LoadListProduct(product);
+                productId = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Key;
+                productName = ((KeyValuePair<int, string>)cbProductName.SelectedItem).Value;
             }
+
+            if (textAmountProduct.Text == "")
+            {
+                var message = "Please input product name";
+                var title = "Error";
+                MessageBox.Show(message, title);
+                textAmountProduct.Focus();
+                return;
+            }
+            else {
+                int amountProduct = Int32.Parse(textAmountProduct.Text);
+                Product product = new Product()
+                {
+                    Id = productId,
+                    Name = productName,
+                    Amount = amountProduct
+                };
+
+                if (checkExistProduct())
+                {
+                    var message = "Please choice product other";
+                    var title = "Product existed";
+                    MessageBox.Show(message, title);
+                }
+                else
+                {
+                    LoadListProduct(product);
+                }
+            }
+            
             
             
         }
@@ -306,7 +341,8 @@ namespace ComputerWinform.Forms
             Delete.UseColumnTextForButtonValue = true; //dont forget this line
             productname.Name = product.Name;
             productid.Name = product.Id.ToString();
-            dataGridView1.Rows.Add(productid.Name, productname.Name, Delete);
+            amount.Name = product.Amount.ToString();
+            dataGridView1.Rows.Add(productid.Name, productname.Name,amount.Name, Delete);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -322,24 +358,53 @@ namespace ComputerWinform.Forms
 
         private void buttonAddCombo_Click(object sender, EventArgs e)
         {
-            int comboId = ((KeyValuePair<int, string>)cbComboname.SelectedItem).Key;
-            string comboName = ((KeyValuePair<int, string>)cbComboname.SelectedItem).Value;
-
-            Combo combo = new Combo()
+            int comboId;
+            string comboName;
+            if (cbComboname.Text == "") 
             {
-                Id = comboId,
-                Name = comboName
-            };
-
-            if (checkExistCombo())
-            {
-                var message = "Please choice product other";
-                var title = "Product existed";
+                var message = "Please input combo name";
+                var title = "Error";
                 MessageBox.Show(message, title);
+                cbComboname.Focus();
+                return;
             }
             else
             {
-                LoadListCombo(combo);
+                 comboId = ((KeyValuePair<int, string>)cbComboname.SelectedItem).Key;
+                 comboName = ((KeyValuePair<int, string>)cbComboname.SelectedItem).Value;
+            }
+            
+           
+
+
+            if (textAmountCombo.Text == "")
+            {
+                var message = "Please input combo name";
+                var title = "Error";
+                MessageBox.Show(message, title);
+                textAmountCombo.Focus();
+                return;
+            }
+            else
+            {
+                int amountCombo = Int32.Parse(textAmountCombo.Text);
+                Combo combo = new Combo()
+                {
+                    Id = comboId,
+                    Name = comboName,
+                    Amount = amountCombo
+                };
+
+                if (checkExistCombo())
+                {
+                    var message = "Please imput amount combo";
+                    var title = "Error";
+                    MessageBox.Show(message, title);
+                }
+                else
+                {
+                    LoadListCombo(combo);
+                }
             }
         }
         private bool checkExistCombo()
@@ -365,7 +430,8 @@ namespace ComputerWinform.Forms
             DeleteCombo.UseColumnTextForButtonValue = true; //dont forget this line
             comboName.Name = combo.Name;
             comboid.Name = combo.Id.ToString();
-            dataGridView2.Rows.Add(comboid.Name, comboName.Name, DeleteCombo);
+            amountcombo.Name = combo.Amount.ToString();
+            dataGridView2.Rows.Add(comboid.Name, comboName.Name, amountcombo.Name, DeleteCombo);
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -390,7 +456,7 @@ namespace ComputerWinform.Forms
                 {
                     Id = Int32.Parse(dataGridView1.Rows[rows].Cells[0].Value.ToString()),
                     Name = dataGridView1.Rows[rows].Cells[1].Value.ToString(),
-                    
+                    Amount = Int32.Parse(dataGridView1.Rows[rows].Cells[2].Value.ToString())
                 };
                 rows_product.Add(product);
             }
@@ -398,9 +464,9 @@ namespace ComputerWinform.Forms
             {
                 Combo combo = new Combo()
                 {
-                    Id = Int32.Parse(dataGridView1.Rows[rows].Cells[0].Value.ToString()),
-                    Name = dataGridView1.Rows[rows].Cells[1].Value.ToString(),
-
+                    Id = Int32.Parse(dataGridView2.Rows[rows].Cells[0].Value.ToString()),
+                    Name = dataGridView2.Rows[rows].Cells[1].Value.ToString(),
+                    Amount = Int32.Parse(dataGridView2.Rows[rows].Cells[2].Value.ToString())
                 };
                 rows_combo.Add(combo);
             }
@@ -413,7 +479,7 @@ namespace ComputerWinform.Forms
                     {
                         Id = item.Id,
                     },
-                    Amount = 1
+                    Amount = item.Amount
                 };
 
                 listReceiptDetails.Add(receiptDetails);
@@ -427,10 +493,11 @@ namespace ComputerWinform.Forms
                     {
                         Id = item.Id
                     },
-                    Amount = 1
+                    Amount = item.Amount
                 };
                 listReceiptCombos.Add(ReceiptCombos);
             }
+            int customerId = ((KeyValuePair<int, string>)cbCustomer.SelectedItem).Key;
             Receipt receipt = new Receipt()
             {
                 Recipient = textName.Text,
@@ -439,7 +506,11 @@ namespace ComputerWinform.Forms
                 Date = dateDate.Text,
                 Status = Int32.Parse(textStatus.Text),
                 Details = listReceiptDetails,
-                Combos = listReceiptCombos
+                Combos = listReceiptCombos,
+                Customer = new Person()
+                {
+                    Id = customerId,
+                }
             };
             var test = await ApiHandler.client.PostAsJsonAsync("receipt", receipt);
             LoadDataCustomer();
@@ -456,7 +527,7 @@ namespace ComputerWinform.Forms
                 {
                     Id = Int32.Parse(dataGridView1.Rows[rows].Cells[0].Value.ToString()),
                     Name = dataGridView1.Rows[rows].Cells[1].Value.ToString(),
-
+                    Amount = Int32.Parse(dataGridView1.Rows[rows].Cells[2].Value.ToString())
                 };
                 rows_product.Add(product);
             }
@@ -464,9 +535,9 @@ namespace ComputerWinform.Forms
             {
                 Combo combo = new Combo()
                 {
-                    Id = Int32.Parse(dataGridView1.Rows[rows].Cells[0].Value.ToString()),
-                    Name = dataGridView1.Rows[rows].Cells[1].Value.ToString(),
-
+                    Id = Int32.Parse(dataGridView2.Rows[rows].Cells[0].Value.ToString()),
+                    Name = dataGridView2.Rows[rows].Cells[1].Value.ToString(),
+                    Amount = Int32.Parse(dataGridView2.Rows[rows].Cells[2].Value.ToString())
                 };
                 rows_combo.Add(combo);
             }
@@ -479,7 +550,7 @@ namespace ComputerWinform.Forms
                     {
                         Id = item.Id,
                     },
-                    Amount = 1
+                    Amount = item.Amount
                 };
 
                 listReceiptDetails.Add(receiptDetails);
@@ -493,20 +564,25 @@ namespace ComputerWinform.Forms
                     {
                         Id = item.Id
                     },
-                    Amount = 1
+                    Amount = item.Amount
                 };
                 listReceiptCombos.Add(ReceiptCombos);
             }
+            int customerId = ((KeyValuePair<int, string>)cbCustomer.SelectedItem).Key;
             Receipt receipt = new Receipt()
             {
                 Id = Int32.Parse(textId.Text),
                 Recipient = textName.Text,
-                Address = textAddress.Text,
+                Address = textAddress.Text,2
                 Phone = textPhone.Text,
                 Date = dateDate.Text,
                 Status = Int32.Parse(textStatus.Text),
                 Details = listReceiptDetails,
-                Combos = listReceiptCombos
+                Combos = listReceiptCombos,
+                Customer = new Person()
+                {
+                    Id = customerId,
+                }
             };
             var test = await ApiHandler.client.PutAsJsonAsync("receipt", receipt);
             LoadDataCustomer();
